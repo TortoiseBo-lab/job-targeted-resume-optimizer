@@ -28,7 +28,7 @@ const requiredFiles = [
   "examples/outputs/example-targeted-resume.docx",
   "examples/outputs/example-targeted-resume.pdf",
   "examples/outputs/example-targeted-resume.html",
-  "docs/USAGE_MODEL_CN.md",
+  "docs/USAGE.md",
   "docs/CLAUDE_CODE_SKILL_CN.md",
   "scripts/export-resume.mjs",
   "knowledge-base/index.json",
