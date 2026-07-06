@@ -4,6 +4,14 @@
   "description": "Installable Codex and Claude Code skill package for target-company and target-role driven resume optimization.",
   "license": "MIT",
   "type": "module",
+  "homepage": "https://github.com/TortoiseBo-lab/job-targeted-resume-optimizer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TortoiseBo-lab/job-targeted-resume-optimizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TortoiseBo-lab/job-targeted-resume-optimizer/issues"
+  },
   "keywords": [
     "resume",
     "career",
@@ -37,6 +45,9 @@
     "DATA_CARD.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   }

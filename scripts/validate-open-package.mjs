@@ -31,6 +31,7 @@ const requiredFiles = [
   "docs/USAGE.md",
   "docs/CLAUDE_CODE_SKILL_CN.md",
   "docs/INSTALL_SKILLS.md",
+  "docs/NPM_PUBLISHING.md",
   "scripts/export-resume.mjs",
   "scripts/install-skill.mjs",
   "skills/codex/job-targeted-resume-optimizer/SKILL.md",
