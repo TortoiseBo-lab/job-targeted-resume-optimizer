@@ -10,6 +10,7 @@ If you are not a developer and just want to use this with ChatGPT, Claude, Gemin
 
 - [中文零代码上手指南](START_HERE_CN.md)
 - [Copy-paste Chinese prompt](prompts/chatgpt-copy-paste-cn.md)
+- [Install as a Claude Code skill](docs/CLAUDE_CODE_SKILL_CN.md)
 
 ## Why This Exists
 
