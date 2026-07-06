@@ -4,6 +4,13 @@ Open knowledge for building a target-company and target-role driven resume tailo
 
 This is not the production web app. It is the public GitHub package: abstracted resume rules, a 67-template routing catalog, and a practical playbook for turning a candidate profile, target company, target role, and JD into a tailored resume strategy.
 
+## Start Here
+
+If you are not a developer and just want to use this with ChatGPT, Claude, Gemini, or another LLM, start with:
+
+- [中文零代码上手指南](START_HERE_CN.md)
+- [Copy-paste Chinese prompt](prompts/chatgpt-copy-paste-cn.md)
+
 ## Why This Exists
 
 Most AI resume tools stop at generic polishing. This package is organized around a stricter workflow:
