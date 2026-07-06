@@ -1,0 +1,3 @@
+display_name: Job Targeted Resume Optimizer
+short_description: Build target-company resumes and export Word/PDF.
+default_prompt: Create a target-role resume package from my resume and a job description.

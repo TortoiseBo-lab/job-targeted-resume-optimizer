@@ -1,7 +1,7 @@
 {
-  "name": "targeted-resume-skill-open-knowledge",
-  "version": "0.2.0",
-  "description": "Open knowledge package for a target-company and target-role driven resume tailoring skill.",
+  "name": "job-targeted-resume-optimizer",
+  "version": "0.3.0",
+  "description": "Installable Codex and Claude Code skill package for target-company and target-role driven resume optimization.",
   "license": "MIT",
   "type": "module",
   "keywords": [
@@ -16,8 +16,27 @@
   "scripts": {
     "validate": "node scripts/validate-open-package.mjs",
     "export": "node scripts/export-resume.mjs",
-    "export:example": "node scripts/export-resume.mjs --input examples/outputs/example-targeted-resume.md"
+    "export:example": "node scripts/export-resume.mjs --input examples/outputs/example-targeted-resume.md",
+    "install:skills": "node scripts/install-skill.mjs --target all",
+    "install:codex": "node scripts/install-skill.mjs --target codex",
+    "install:claude": "node scripts/install-skill.mjs --target claude"
   },
+  "bin": {
+    "resume-skill": "scripts/install-skill.mjs"
+  },
+  "files": [
+    ".claude/skills/job-targeted-resume-optimizer/SKILL.md",
+    "skills/",
+    "knowledge-base/",
+    "scripts/",
+    "examples/",
+    "prompts/",
+    "docs/",
+    "README.md",
+    "START_HERE_CN.md",
+    "DATA_CARD.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=18"
   }

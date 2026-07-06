@@ -12,6 +12,7 @@ If you are not a developer and just want to use this with ChatGPT, Claude, Gemin
 - [Copy-paste Chinese prompt](prompts/chatgpt-copy-paste-cn.md)
 - [Install as a Claude Code skill](docs/CLAUDE_CODE_SKILL_CN.md)
 - [Usage guide](docs/USAGE.md)
+- [Installable Codex and Claude Code skills](docs/INSTALL_SKILLS.md)
 
 ## Why This Exists
 
@@ -50,6 +51,20 @@ Requires Node.js 18+.
 ```bash
 npm install
 npm run validate
+```
+
+Install this package as a local Codex or Claude Code skill:
+
+```bash
+npm run install:codex
+npm run install:claude
+```
+
+After npm publication, users can install globally and choose a target:
+
+```bash
+npm install -g job-targeted-resume-optimizer
+resume-skill install --target all
 ```
 
 Export a Markdown resume package to Word and PDF:
