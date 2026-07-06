@@ -1,85 +1,142 @@
-# Targeted Resume Skill Open Knowledge
+# Job Targeted Resume Optimizer
 
-Open knowledge for building a target-company and target-role driven resume tailoring skill.
+[![npm version](https://img.shields.io/npm/v/job-targeted-resume-optimizer.svg)](https://www.npmjs.com/package/job-targeted-resume-optimizer)
+[![license](https://img.shields.io/badge/license-MIT-111111.svg)](LICENSE)
+[![node](https://img.shields.io/badge/node-%3E%3D18-111111.svg)](package.json)
 
-This is not the production web app. It is the public GitHub package: abstracted resume rules, a 67-template routing catalog, and a practical playbook for turning a candidate profile, target company, target role, and JD into a tailored resume strategy.
+An installable Codex and Claude Code skill for creating target-company and target-role tailored resumes.
 
-## Start Here
+Most resume tools polish what already exists. This package starts from the target: company, role, market, seniority, and JD. It maps the candidate's real evidence to that target, chooses a resume strategy, rewrites without inventing facts, and exports Markdown, Word, PDF, and HTML.
 
-If you are not a developer and just want to use this with ChatGPT, Claude, Gemini, or another LLM, start with:
+This is the open skill package, not the hosted production web app.
 
-- [中文零代码上手指南](START_HERE_CN.md)
-- [Copy-paste Chinese prompt](prompts/chatgpt-copy-paste-cn.md)
-- [Install as a Claude Code skill](docs/CLAUDE_CODE_SKILL_CN.md)
-- [Usage guide](docs/USAGE.md)
-- [Installable Codex and Claude Code skills](docs/INSTALL_SKILLS.md)
+## Install
 
-## Why This Exists
-
-Most AI resume tools stop at generic polishing. This package is organized around a stricter workflow:
-
-1. Read the target company, role, market, seniority, and JD.
-2. Extract job signals and evidence requirements.
-3. Map the candidate's real facts to direct matches, transferable matches, and gaps.
-4. Choose section order, density, and template strategy.
-5. Rewrite bullets without inventing facts.
-6. Produce a report with rationale and follow-up questions.
-
-## What's Included
-
-- `knowledge-base/index.json`: coverage map for companies, industries, universities, and styles.
-- `knowledge-base/templates/catalog.json`: 67 template routes with layout, density, section-order, and content rules.
-- `knowledge-base/playbooks/targeted-resume-playbook.json`: machine-readable workflow.
-- `knowledge-base/playbooks/targeted-resume-playbook.md`: human-readable workflow.
-- `knowledge-base/**/rules.json`: abstracted source-specific writing rules.
-- `knowledge-base/**/examples.json`: synthetic examples and bullet patterns.
-- `examples/`: small integration examples for prompt design and routing.
-- `DATA_CARD.md`: inclusion, exclusion, and source policy.
-- `scripts/validate-open-package.mjs`: release validation.
-
-## What's Not Included
-
-- Production website code.
-- Original third-party guide PDFs, screenshots, or raw extracted text.
-- Raw personal resumes, uploaded user files, or private resume corpora.
-- API keys, deployment metadata, payment assets, or local source manifests.
-
-## Quick Start
-
-Requires Node.js 18+.
-
-```bash
-npm install
-npm run validate
-```
-
-Install this package as a local Codex or Claude Code skill:
-
-```bash
-npm run install:codex
-npm run install:claude
-```
-
-After npm publication, users can install globally and choose a target:
+Install from npm:
 
 ```bash
 npm install -g job-targeted-resume-optimizer
 resume-skill install --target all
 ```
 
-Export a Markdown resume package to Word and PDF:
+Install only one environment:
 
 ```bash
-npm run export -- --input outputs/my-targeted-resume.md
+resume-skill install --target codex
+resume-skill install --target claude
 ```
 
-Try the bundled example:
+Then ask Codex or Claude Code:
+
+```txt
+Use job-targeted-resume-optimizer.
+
+My resume is in ./inputs/resume.md.
+The JD is in ./inputs/target-jd.md.
+Target company: Google
+Target role: Software Engineer Intern
+Target market: US
+
+Please generate a targeted resume, optimization report, Word file, and PDF.
+```
+
+Expected outputs:
+
+```txt
+outputs/google-software-engineer-intern-targeted-resume.md
+outputs/google-software-engineer-intern-targeted-resume.docx
+outputs/google-software-engineer-intern-targeted-resume.pdf
+outputs/google-software-engineer-intern-targeted-resume.html
+```
+
+## Demo
+
+Bundled example:
+
+- Input resume: [examples/inputs/sample-resume.md](examples/inputs/sample-resume.md)
+- Target JD: [examples/inputs/google-swe-intern-jd.md](examples/inputs/google-swe-intern-jd.md)
+- Output Markdown: [examples/outputs/example-targeted-resume.md](examples/outputs/example-targeted-resume.md)
+- Output Word: [examples/outputs/example-targeted-resume.docx](examples/outputs/example-targeted-resume.docx)
+- Output PDF: [examples/outputs/example-targeted-resume.pdf](examples/outputs/example-targeted-resume.pdf)
+
+Run the demo export locally:
 
 ```bash
+git clone https://github.com/TortoiseBo-lab/job-targeted-resume-optimizer.git
+cd job-targeted-resume-optimizer
+npm install
 npm run export:example
 ```
 
-Use the JSON files directly from your own app or agent:
+## Workflow
+
+```txt
+Resume + Target JD
+  -> Target role signal analysis
+  -> Candidate evidence map
+  -> Strategy and template route
+  -> Targeted resume draft
+  -> Optimization report
+  -> Word / PDF / HTML export
+```
+
+The skill is designed to behave like a guided resume-making flow:
+
+1. Intake the original resume and target JD.
+2. Extract target-company and target-role signals.
+3. Separate direct matches, transferable matches, and gaps.
+4. Select section order, density, and template route.
+5. Rewrite bullets using only supported facts.
+6. Mark missing metrics or context as `[Need detail: ...]`.
+7. Export the final resume package.
+
+## Why It Exists
+
+Generic resume editing often makes every candidate sound the same. This package is built around a stricter principle:
+
+> A strong resume is not just well written. It is engineered for one target application.
+
+The system uses:
+
+- Company-specific writing rules.
+- Industry and role conventions.
+- University and style guidance.
+- A 67-route template catalog.
+- A target-driven playbook for evidence mapping and resume strategy.
+
+## What Is Included
+
+| Path | Purpose |
+| --- | --- |
+| `skills/codex/job-targeted-resume-optimizer/` | Codex skill package |
+| `skills/claude/job-targeted-resume-optimizer/` | Claude Code skill package |
+| `knowledge-base/index.json` | Coverage map for companies, industries, universities, and styles |
+| `knowledge-base/templates/catalog.json` | 67 resume template routes |
+| `knowledge-base/playbooks/targeted-resume-playbook.md` | Human-readable workflow |
+| `scripts/install-skill.mjs` | Codex / Claude Code installer |
+| `scripts/export-resume.mjs` | Markdown to DOCX / PDF / HTML exporter |
+| `examples/` | Sample resume, JD, and generated outputs |
+| `prompts/chatgpt-copy-paste-cn.md` | No-code Chinese prompt |
+
+## Coverage
+
+Current open coverage includes:
+
+- Companies: Google, Meta, Amazon, OpenAI, Microsoft, TikTok, McKinsey, BCG, Bain, Goldman Sachs, J.P. Morgan, Morgan Stanley.
+- Industries: software engineering, data science, product management, consulting, finance, investment banking, marketing, academic CV, healthcare, law, public policy, accounting, statistics, fintech, and more.
+- Styles: ATS, Big Tech, consulting, investment banking, academic CV, modern, minimal, startup, and other routes.
+- Templates: 67 target-driven resume routes.
+
+## Use Without Installation
+
+For a no-code test, copy the prompt into ChatGPT, Claude, Gemini, or another LLM:
+
+- [中文零代码上手指南](START_HERE_CN.md)
+- [Copy-paste Chinese prompt](prompts/chatgpt-copy-paste-cn.md)
+
+## Use As A Developer Package
+
+You can load the JSON files directly from your own app or agent:
 
 ```js
 import fs from "node:fs";
@@ -93,33 +150,9 @@ console.log(playbook.workflow.map((step) => step.name));
 console.log(templates.templateCount);
 ```
 
-## Suggested LLM Flow
-
-Load only the relevant slices for a request:
-
-1. Resolve target company and role to slugs from `knowledge-base/index.json`.
-2. Load the matching company, industry, university, and style `rules.json`.
-3. Load one primary template from `knowledge-base/templates/catalog.json`.
-4. Add the playbook workflow and scoring rubric.
-5. Ask the model to generate a resume draft plus an optimization report.
-
-See:
-
-- [examples/use-playbook.md](examples/use-playbook.md)
-- [examples/template-routing.md](examples/template-routing.md)
-
-## Coverage
-
-Current open coverage includes:
-
-- Companies: Google, Meta, Amazon, OpenAI, Microsoft, TikTok, McKinsey, BCG, Bain, Goldman Sachs, J.P. Morgan, Morgan Stanley.
-- Industries: software engineering, data science, product management, consulting, finance, investment banking, marketing, academic CV, healthcare, law, public policy, accounting, statistics, fintech, and more.
-- Universities/styles: Harvard, MIT, Stanford, UPenn, Berkeley, Yale, Princeton, CMU, Cornell, Duke, ATS, Big Tech, consulting, investment banking, academic CV, and modern style routes.
-- Templates: 67 target-driven resume routes.
-
 ## Data Policy
 
-The public knowledge base stores abstracted, project-authored rules and synthetic examples. It is designed to be useful without redistributing copyrighted source documents or personal data.
+The public package contains abstracted, project-authored rules and synthetic examples. It does not include raw private resume corpora, uploaded user resumes, original third-party guide PDFs, payment code, API keys, deployment assets, or production website files.
 
 See [DATA_CARD.md](DATA_CARD.md).
 
@@ -129,11 +162,14 @@ See [DATA_CARD.md](DATA_CARD.md).
 npm run validate
 ```
 
-The validator checks required files, coverage counts, template count, JSON validity, and obvious sensitive content patterns.
+The validator checks required files, coverage counts, template count, JSON validity, raw-file absence, and obvious sensitive-content patterns.
 
-## Publishing Status
+## Documentation
 
-See [docs/PUBLISHING.md](docs/PUBLISHING.md) for the final GitHub release checklist.
+- [Usage guide](docs/USAGE.md)
+- [Installable skills](docs/INSTALL_SKILLS.md)
+- [Claude Code skill guide](docs/CLAUDE_CODE_SKILL_CN.md)
+- [npm publishing notes](docs/NPM_PUBLISHING.md)
 
 ## License
 
