@@ -1,6 +1,6 @@
 {
   "name": "targeted-resume-skill-open-knowledge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Open knowledge package for a target-company and target-role driven resume tailoring skill.",
   "license": "MIT",
   "type": "module",
@@ -14,7 +14,9 @@
     "knowledge-base"
   ],
   "scripts": {
-    "validate": "node scripts/validate-open-package.mjs"
+    "validate": "node scripts/validate-open-package.mjs",
+    "export": "node scripts/export-resume.mjs",
+    "export:example": "node scripts/export-resume.mjs --input examples/outputs/example-targeted-resume.md"
   },
   "engines": {
     "node": ">=18"

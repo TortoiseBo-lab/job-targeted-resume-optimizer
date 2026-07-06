@@ -11,6 +11,7 @@ If you are not a developer and just want to use this with ChatGPT, Claude, Gemin
 - [中文零代码上手指南](START_HERE_CN.md)
 - [Copy-paste Chinese prompt](prompts/chatgpt-copy-paste-cn.md)
 - [Install as a Claude Code skill](docs/CLAUDE_CODE_SKILL_CN.md)
+- [中文使用模式说明](docs/USAGE_MODEL_CN.md)
 
 ## Why This Exists
 
@@ -49,6 +50,18 @@ Requires Node.js 18+.
 ```bash
 npm install
 npm run validate
+```
+
+Export a Markdown resume package to Word and PDF:
+
+```bash
+npm run export -- --input outputs/my-targeted-resume.md
+```
+
+Try the bundled example:
+
+```bash
+npm run export:example
 ```
 
 Use the JSON files directly from your own app or agent:

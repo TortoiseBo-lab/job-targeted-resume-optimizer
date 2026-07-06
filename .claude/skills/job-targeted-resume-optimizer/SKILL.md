@@ -103,9 +103,11 @@ Also summarize the result in chat with:
 If the user asks for Word or PDF:
 
 1. Generate the Markdown resume package first.
-2. Check whether a local converter is available, such as `pandoc`, `libreoffice`, or another project-supported exporter.
-3. If a converter is available, produce the requested `.docx` or `.pdf`.
-4. If no converter is available, explain the missing dependency and still provide the Markdown output.
+2. From the repository root, run:
+
+   `npm run export -- --input outputs/<company-or-role>-targeted-resume.md`
+
+3. Confirm the generated `.docx` and `.pdf` files exist.
+4. If export fails, explain the error and still provide the Markdown output.
 
 Do not claim a DOCX or PDF was created unless the file exists.
-

@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 3261 >>
+stream
+BT /F1 18.0 Tf 54 736.0 Td (ALEX CHEN) Tj ET
+BT /F1 10.4 Tf 54 711.8 Td (alex.chen@example.com | New York, NY | linkedin.com/in/alexchen | github.com/alexchen) Tj ET
+BT /F1 12.0 Tf 54 689.2 Td (TARGET ROLE) Tj ET
+BT /F1 10.4 Tf 54 671.0 Td (Google Software Engineer Intern, US) Tj ET
+BT /F1 12.0 Tf 54 648.4 Td (RESUME STRATEGY) Tj ET
+BT /F1 10.2 Tf 64 630.2 Td (- Route: Big Tech software engineering, ATS-friendly one-page resume.) Tj ET
+BT /F1 10.2 Tf 64 615.8 Td (- Section order: Education, Technical Skills, Experience, Projects.) Tj ET
+BT /F1 10.2 Tf 64 601.4 Td (- Emphasis: software development, data structures, production-minded reliability,) Tj ET
+BT /F1 10.2 Tf 64 587.0 Td (  cross-functional work, and scalable product thinking.) Tj ET
+BT /F1 12.0 Tf 54 564.6 Td (EDUCATION) Tj ET
+BT /F1 10.8 Tf 54 540.4 Td (COLUMBIA UNIVERSITY) Tj ET
+BT /F1 10.4 Tf 54 523.4 Td (M.S. in Computer Science, expected May 2027) Tj ET
+BT /F1 10.2 Tf 64 506.8 Td (- Relevant coursework: distributed systems, machine learning, databases, algorithms.) Tj ET
+BT /F1 10.8 Tf 54 484.4 Td (UNIVERSITY OF ILLINOIS URBANA-CHAMPAIGN) Tj ET
+BT /F1 10.4 Tf 54 467.4 Td (B.S. in Statistics and Computer Science, May 2025) Tj ET
+BT /F1 10.2 Tf 64 450.8 Td (- GPA: 3.8/4.0.) Tj ET
+BT /F1 12.0 Tf 54 428.4 Td (TECHNICAL SKILLS) Tj ET
+BT /F1 10.2 Tf 64 410.2 Td (- Languages: Python, JavaScript, TypeScript, SQL, Java.) Tj ET
+BT /F1 10.2 Tf 64 395.8 Td (- Frameworks and tools: React, Node.js, PostgreSQL, Git, Docker, pandas.) Tj ET
+BT /F1 10.2 Tf 64 381.4 Td (- Foundations: algorithms, databases, machine learning, data validation.) Tj ET
+BT /F1 12.0 Tf 54 359.0 Td (EXPERIENCE) Tj ET
+BT /F1 10.8 Tf 54 334.8 Td (DATA PLATFORM INTERN, FINSIGHT ANALYTICS) Tj ET
+BT /F1 10.4 Tf 54 317.8 Td (June 2025 - August 2025) Tj ET
+BT /F1 10.2 Tf 64 301.2 Td (- Built Python data validation scripts for financial transaction datasets, improving) Tj ET
+BT /F1 10.2 Tf 64 286.8 Td (  reliability of downstream analytics workflows.) Tj ET
+BT /F1 10.2 Tf 64 272.4 Td (- Investigated broken ETL checks and documented recurring data quality issues for two data) Tj ET
+BT /F1 10.2 Tf 64 258.0 Td (  engineers and one product manager.) Tj ET
+BT /F1 10.2 Tf 64 243.6 Td (- Contributed to dashboard reliability improvements by tracing data refresh failures and) Tj ET
+BT /F1 10.2 Tf 64 229.2 Td (  proposing validation checkpoints. [Need detail: error-rate reduction or dashboard refresh) Tj ET
+BT /F1 10.2 Tf 64 214.8 Td (  improvement]) Tj ET
+BT /F1 10.8 Tf 54 192.4 Td (SOFTWARE ENGINEERING PROJECT, CAMPUS COURSE PLANNER) Tj ET
+BT /F1 10.4 Tf 54 175.4 Td (January 2025 - May 2025) Tj ET
+BT /F1 10.2 Tf 64 158.8 Td (- Developed a React and Node.js web application that helps students compare course schedules) Tj ET
+BT /F1 10.2 Tf 64 144.4 Td (  and save academic plans.) Tj ET
+BT /F1 10.2 Tf 64 130.0 Td (- Designed PostgreSQL schemas for courses, prerequisites, and saved plans, supporting) Tj ET
+BT /F1 10.2 Tf 64 115.6 Td (  structured search and filtering.) Tj ET
+BT /F1 10.2 Tf 64 101.2 Td (- Implemented filters for department, time, professor, and requirement type to improve course) Tj ET
+BT /F1 10.2 Tf 64 86.8 Td (  discovery. [Need detail: number of users, courses, or test cases]) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1716 >>
+stream
+BT /F1 12.0 Tf 54 738.0 Td (PROJECTS) Tj ET
+BT /F1 10.8 Tf 54 713.8 Td (RECOMMENDATION SYSTEM PROTOTYPE) Tj ET
+BT /F1 10.2 Tf 64 696.8 Td (- Trained a Python collaborative filtering model and evaluated ranking quality with precision,) Tj ET
+BT /F1 10.2 Tf 64 682.4 Td (  recall, and mean average precision.) Tj ET
+BT /F1 10.2 Tf 64 668.0 Td (- Connected model evaluation to product relevance by comparing recommended items against known) Tj ET
+BT /F1 10.2 Tf 64 653.6 Td (  user preferences. [Need detail: dataset size and best metric values]) Tj ET
+BT /F1 12.0 Tf 54 631.2 Td (OPTIMIZATION REPORT) Tj ET
+BT /F1 10.8 Tf 54 607.0 Td (STRONGEST MATCHES) Tj ET
+BT /F1 10.2 Tf 64 590.0 Td (- Python, JavaScript, SQL, React, Node.js, and PostgreSQL align with Google's general-purpose) Tj ET
+BT /F1 10.2 Tf 64 575.6 Td (  coding and web application requirements.) Tj ET
+BT /F1 10.2 Tf 64 561.2 Td (- ETL validation and dashboard reliability work show software quality, debugging, and product) Tj ET
+BT /F1 10.2 Tf 64 546.8 Td (  reliability evidence.) Tj ET
+BT /F1 10.2 Tf 64 532.4 Td (- Course planner project shows full-stack implementation, database design, and user-facing) Tj ET
+BT /F1 10.2 Tf 64 518.0 Td (  product thinking.) Tj ET
+BT /F1 10.8 Tf 54 495.6 Td (EVIDENCE GAPS) Tj ET
+BT /F1 10.2 Tf 64 478.6 Td (- Add quantified impact for dashboard reliability, such as refresh success rate, number of) Tj ET
+BT /F1 10.2 Tf 64 464.2 Td (  checks, or failures reduced.) Tj ET
+BT /F1 10.2 Tf 64 449.8 Td (- Add scale for the course planner, such as number of courses, users, records, or tests.) Tj ET
+BT /F1 10.2 Tf 64 435.4 Td (- Add more explicit algorithm/data structure evidence from coursework or projects.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000003504 00000 n 
+0000003630 00000 n 
+0000005398 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+5524
+%%EOF
