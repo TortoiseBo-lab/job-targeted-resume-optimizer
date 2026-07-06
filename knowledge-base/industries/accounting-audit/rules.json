@@ -1,0 +1,154 @@
+{
+  "sourceName": "Accounting and Audit Resume",
+  "sourceType": "industry",
+  "targetRole": "Accounting / Audit / Assurance",
+  "targetCountry": "International",
+  "resumeLength": "One page, conservative and evidence-dense.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Accounting / Finance Experience",
+    "Projects",
+    "Certifications",
+    "Technical Skills",
+    "Activities"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Accounting / Finance Experience",
+    "Projects",
+    "Certifications",
+    "Technical Skills",
+    "Activities"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Conservative resume font with clear section hierarchy.",
+    "margin": "0.5-0.75 inch.",
+    "bulletStyle": "Compact bullets emphasizing procedure, scope, and accuracy.",
+    "dateFormat": "Month/year or season/year, consistently aligned.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Conservative, accurate, process-aware, and compliance-minded.",
+    "bulletFormula": "Action + accounting/audit object + procedure/tool + scope + accuracy, compliance, or reporting outcome",
+    "actionVerbs": [
+      "Reconciled",
+      "Verified",
+      "Prepared",
+      "Reviewed",
+      "Tested",
+      "Classified",
+      "Documented",
+      "Analyzed",
+      "Compiled",
+      "Validated",
+      "Monitored",
+      "Reported"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Helped with audit work.",
+      "strong": "Reviewed invoice samples and reconciled supporting documents to flag reporting discrepancies for senior audit review.",
+      "reason": "Clarifies audit object, procedure, and stakeholder use without overstating ownership."
+    },
+    {
+      "weak": "Made financial reports.",
+      "strong": "Prepared monthly variance analysis in Excel, summarizing revenue and expense drivers for management review.",
+      "reason": "Adds reporting object, tool, and decision context."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "accounting-audit-routing",
+      "title": "Accounting and Audit Resume routing rule",
+      "content": "When the target role matches Accounting / Audit / Assurance, use Accounting and Audit Resume as the primary industry route and adopt this formula: Action + accounting/audit object + procedure/tool + scope + accuracy, compliance, or reporting outcome."
+    },
+    {
+      "id": "accounting-audit-style",
+      "title": "Accounting and Audit Resume language guardrail",
+      "content": "Preserve domain-native evidence for Accounting / Audit / Assurance; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "accounting",
+      "audit",
+      "finance",
+      "compliance"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

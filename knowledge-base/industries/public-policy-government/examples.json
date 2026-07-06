@@ -1,0 +1,61 @@
+{
+  "sourceName": "Public Policy and Government CV",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on a public policy project.",
+      "strong": "Analyzed municipal policy documents and stakeholder interviews to draft a 6-page brief on implementation barriers.",
+      "reason": "Names source materials, method, deliverable, and policy value.",
+      "pattern": "Action + policy/government question + research method/source + output + stakeholder or decision value",
+      "tags": [
+        "policy",
+        "government",
+        "public-sector",
+        "history"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Helped government office with research.",
+      "strong": "Synthesized public records and community feedback into briefing notes for weekly department meetings.",
+      "reason": "Keeps the claim factual while showing audience and use.",
+      "pattern": "Action + policy/government question + research method/source + output + stakeholder or decision value",
+      "tags": [
+        "policy",
+        "government",
+        "public-sector",
+        "history"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Analyzed",
+    "Briefed",
+    "Researched",
+    "Mapped",
+    "Evaluated",
+    "Drafted",
+    "Coordinated",
+    "Presented",
+    "Interviewed",
+    "Synthesized",
+    "Recommended"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

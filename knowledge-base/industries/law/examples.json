@@ -1,0 +1,62 @@
+{
+  "sourceName": "Law and Legal Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Did legal research for the team.",
+      "strong": "Researched case law and statutory guidance to draft a legal memo summarizing risk considerations for attorney review.",
+      "reason": "Shows material, method, deliverable, and audience while preserving legal responsibility boundaries.",
+      "pattern": "Action + legal material + analytical method + audience/use + quality, decision, or compliance value",
+      "tags": [
+        "law",
+        "legal",
+        "compliance",
+        "policy-writing"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on compliance documents.",
+      "strong": "Reviewed contract clauses against internal compliance checklist and summarized exceptions for follow-up discussion.",
+      "reason": "Uses precise compliance language instead of vague support phrasing.",
+      "pattern": "Action + legal material + analytical method + audience/use + quality, decision, or compliance value",
+      "tags": [
+        "law",
+        "legal",
+        "compliance",
+        "policy-writing"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Researched",
+    "Drafted",
+    "Reviewed",
+    "Analyzed",
+    "Summarized",
+    "Interpreted",
+    "Filed",
+    "Briefed",
+    "Presented",
+    "Compared",
+    "Assessed",
+    "Synthesized"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

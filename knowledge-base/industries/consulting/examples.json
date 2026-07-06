@@ -1,0 +1,67 @@
+{
+  "sourceName": "Consulting",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Made slides for a client project.",
+      "strong": "Synthesized customer and pricing data into a 12-page executive recommendation that identified $1.4M in margin upside.",
+      "reason": "Shows analytical method, client deliverable, and quantified implication.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "industry",
+        "consulting"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Did market research.",
+      "strong": "Analyzed 35 competitor offerings and 200 survey responses to prioritize three launch segments for a B2B expansion strategy.",
+      "reason": "Frames research as structured evidence leading to a decision.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "industry",
+        "consulting"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Diagnosed",
+    "Synthesized",
+    "Recommended",
+    "Prioritized",
+    "Mapped",
+    "Presented",
+    "Built",
+    "Led",
+    "Designed",
+    "Implemented",
+    "Analyzed",
+    "Optimized",
+    "Launched",
+    "Automated",
+    "Improved",
+    "Reduced",
+    "Increased",
+    "Delivered",
+    "Modeled",
+    "Coordinated",
+    "Evaluated",
+    "Resolved"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "great",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "team player",
+    "results-driven"
+  ],
+  "updatedAt": "2026-06-27T02:00:34.643Z"
+}

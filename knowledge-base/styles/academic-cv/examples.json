@@ -1,0 +1,67 @@
+{
+  "sourceName": "Academic CV",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Assisted professor with research.",
+      "strong": "Cleaned and coded 3,200 interview records in R, improving inter-rater reliability from 0.76 to 0.88 for a labor-policy study.",
+      "reason": "Names method, dataset, tool, and research-quality metric.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "style",
+        "academic-cv"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Wrote literature reviews.",
+      "strong": "Synthesized 48 peer-reviewed articles into a literature matrix that shaped hypotheses for a mixed-methods dissertation project.",
+      "reason": "Makes the research contribution visible and specific.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "style",
+        "academic-cv"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Researched",
+    "Authored",
+    "Presented",
+    "Collected",
+    "Coded",
+    "Built",
+    "Led",
+    "Designed",
+    "Implemented",
+    "Analyzed",
+    "Optimized",
+    "Launched",
+    "Automated",
+    "Improved",
+    "Reduced",
+    "Increased",
+    "Delivered",
+    "Synthesized",
+    "Modeled",
+    "Coordinated",
+    "Evaluated",
+    "Resolved"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "great",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "team player",
+    "results-driven"
+  ],
+  "updatedAt": "2026-06-27T02:00:34.643Z"
+}

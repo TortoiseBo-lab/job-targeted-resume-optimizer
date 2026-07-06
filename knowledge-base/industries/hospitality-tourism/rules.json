@@ -1,0 +1,154 @@
+{
+  "sourceName": "Tourism, Hospitality and Service Management Resume",
+  "sourceType": "industry",
+  "targetRole": "Tourism / Hospitality / Service Management",
+  "targetCountry": "International",
+  "resumeLength": "One page with service, operations, language, and event evidence easy to scan.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Service / Operations Experience",
+    "Events / Projects",
+    "Leadership",
+    "Languages",
+    "Skills and Certifications"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Service / Operations Experience",
+    "Events / Projects",
+    "Leadership",
+    "Languages",
+    "Skills and Certifications"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Polished professional font; warm but not decorative.",
+    "margin": "0.6-0.8 inch.",
+    "bulletStyle": "Customer/service context first, then scale and reliability outcome.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Professional, service-oriented, cross-cultural, and operationally reliable.",
+    "bulletFormula": "Action + service/operations context + guest/customer/stakeholder group + scale + satisfaction, efficiency, or reliability outcome",
+    "actionVerbs": [
+      "Coordinated",
+      "Hosted",
+      "Resolved",
+      "Scheduled",
+      "Supported",
+      "Improved",
+      "Trained",
+      "Communicated",
+      "Delivered",
+      "Processed",
+      "Guided",
+      "Maintained"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Helped with events.",
+      "strong": "Coordinated guest check-in and vendor communication for campus events, improving handoff clarity across operations volunteers.",
+      "reason": "Shows service process, stakeholder group, and reliability value."
+    },
+    {
+      "weak": "Provided customer service.",
+      "strong": "Resolved visitor inquiries in English and Mandarin while maintaining accurate booking and service records.",
+      "reason": "Connects customer service to language ability and operational accuracy."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "hospitality-tourism-routing",
+      "title": "Tourism, Hospitality and Service Management Resume routing rule",
+      "content": "When the target role matches Tourism / Hospitality / Service Management, use Tourism, Hospitality and Service Management Resume as the primary industry route and adopt this formula: Action + service/operations context + guest/customer/stakeholder group + scale + satisfaction, efficiency, or reliability outcome."
+    },
+    {
+      "id": "hospitality-tourism-style",
+      "title": "Tourism, Hospitality and Service Management Resume language guardrail",
+      "content": "Preserve domain-native evidence for Tourism / Hospitality / Service Management; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "tourism",
+      "hospitality",
+      "service",
+      "events"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

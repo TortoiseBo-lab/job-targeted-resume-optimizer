@@ -1,0 +1,66 @@
+{
+  "sourceName": "Morgan Stanley",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on valuation models.",
+      "strong": "Built DCF and trading-comps models for 8 software peers, stress-testing revenue assumptions across base, upside, and downside cases.",
+      "reason": "Names finance tools, peer scope, and analytical rigor.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "company",
+        "morgan-stanley"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Prepared reports for the team.",
+      "strong": "Automated weekly portfolio risk report, cutting manual update time by 45% and improving exposure visibility for senior analysts.",
+      "reason": "Connects operational improvement to stakeholder value.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "company",
+        "morgan-stanley"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Modeled",
+    "Analyzed",
+    "Forecasted",
+    "Reconciled",
+    "Presented",
+    "Monitored",
+    "Built",
+    "Led",
+    "Designed",
+    "Implemented",
+    "Optimized",
+    "Launched",
+    "Automated",
+    "Improved",
+    "Reduced",
+    "Increased",
+    "Delivered",
+    "Synthesized",
+    "Coordinated",
+    "Evaluated",
+    "Resolved"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "great",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "team player",
+    "results-driven"
+  ],
+  "updatedAt": "2026-06-27T02:00:34.643Z"
+}

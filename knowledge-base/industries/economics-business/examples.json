@@ -1,0 +1,61 @@
+{
+  "sourceName": "Economics and Business Management Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Completed an economics project.",
+      "strong": "Modeled demand scenarios using public market data and presented pricing implications in a team research report.",
+      "reason": "Turns coursework into question, method, output, and business implication.",
+      "pattern": "Action + business/economic question + method/data + deliverable/recommendation + implication or stakeholder value",
+      "tags": [
+        "economics",
+        "business",
+        "management",
+        "commercial-analysis"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on business analysis.",
+      "strong": "Benchmarked competitor offerings and summarized positioning gaps to support a market-entry recommendation.",
+      "reason": "Adds analytical method and decision context.",
+      "pattern": "Action + business/economic question + method/data + deliverable/recommendation + implication or stakeholder value",
+      "tags": [
+        "economics",
+        "business",
+        "management",
+        "commercial-analysis"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Analyzed",
+    "Modeled",
+    "Benchmarked",
+    "Forecasted",
+    "Evaluated",
+    "Coordinated",
+    "Presented",
+    "Recommended",
+    "Mapped",
+    "Compared",
+    "Synthesized"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

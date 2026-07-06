@@ -1,0 +1,49 @@
+{
+  "sourceName": "University of Hong Kong Career Guidance",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Helped with market research for a finance project.",
+      "strong": "Analyzed 30+ comparable companies and summarized valuation drivers in Excel, supporting a market-entry recommendation for the student finance project.",
+      "reason": "Makes scope, method and business use clear without inventing unsupported impact.",
+      "pattern": "Action + scope + method + use",
+      "tags": [
+        "Hong Kong",
+        "finance",
+        "student project"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Responsible for organizing student activities.",
+      "strong": "Coordinated a 6-person team to plan a campus career event, managing speaker outreach, registration tracking and on-site operations.",
+      "reason": "Shows leadership, coordination and operational detail relevant to Hong Kong graduate applications.",
+      "pattern": "Action + team/scope + responsibilities",
+      "tags": [
+        "Hong Kong",
+        "leadership",
+        "campus"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Analyzed",
+    "Built",
+    "Coordinated",
+    "Delivered",
+    "Developed",
+    "Improved",
+    "Led",
+    "Prepared",
+    "Researched",
+    "Supported"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped",
+    "participated in",
+    "hard-working",
+    "good communication skills"
+  ],
+  "updatedAt": "2026-06-30T00:00:00.000Z"
+}

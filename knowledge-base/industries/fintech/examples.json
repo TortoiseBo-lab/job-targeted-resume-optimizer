@@ -1,0 +1,61 @@
+{
+  "sourceName": "Financial Technology Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on a fintech app.",
+      "strong": "Built a portfolio-tracking prototype that integrated transaction data and visualized asset allocation for user review.",
+      "reason": "Combines product, data, and finance context in one clear bullet.",
+      "pattern": "Action + financial product/data/model + technical method + risk, efficiency, accuracy, or user/business value",
+      "tags": [
+        "fintech",
+        "finance",
+        "technology",
+        "data"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Analyzed financial data using Python.",
+      "strong": "Automated Python data cleaning for market-price records, reducing manual preparation before risk analysis.",
+      "reason": "Shows tool, data object, workflow, and downstream finance use.",
+      "pattern": "Action + financial product/data/model + technical method + risk, efficiency, accuracy, or user/business value",
+      "tags": [
+        "fintech",
+        "finance",
+        "technology",
+        "data"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Built",
+    "Modeled",
+    "Automated",
+    "Integrated",
+    "Analyzed",
+    "Validated",
+    "Optimized",
+    "Backtested",
+    "Visualized",
+    "Monitored",
+    "Deployed"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

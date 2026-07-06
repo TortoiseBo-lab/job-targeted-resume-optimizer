@@ -1,0 +1,100 @@
+{
+  "sourceName": "Cambridge",
+  "sourceType": "university",
+  "targetCountry": "USA/UK",
+  "resumeLength": "Prefer one page unless senior or academic",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Experience",
+    "Projects",
+    "Skills"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Experience",
+    "Projects",
+    "Skills",
+    "Leadership",
+    "Awards"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Readable professional sans or serif, 10-11pt for body",
+    "margin": "0.5-1 inch depending on density",
+    "bulletStyle": "Concise bullet points, consistent indentation",
+    "dateFormat": "Consistent month/year or year format",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Concise, specific, evidence-based",
+    "bulletFormula": "Action verb + scope/context + method/tool + measurable result",
+    "actionVerbs": [
+      "Led",
+      "Built",
+      "Analyzed",
+      "Improved",
+      "Designed",
+      "Implemented"
+    ],
+    "avoidWords": [
+      "helped",
+      "responsible for",
+      "various",
+      "many",
+      "hard-working"
+    ],
+    "quantificationRules": [
+      "Use numbers for scope, frequency, scale, revenue, cost, users, latency, accuracy, or time saved when supported by facts.",
+      "Do not invent metrics. Ask follow-up questions when source content lacks measurable evidence."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Responsible for improving reports.",
+      "strong": "Automated weekly reporting workflow using SQL and dashboards, reducing manual analysis time and improving stakeholder visibility.",
+      "reason": "Starts with a clear action, names method, and explains business impact."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Relevance",
+      "weight": 0.25,
+      "description": "Aligns content with target role and source expectations."
+    },
+    {
+      "category": "Evidence",
+      "weight": 0.25,
+      "description": "Uses concrete achievements, scope, and measurable outcomes."
+    },
+    {
+      "category": "Clarity",
+      "weight": 0.2,
+      "description": "Uses concise, recruiter-readable language."
+    },
+    {
+      "category": "Format",
+      "weight": 0.15,
+      "description": "Follows section order, spacing, ATS, and consistency rules."
+    },
+    {
+      "category": "Authenticity",
+      "weight": 0.15,
+      "description": "Avoids inflated, vague, or unsupported claims."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "cambridge-core",
+      "title": "Cambridge resume guidance",
+      "content": "Apply Cambridge guidance: keep the resume concise, evidence-based, consistently formatted, and aligned with the user's selected role."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "scripts/init-knowledge-base.mjs",
+    "version": 1,
+    "sourceFiles": [],
+    "updatedAt": "2026-06-22T18:48:02.874Z"
+  }
+}

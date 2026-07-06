@@ -1,0 +1,33 @@
+{
+  "sourceName": "Oxford",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on data analysis project.",
+      "strong": "Analyzed customer behavior data to identify retention patterns and present prioritized recommendations to the team.",
+      "pattern": "Action + object + insight + audience/result",
+      "tags": [
+        "impact",
+        "clarity",
+        "role-relevance"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Analyzed",
+    "Built",
+    "Created",
+    "Designed",
+    "Improved",
+    "Led",
+    "Optimized",
+    "Presented"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "worked on",
+    "helped with",
+    "familiar with"
+  ],
+  "updatedAt": "2026-06-22T18:48:02.874Z"
+}

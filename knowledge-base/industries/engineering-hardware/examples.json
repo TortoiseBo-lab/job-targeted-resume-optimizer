@@ -1,0 +1,64 @@
+{
+  "sourceName": "Electrical, Mechanical and Hardware Engineering CV",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked on an automation project.",
+      "strong": "Designed and tested a PLC-based automation module, documenting sensor logic and failure cases for repeatable lab validation.",
+      "reason": "Names the system, method, and validation output instead of vague participation.",
+      "pattern": "Action + engineered object/system + method/tool + constraint/test condition + validated output or performance result",
+      "tags": [
+        "engineering",
+        "hardware",
+        "automation",
+        "mechanical",
+        "electrical"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Used MATLAB in engineering class.",
+      "strong": "Modeled control-system response in MATLAB/Simulink and compared parameter sensitivity across three operating scenarios.",
+      "reason": "Turns a tool list into a method-driven engineering contribution.",
+      "pattern": "Action + engineered object/system + method/tool + constraint/test condition + validated output or performance result",
+      "tags": [
+        "engineering",
+        "hardware",
+        "automation",
+        "mechanical",
+        "electrical"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Designed",
+    "Simulated",
+    "Fabricated",
+    "Calibrated",
+    "Tested",
+    "Validated",
+    "Diagnosed",
+    "Documented",
+    "Modeled",
+    "Optimized",
+    "Assembled",
+    "Measured"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

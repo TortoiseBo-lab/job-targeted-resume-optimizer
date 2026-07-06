@@ -1,0 +1,154 @@
+{
+  "sourceName": "Law and Legal Resume",
+  "sourceType": "industry",
+  "targetRole": "Law / Legal / Compliance",
+  "targetCountry": "International",
+  "resumeLength": "One page for most legal internships and entry roles; longer CV only for academic/legal scholarship profiles.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Legal Experience",
+    "Research and Writing",
+    "Clinic / Moot / Casework",
+    "Leadership",
+    "Languages and Skills"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Legal Experience",
+    "Research and Writing",
+    "Clinic / Moot / Casework",
+    "Leadership",
+    "Languages and Skills"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Formal, text-led, highly readable typography.",
+    "margin": "0.65-0.85 inch.",
+    "bulletStyle": "Concise bullets that foreground research, drafting, jurisdiction, and audience.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Formal, analytical, jurisdiction-aware, and restrained.",
+    "bulletFormula": "Action + legal material + analytical method + audience/use + quality, decision, or compliance value",
+    "actionVerbs": [
+      "Researched",
+      "Drafted",
+      "Reviewed",
+      "Analyzed",
+      "Summarized",
+      "Interpreted",
+      "Filed",
+      "Briefed",
+      "Presented",
+      "Compared",
+      "Assessed",
+      "Synthesized"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Did legal research for the team.",
+      "strong": "Researched case law and statutory guidance to draft a legal memo summarizing risk considerations for attorney review.",
+      "reason": "Shows material, method, deliverable, and audience while preserving legal responsibility boundaries."
+    },
+    {
+      "weak": "Worked on compliance documents.",
+      "strong": "Reviewed contract clauses against internal compliance checklist and summarized exceptions for follow-up discussion.",
+      "reason": "Uses precise compliance language instead of vague support phrasing."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "law-routing",
+      "title": "Law and Legal Resume routing rule",
+      "content": "When the target role matches Law / Legal / Compliance, use Law and Legal Resume as the primary industry route and adopt this formula: Action + legal material + analytical method + audience/use + quality, decision, or compliance value."
+    },
+    {
+      "id": "law-style",
+      "title": "Law and Legal Resume language guardrail",
+      "content": "Preserve domain-native evidence for Law / Legal / Compliance; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "law",
+      "legal",
+      "compliance",
+      "policy-writing"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

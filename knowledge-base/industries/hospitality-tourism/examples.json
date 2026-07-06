@@ -1,0 +1,62 @@
+{
+  "sourceName": "Tourism, Hospitality and Service Management Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Helped with events.",
+      "strong": "Coordinated guest check-in and vendor communication for campus events, improving handoff clarity across operations volunteers.",
+      "reason": "Shows service process, stakeholder group, and reliability value.",
+      "pattern": "Action + service/operations context + guest/customer/stakeholder group + scale + satisfaction, efficiency, or reliability outcome",
+      "tags": [
+        "tourism",
+        "hospitality",
+        "service",
+        "events"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Provided customer service.",
+      "strong": "Resolved visitor inquiries in English and Mandarin while maintaining accurate booking and service records.",
+      "reason": "Connects customer service to language ability and operational accuracy.",
+      "pattern": "Action + service/operations context + guest/customer/stakeholder group + scale + satisfaction, efficiency, or reliability outcome",
+      "tags": [
+        "tourism",
+        "hospitality",
+        "service",
+        "events"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Coordinated",
+    "Hosted",
+    "Resolved",
+    "Scheduled",
+    "Supported",
+    "Improved",
+    "Trained",
+    "Communicated",
+    "Delivered",
+    "Processed",
+    "Guided",
+    "Maintained"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

@@ -1,0 +1,153 @@
+{
+  "sourceName": "Financial Technology Resume",
+  "sourceType": "industry",
+  "targetRole": "Financial Technology / FinTech",
+  "targetCountry": "International",
+  "resumeLength": "One page with finance logic and technical implementation both visible.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Technical Skills",
+    "Finance / FinTech Projects",
+    "Experience",
+    "Leadership",
+    "Certifications"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Technical Skills",
+    "Finance / FinTech Projects",
+    "Experience",
+    "Leadership",
+    "Certifications"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Technical-business hybrid layout with clean skills grouping.",
+    "margin": "0.55-0.75 inch.",
+    "bulletStyle": "Pair financial object with technical method and measurable or bounded output.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Technical, financially precise, product-aware, and evidence-driven.",
+    "bulletFormula": "Action + financial product/data/model + technical method + risk, efficiency, accuracy, or user/business value",
+    "actionVerbs": [
+      "Built",
+      "Modeled",
+      "Automated",
+      "Integrated",
+      "Analyzed",
+      "Validated",
+      "Optimized",
+      "Backtested",
+      "Visualized",
+      "Monitored",
+      "Deployed"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Worked on a fintech app.",
+      "strong": "Built a portfolio-tracking prototype that integrated transaction data and visualized asset allocation for user review.",
+      "reason": "Combines product, data, and finance context in one clear bullet."
+    },
+    {
+      "weak": "Analyzed financial data using Python.",
+      "strong": "Automated Python data cleaning for market-price records, reducing manual preparation before risk analysis.",
+      "reason": "Shows tool, data object, workflow, and downstream finance use."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "fintech-routing",
+      "title": "Financial Technology Resume routing rule",
+      "content": "When the target role matches Financial Technology / FinTech, use Financial Technology Resume as the primary industry route and adopt this formula: Action + financial product/data/model + technical method + risk, efficiency, accuracy, or user/business value."
+    },
+    {
+      "id": "fintech-style",
+      "title": "Financial Technology Resume language guardrail",
+      "content": "Preserve domain-native evidence for Financial Technology / FinTech; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "fintech",
+      "finance",
+      "technology",
+      "data"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "sourceName": "Statistics and Mathematics Resume",
+  "sourceType": "industry",
+  "targetRole": "Statistics / Mathematics / Quantitative Research",
+  "targetCountry": "International",
+  "resumeLength": "One page unless academic publications or research output justify a CV.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Quantitative Skills",
+    "Research / Projects",
+    "Experience",
+    "Awards",
+    "Publications"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Quantitative Skills",
+    "Research / Projects",
+    "Experience",
+    "Awards",
+    "Publications"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Clean technical font; formulas/methods should be readable but not overcrowded.",
+    "margin": "0.55-0.75 inch.",
+    "bulletStyle": "Method, dataset/problem, validation, and interpretation in each bullet when available.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Rigorous, quantitative, model-aware, and explainable.",
+    "bulletFormula": "Action + statistical/math method + dataset/problem + validation metric + interpretation or decision value",
+    "actionVerbs": [
+      "Modeled",
+      "Estimated",
+      "Tested",
+      "Simulated",
+      "Cleaned",
+      "Validated",
+      "Interpreted",
+      "Visualized",
+      "Forecasted",
+      "Optimized",
+      "Compared"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Used R for data analysis.",
+      "strong": "Modeled survey response patterns in R and validated assumptions through residual checks and sensitivity analysis.",
+      "reason": "Names method, tool, and validation logic."
+    },
+    {
+      "weak": "Did a math research project.",
+      "strong": "Simulated parameter changes across multiple scenarios to compare model stability and summarize implications for the research team.",
+      "reason": "Shows quantitative method and interpretation value without inventing numbers."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "statistics-math-routing",
+      "title": "Statistics and Mathematics Resume routing rule",
+      "content": "When the target role matches Statistics / Mathematics / Quantitative Research, use Statistics and Mathematics Resume as the primary industry route and adopt this formula: Action + statistical/math method + dataset/problem + validation metric + interpretation or decision value."
+    },
+    {
+      "id": "statistics-math-style",
+      "title": "Statistics and Mathematics Resume language guardrail",
+      "content": "Preserve domain-native evidence for Statistics / Mathematics / Quantitative Research; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "statistics",
+      "mathematics",
+      "quantitative",
+      "econometrics"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

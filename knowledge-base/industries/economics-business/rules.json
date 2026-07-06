@@ -1,0 +1,153 @@
+{
+  "sourceName": "Economics and Business Management Resume",
+  "sourceType": "industry",
+  "targetRole": "Economics / Business Management",
+  "targetCountry": "International",
+  "resumeLength": "One page for early-career roles; keep academic projects concise and decision-focused.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Business / Analytical Experience",
+    "Projects",
+    "Leadership",
+    "Skills",
+    "Activities"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Business / Analytical Experience",
+    "Projects",
+    "Leadership",
+    "Skills",
+    "Activities"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Clean business-style font and conventional headings.",
+    "margin": "0.55-0.75 inch.",
+    "bulletStyle": "Bullets should read like compact business evidence, not class descriptions.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Analytical, business-ready, structured, and plain-spoken.",
+    "bulletFormula": "Action + business/economic question + method/data + deliverable/recommendation + implication or stakeholder value",
+    "actionVerbs": [
+      "Analyzed",
+      "Modeled",
+      "Benchmarked",
+      "Forecasted",
+      "Evaluated",
+      "Coordinated",
+      "Presented",
+      "Recommended",
+      "Mapped",
+      "Compared",
+      "Synthesized"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Completed an economics project.",
+      "strong": "Modeled demand scenarios using public market data and presented pricing implications in a team research report.",
+      "reason": "Turns coursework into question, method, output, and business implication."
+    },
+    {
+      "weak": "Worked on business analysis.",
+      "strong": "Benchmarked competitor offerings and summarized positioning gaps to support a market-entry recommendation.",
+      "reason": "Adds analytical method and decision context."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "economics-business-routing",
+      "title": "Economics and Business Management Resume routing rule",
+      "content": "When the target role matches Economics / Business Management, use Economics and Business Management Resume as the primary industry route and adopt this formula: Action + business/economic question + method/data + deliverable/recommendation + implication or stakeholder value."
+    },
+    {
+      "id": "economics-business-style",
+      "title": "Economics and Business Management Resume language guardrail",
+      "content": "Preserve domain-native evidence for Economics / Business Management; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "economics",
+      "business",
+      "management",
+      "commercial-analysis"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

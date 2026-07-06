@@ -1,0 +1,61 @@
+{
+  "sourceName": "Statistics and Mathematics Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Used R for data analysis.",
+      "strong": "Modeled survey response patterns in R and validated assumptions through residual checks and sensitivity analysis.",
+      "reason": "Names method, tool, and validation logic.",
+      "pattern": "Action + statistical/math method + dataset/problem + validation metric + interpretation or decision value",
+      "tags": [
+        "statistics",
+        "mathematics",
+        "quantitative",
+        "econometrics"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Did a math research project.",
+      "strong": "Simulated parameter changes across multiple scenarios to compare model stability and summarize implications for the research team.",
+      "reason": "Shows quantitative method and interpretation value without inventing numbers.",
+      "pattern": "Action + statistical/math method + dataset/problem + validation metric + interpretation or decision value",
+      "tags": [
+        "statistics",
+        "mathematics",
+        "quantitative",
+        "econometrics"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Modeled",
+    "Estimated",
+    "Tested",
+    "Simulated",
+    "Cleaned",
+    "Validated",
+    "Interpreted",
+    "Visualized",
+    "Forecasted",
+    "Optimized",
+    "Compared"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

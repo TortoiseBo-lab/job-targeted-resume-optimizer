@@ -1,0 +1,155 @@
+{
+  "sourceName": "Jake's Resume",
+  "sourceType": "style",
+  "resumeLength": "Compact one-page technical resume.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Experience",
+    "Projects",
+    "Technical Skills"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Experience",
+    "Projects",
+    "Technical Skills"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Readable serif or sans-serif resume font; keep one family and two weights at most.",
+    "margin": "Compact LaTeX-style spacing with high information density.",
+    "bulletStyle": "Dense, ATS-friendly bullets with simple section headings.",
+    "dateFormat": "Consistent month/year or year-only format, right-aligned when layout supports it.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Technical, concise, and scale-aware.",
+    "bulletFormula": "Action + method/tool + scope + outcome",
+    "actionVerbs": [
+      "Built",
+      "Led",
+      "Designed",
+      "Improved",
+      "Launched",
+      "Implemented",
+      "Analyzed",
+      "Optimized",
+      "Automated",
+      "Reduced",
+      "Increased",
+      "Delivered",
+      "Synthesized",
+      "Modeled",
+      "Presented",
+      "Coordinated",
+      "Evaluated",
+      "Resolved"
+    ],
+    "avoidWords": [
+      "decorative formatting that weakens parser readability",
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "great",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "team player",
+      "results-driven"
+    ],
+    "quantificationRules": [
+      "Adjust bullet density to style: ATS and banking can be denser; minimal and modern should be more selective.",
+      "Attach a number, scale, frequency, audience, runtime, revenue, cost, accuracy, conversion, latency, or time-to-completion metric whenever the source material supports it.",
+      "When exact metrics are absent, use bounded scope statements such as team size, dataset size, user group, deliverable count, or project duration.",
+      "Never invent metrics. Mark missing metrics as an improvement question instead of fabricating proof.",
+      "Prefer outcome metrics over task volume: revenue, adoption, accuracy, savings, cycle time, risk reduction, or decision quality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Worked on backend APIs for the product.",
+      "strong": "Built TypeScript API endpoints that reduced checkout latency by 28% and supported 40K monthly transactions.",
+      "reason": "Adds stack, scope, metric, and business outcome."
+    },
+    {
+      "weak": "Helped improve the model.",
+      "strong": "Optimized feature pipeline and evaluation workflow, lifting model F1 from 0.71 to 0.79 on a 120K-row dataset.",
+      "reason": "Turns vague assistance into method, metric, and dataset scale."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Most prominent bullets and sections map to the target role, company, and industry requirements."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and measurable outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Concise, specific, active language with low repetition and no inflated AI-like phrasing."
+    },
+    {
+      "category": "School and style fit",
+      "weight": 15,
+      "description": "Structure, length, and emphasis match the selected guide/style profile."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "jake-s-resume-structure",
+      "title": "Jake's Resume structure guardrail",
+      "content": "When applying Jake's Resume rules, preserve conventional section names, prioritize the most relevant evidence first, and do not add unsupported content."
+    },
+    {
+      "id": "jake-s-resume-bullet",
+      "title": "Jake's Resume bullet rewrite rule",
+      "content": "Rewrite bullets using Action + method/tool + scope + outcome; each bullet should start with a strong verb, name the method or tool, include scope, and end with an outcome when evidence exists."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "scripts/enrich-knowledge-base.mjs",
+    "version": 2,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local resume-learning corpus",
+        "note": "open-source abstracted resume guidance"
+      },
+      {
+        "label": "Jake's Resume LaTeX template",
+        "url": "https://github.com/jakegut/resume"
+      }
+    ],
+    "updatedAt": "2026-06-27T02:00:34.643Z",
+    "styleTags": [
+      "style",
+      "jakes-resume"
+    ],
+    "documentTypes": [
+      "style_template",
+      "resume_template"
+    ],
+    "learnedFrom": [
+      "open-source abstracted resume guidance",
+      "abstracted public career-center conventions",
+      "abstracted public job-description competency patterns",
+      "open-source LaTeX template structure review"
+    ]
+  }
+}

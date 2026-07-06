@@ -1,0 +1,2739 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-05T02:34:17.698Z",
+  "generatedFrom": "src/lib/resume-template-router.ts",
+  "templateCount": 67,
+  "licenseNote": "This catalog contains project-authored template metadata, abstracted routing rules, and synthetic guidance. It does not include original third-party resume PDFs, screenshots, or raw personal resume text.",
+  "families": {
+    "General": [
+      "harvard-general",
+      "hospitality-service",
+      "healthcare-science",
+      "usc-career-standard",
+      "yale-liberal-arts",
+      "brown-careerlab-general",
+      "dartmouth-tuck-general",
+      "human-resources-talent"
+    ],
+    "Technology and data": [
+      "mit-technical",
+      "google-big-tech",
+      "data-analytics",
+      "fintech-hybrid",
+      "cmu-scs-software",
+      "berkeley-engineering",
+      "frontend-product-engineer",
+      "backend-java-platform",
+      "ml-ai-research-engineer",
+      "cybersecurity-infrastructure",
+      "embedded-robotics",
+      "mechanical-manufacturing",
+      "supply-chain-operations",
+      "environment-sustainability"
+    ],
+    "Finance and accounting": [
+      "statistics-quant",
+      "wharton-finance",
+      "accounting-audit",
+      "nyu-stern-finance"
+    ],
+    "Business and consulting": [
+      "mbb-consulting",
+      "cmu-tepper-business",
+      "duke-business-general",
+      "tuck-mba-executive",
+      "uva-commerce",
+      "wustl-olin-business",
+      "business-analyst-general",
+      "sales-business-development"
+    ],
+    "Product, marketing, and creative": [
+      "stanford-product",
+      "marketing-media",
+      "startup-modern",
+      "communications-pr"
+    ],
+    "Academic, policy, science, and law": [
+      "law-policy",
+      "cambridge-academic",
+      "economics-policy-research",
+      "ux-research-design",
+      "academic-phd-research",
+      "law-llm-formal",
+      "medicine-clinical"
+    ],
+    "Market and school-specific": [
+      "oxford-uk-classic",
+      "hku-hong-kong",
+      "canada-coop-resume",
+      "australia-professional",
+      "europe-eu-cv"
+    ],
+    "Chinese market": [
+      "chinese-campus",
+      "chinese-internet",
+      "chinese-product-ops",
+      "chinese-data-analyst",
+      "chinese-technical-clean",
+      "chinese-algorithm-ai",
+      "chinese-java-backend",
+      "chinese-frontend-ui",
+      "chinese-market-brand",
+      "chinese-consulting",
+      "chinese-finance-bank",
+      "chinese-hr-talent",
+      "chinese-supply-chain",
+      "chinese-teacher-education",
+      "chinese-soe-public",
+      "chinese-business-formal",
+      "chinese-hong-kong"
+    ]
+  },
+  "templates": [
+    {
+      "id": "harvard-general",
+      "label": "Harvard General Resume",
+      "description": "一页纸、证据优先、适合美国通用求职和 early-career。",
+      "sourceLabel": "Harvard Resume Guide",
+      "knowledgePaths": [
+        "knowledge-base/universities/harvard/rules.json",
+        "knowledge-base/styles/ats/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "采用 0.5-0.75 inch 边距、单栏、标准标题和 1-2 行 bullet。",
+        "适合未指定强行业风格时的安全投递版。"
+      ],
+      "matchKeywords": [
+        "usa",
+        "harvard",
+        "ats",
+        "full-time",
+        "internship",
+        "general"
+      ]
+    },
+    {
+      "id": "mit-technical",
+      "label": "MIT Technical Resume",
+      "description": "技术技能前置，项目和工程证据密度更高。",
+      "sourceLabel": "MIT Sample Resumes + Engineering Samples",
+      "knowledgePaths": [
+        "knowledge-base/universities/mit/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json",
+        "knowledge-base/industries/engineering-hardware/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Technical Skills 靠前，项目按系统、工具、规模、结果组织。",
+        "边距保持 0.55-0.75 inch，标题线清晰但不装饰。"
+      ],
+      "matchKeywords": [
+        "mit",
+        "software",
+        "engineer",
+        "ai",
+        "backend",
+        "frontend",
+        "hardware",
+        "electrical",
+        "mechanical",
+        "automation"
+      ]
+    },
+    {
+      "id": "google-big-tech",
+      "label": "Google / Big Tech Resume",
+      "description": "技术栈、系统规模、产品影响和 ATS 关键词优先。",
+      "sourceLabel": "Google Resume Signals + Big Tech Style",
+      "knowledgePaths": [
+        "knowledge-base/companies/google/rules.json",
+        "knowledge-base/styles/big-tech/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "突出 scalable systems、algorithms、product impact 和 cross-functional evidence。",
+        "使用技术名词和指标，但不堆无证据关键词。"
+      ],
+      "matchKeywords": [
+        "google",
+        "meta",
+        "amazon",
+        "microsoft",
+        "openai",
+        "big tech",
+        "software",
+        "ai engineer",
+        "machine learning"
+      ]
+    },
+    {
+      "id": "data-analytics",
+      "label": "Data / Analytics Resume",
+      "description": "SQL、Python、指标体系、看板、模型和业务决策清楚呈现。",
+      "sourceLabel": "Data Analyst / Data Science Knowledge Nodes",
+      "knowledgePaths": [
+        "knowledge-base/industries/data-analyst/rules.json",
+        "knowledge-base/industries/data-science/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "技能与项目靠前，bullet 按数据源、方法、指标和决策价值组织。",
+        "保留技术细节，同时让业务读者能快速扫描。"
+      ],
+      "matchKeywords": [
+        "data analyst",
+        "data scientist",
+        "analytics",
+        "bi",
+        "sql",
+        "python",
+        "dashboard",
+        "statistics"
+      ]
+    },
+    {
+      "id": "statistics-quant",
+      "label": "Statistics / Quantitative CV",
+      "description": "统计方法、模型验证、数据规模和解释价值优先。",
+      "sourceLabel": "Statistics / Mathematics Sample Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/statistics-math/rules.json",
+        "knowledge-base/industries/data-science/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "不把数学/统计项目硬写成商业话术，保留方法、假设和验证。",
+        "适合 quant、统计、应用数学、经济计量和研究申请。"
+      ],
+      "matchKeywords": [
+        "statistics",
+        "mathematics",
+        "quant",
+        "econometrics",
+        "applied mathematics",
+        "model validation"
+      ]
+    },
+    {
+      "id": "wharton-finance",
+      "label": "Wharton / Finance Resume",
+      "description": "金融、投行、估值、风控和商科实习的紧凑版。",
+      "sourceLabel": "UPenn / Wharton Resume Samples",
+      "knowledgePaths": [
+        "knowledge-base/universities/upenn/rules.json",
+        "knowledge-base/industries/finance/rules.json",
+        "knowledge-base/styles/investment-banking/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "更高信息密度，教育、GPA、课程、建模、交易/研究证据前置。",
+        "使用保守字体、短 bullet、右对齐日期习惯。"
+      ],
+      "matchKeywords": [
+        "finance",
+        "investment banking",
+        "banking",
+        "wharton",
+        "upenn",
+        "goldman",
+        "j.p. morgan",
+        "morgan stanley",
+        "valuation"
+      ]
+    },
+    {
+      "id": "accounting-audit",
+      "label": "Accounting / Audit Resume",
+      "description": "审计、会计、税务和财务报告场景的稳重紧凑版。",
+      "sourceLabel": "Accounting and Audit Resume Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/accounting-audit/rules.json",
+        "knowledge-base/industries/finance/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调 reconciliation、working papers、controls、accuracy 和 compliance。",
+        "避免创意化排版，保持事务所和财务岗位可读性。"
+      ],
+      "matchKeywords": [
+        "accounting",
+        "accountancy",
+        "audit",
+        "assurance",
+        "tax",
+        "financial reporting",
+        "controlling"
+      ]
+    },
+    {
+      "id": "fintech-hybrid",
+      "label": "FinTech Hybrid Resume",
+      "description": "金融逻辑和技术实现同时呈现。",
+      "sourceLabel": "Financial Technology CV Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/fintech/rules.json",
+        "knowledge-base/industries/finance/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "技能分组采用技术简历方式，bullet 同时写 financial object 和 technical method。",
+        "适合金融科技、量化产品、风控数据和交易系统。"
+      ],
+      "matchKeywords": [
+        "fintech",
+        "financial technology",
+        "risk model",
+        "portfolio",
+        "transaction data"
+      ]
+    },
+    {
+      "id": "mbb-consulting",
+      "label": "MBB Consulting Resume",
+      "description": "领导力、结构化分析、建议和业务影响突出。",
+      "sourceLabel": "McKinsey / BCG / Bain + Consulting Style",
+      "knowledgePaths": [
+        "knowledge-base/companies/mckinsey/rules.json",
+        "knowledge-base/companies/bcg/rules.json",
+        "knowledge-base/companies/bain/rules.json",
+        "knowledge-base/industries/consulting/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "每条经历尽量体现问题、分析、建议、影响。",
+        "领导力和高质量商业判断优先于工具清单。"
+      ],
+      "matchKeywords": [
+        "mckinsey",
+        "bcg",
+        "bain",
+        "consulting",
+        "strategy",
+        "business analyst",
+        "case"
+      ]
+    },
+    {
+      "id": "stanford-product",
+      "label": "Stanford Product / Leadership Resume",
+      "description": "产品、增长、用户研究和跨部门推进更突出。",
+      "sourceLabel": "Stanford Resume Guide + Product Management Node",
+      "knowledgePaths": [
+        "knowledge-base/universities/stanford/rules.json",
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "适度现代，但仍保持 ATS 结构。",
+        "强调用户问题、实验、roadmap、launch 和产品指标。"
+      ],
+      "matchKeywords": [
+        "product manager",
+        "product",
+        "growth",
+        "ux",
+        "user research",
+        "stanford",
+        "startup"
+      ]
+    },
+    {
+      "id": "marketing-media",
+      "label": "Marketing / Media Editorial Resume",
+      "description": "渠道、受众、内容、活动和作品证据清晰呈现。",
+      "sourceLabel": "Marketing + Communication / Media Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/marketing/rules.json",
+        "knowledge-base/industries/communications-media/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "允许更强编辑层级，但主结构仍按 ATS。",
+        "bullet 必须写 audience、channel、campaign、reach 或 editorial value。"
+      ],
+      "matchKeywords": [
+        "marketing",
+        "brand",
+        "communication",
+        "media",
+        "content",
+        "journalism",
+        "editorial",
+        "pr"
+      ]
+    },
+    {
+      "id": "hospitality-service",
+      "label": "Hospitality / Tourism Resume",
+      "description": "服务流程、语言能力、活动规模和客户体验优先。",
+      "sourceLabel": "Tourism / Hospitality Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/hospitality-tourism/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "视觉更友好但不花哨，适合服务、酒店、旅游和活动岗位。",
+        "强调 guest/customer、service recovery、event scale 和 languages。"
+      ],
+      "matchKeywords": [
+        "tourism",
+        "hospitality",
+        "hotel",
+        "event",
+        "guest",
+        "travel",
+        "service"
+      ]
+    },
+    {
+      "id": "law-policy",
+      "label": "Law / Policy Formal CV",
+      "description": "法律、政策、政府和合规方向的正式文本型模板。",
+      "sourceLabel": "Law and Legal Resume + Public Policy Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/law/rules.json",
+        "knowledge-base/industries/public-policy-government/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "保留 research、memo、brief、jurisdiction、stakeholder 等证据。",
+        "不强行套商业指标，格式正式、文字可读。"
+      ],
+      "matchKeywords": [
+        "law",
+        "legal",
+        "policy",
+        "government",
+        "public sector",
+        "compliance",
+        "jurisdiction"
+      ]
+    },
+    {
+      "id": "healthcare-science",
+      "label": "Healthcare / Life Science CV",
+      "description": "医学、公共卫生、实验室和生命科学方向。",
+      "sourceLabel": "Medicine / Healthcare / Life Science Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/healthcare-medicine/rules.json",
+        "knowledge-base/industries/research-assistant/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "保留 protocol、sample、clinical/lab context、publication/presentation。",
+        "避免夸大临床责任，强调准确性和研究贡献。"
+      ],
+      "matchKeywords": [
+        "medicine",
+        "medical",
+        "healthcare",
+        "clinical",
+        "public health",
+        "biology",
+        "food quality",
+        "lab"
+      ]
+    },
+    {
+      "id": "oxford-uk-classic",
+      "label": "Oxford / UK CV",
+      "description": "英国和欧洲申请更正式、教育与经历并重。",
+      "sourceLabel": "Oxford CV Sample + UK Academic/Professional CV Pattern",
+      "knowledgePaths": [
+        "knowledge-base/universities/oxford/rules.json",
+        "knowledge-base/styles/ats/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "保留 UK CV 的正式标题、教育背景和经历顺序。",
+        "适合英国、欧洲、英联邦语境下的早期职业申请。"
+      ],
+      "matchKeywords": [
+        "uk",
+        "europe",
+        "oxford",
+        "cv",
+        "united kingdom"
+      ]
+    },
+    {
+      "id": "cambridge-academic",
+      "label": "Cambridge Academic CV",
+      "description": "学术、研究、PhD 和奖学金申请模板。",
+      "sourceLabel": "Cambridge / Academic CV Samples",
+      "knowledgePaths": [
+        "knowledge-base/universities/cambridge/rules.json",
+        "knowledge-base/industries/academic-cv/rules.json",
+        "knowledge-base/styles/academic-cv/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "不压缩掉 Publications、Research、Teaching、Presentations。",
+        "页边距更宽，段落更正式，适合多页 CV。"
+      ],
+      "matchKeywords": [
+        "cambridge",
+        "academic cv",
+        "phd",
+        "research",
+        "publication",
+        "scholarship"
+      ]
+    },
+    {
+      "id": "hku-hong-kong",
+      "label": "HKU / Hong Kong CV",
+      "description": "香港地区投递，兼顾国际 CV 与中文地区求职习惯。",
+      "sourceLabel": "HKU / Hong Kong Career CV Guidance",
+      "knowledgePaths": [
+        "knowledge-base/universities/hku/rules.json",
+        "knowledge/chinese-resume/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "香港作为国际与中文求职交叉场景，保留清晰教育、经历和语言能力。",
+        "避免过度美式或过度国内化。"
+      ],
+      "matchKeywords": [
+        "hong kong",
+        "hku",
+        "香港",
+        "china hong kong"
+      ]
+    },
+    {
+      "id": "startup-modern",
+      "label": "Startup / Modern Resume",
+      "description": "创业公司、产品、运营和跨职能岗位的现代版。",
+      "sourceLabel": "Startup Style + Modern Resume Templates",
+      "knowledgePaths": [
+        "knowledge-base/styles/startup-style/rules.json",
+        "knowledge-base/styles/modern/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "更强调 launch、ownership、experiments、growth 和 cross-functional。",
+        "有视觉记忆点，但保留单栏导出安全。"
+      ],
+      "matchKeywords": [
+        "startup",
+        "modern",
+        "growth",
+        "operations",
+        "entrepreneurship",
+        "creative"
+      ]
+    },
+    {
+      "id": "usc-career-standard",
+      "label": "USC Career Guide Resume",
+      "description": "美国综合院校通用求职版，适合 early-career、实习和全职。",
+      "sourceLabel": "USC Resume Guide",
+      "knowledgePaths": [
+        "knowledge-base/universities/usc/rules.json",
+        "knowledge-base/styles/ats/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调清晰模块、倒序经历和一页纸可读性。",
+        "适合目标地区为美国但岗位风格不极端时使用。"
+      ],
+      "matchKeywords": [
+        "usc",
+        "southern california",
+        "early career",
+        "internship",
+        "entry level",
+        "general resume"
+      ]
+    },
+    {
+      "id": "cmu-scs-software",
+      "label": "CMU SCS Software Resume",
+      "description": "计算机、软件工程、系统项目和开源经历的高密度技术版。",
+      "sourceLabel": "CMU SCS Sample Resumes",
+      "knowledgePaths": [
+        "knowledge-base/universities/cmu/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Technical Skills",
+        "Projects",
+        "Experience",
+        "Research",
+        "Leadership"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "Technical Skills should be grouped by language, framework, infrastructure, and data tooling."
+      ],
+      "rationale": [
+        "技术技能前置，项目标题必须带清楚的技术对象。",
+        "适合 CS、SWE、系统、平台、后端和工程实习。"
+      ],
+      "matchKeywords": [
+        "cmu",
+        "carnegie mellon",
+        "scs",
+        "computer science",
+        "software engineer",
+        "systems",
+        "distributed"
+      ]
+    },
+    {
+      "id": "cmu-tepper-business",
+      "label": "CMU Tepper Business Resume",
+      "description": "商学院、分析、运营和商业技术交叉方向。",
+      "sourceLabel": "CMU Tepper Resume Guide",
+      "knowledgePaths": [
+        "knowledge-base/universities/cmu/rules.json",
+        "knowledge-base/industries/business-analytics/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "保留商科简历的紧凑度，同时强调数据和运营证据。",
+        "适合 business analytics、operations、strategy 和 MBA 申请。"
+      ],
+      "matchKeywords": [
+        "tepper",
+        "business analytics",
+        "operations",
+        "mba",
+        "business school",
+        "strategy"
+      ]
+    },
+    {
+      "id": "berkeley-engineering",
+      "label": "Berkeley Engineering Resume",
+      "description": "工程、硬件、实验室、制造和系统实现导向。",
+      "sourceLabel": "UC Berkeley Engineering Resume Guide",
+      "knowledgePaths": [
+        "knowledge-base/universities/berkeley/rules.json",
+        "knowledge-base/industries/engineering-hardware/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Technical Skills",
+        "Engineering Projects",
+        "Experience",
+        "Leadership"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "突出工程对象、工具链、测试/验证和性能结果。",
+        "比通用技术简历更重视硬件、实验、制造和可靠性。"
+      ],
+      "matchKeywords": [
+        "berkeley",
+        "engineering",
+        "hardware",
+        "mechanical",
+        "electrical",
+        "manufacturing",
+        "lab"
+      ]
+    },
+    {
+      "id": "yale-liberal-arts",
+      "label": "Yale Liberal Arts Resume",
+      "description": "文社科、研究、写作、政策和项目经历的正式版。",
+      "sourceLabel": "Yale Resume Tips and Resources",
+      "knowledgePaths": [
+        "knowledge-base/universities/yale/rules.json",
+        "knowledge-base/industries/liberal-arts/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "不把文社科经历硬写成技术指标，保留研究、写作和组织能力。",
+        "适合政策、教育、非营利、传播和研究助理申请。"
+      ],
+      "matchKeywords": [
+        "yale",
+        "liberal arts",
+        "history",
+        "government",
+        "policy",
+        "writing",
+        "research assistant"
+      ]
+    },
+    {
+      "id": "duke-business-general",
+      "label": "Duke Business Resume",
+      "description": "商科、管理、领导力和跨职能项目的稳重版。",
+      "sourceLabel": "Duke Resume Template",
+      "knowledgePaths": [
+        "knowledge-base/universities/duke/rules.json",
+        "knowledge-base/industries/business-general/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "更强调 leadership、initiative、analysis 和 measurable outcome。",
+        "适合商科学生申请管理、咨询、金融和运营。"
+      ],
+      "matchKeywords": [
+        "duke",
+        "business",
+        "management",
+        "leadership",
+        "case competition"
+      ]
+    },
+    {
+      "id": "nyu-stern-finance",
+      "label": "NYU Stern Finance Resume",
+      "description": "纽约金融、投研、估值、市场和商业分析场景。",
+      "sourceLabel": "NYU Stern Resume Template",
+      "knowledgePaths": [
+        "knowledge-base/universities/nyu-stern/rules.json",
+        "knowledge-base/industries/finance/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership & Activities",
+        "Skills & Interests"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "教育、GPA、金融课程和相关经历靠前。",
+        "适合投行、投研、资产管理、商业分析和纽约金融市场。"
+      ],
+      "matchKeywords": [
+        "nyu",
+        "stern",
+        "new york",
+        "asset management",
+        "equity research",
+        "investment banking"
+      ]
+    },
+    {
+      "id": "tuck-mba-executive",
+      "label": "Tuck MBA Executive Resume",
+      "description": "MBA、管理、战略、商业影响和领导力版本。",
+      "sourceLabel": "Tuck MBA Resume Template",
+      "knowledgePaths": [
+        "knowledge-base/universities/tuck/rules.json",
+        "knowledge-base/styles/mba-executive/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Professional Experience",
+        "Education",
+        "Leadership",
+        "Additional Information"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "先呈现职业影响，再呈现教育背景。",
+        "适合有多年经验的 MBA、管理咨询和战略岗位。"
+      ],
+      "matchKeywords": [
+        "tuck",
+        "mba",
+        "executive",
+        "manager",
+        "strategy",
+        "leadership",
+        "experienced"
+      ]
+    },
+    {
+      "id": "uva-commerce",
+      "label": "UVA Commerce Resume",
+      "description": "商业、管理信息系统、创意产业和咨询的综合版。",
+      "sourceLabel": "UVA Commerce Resume Writing Tips",
+      "knowledgePaths": [
+        "knowledge-base/universities/uva/rules.json",
+        "knowledge-base/industries/commerce/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "在商科证据和行业项目之间保持平衡。",
+        "适合 commerce、MIS、creative industries、consulting 和 business roles。"
+      ],
+      "matchKeywords": [
+        "uva",
+        "commerce",
+        "mis",
+        "creative industries",
+        "business",
+        "management information systems"
+      ]
+    },
+    {
+      "id": "brown-careerlab-general",
+      "label": "Brown CareerLAB Resume",
+      "description": "本科生、校园项目、研究、社团和早期职业通用版。",
+      "sourceLabel": "Brown CareerLAB Resume Samples",
+      "knowledgePaths": [
+        "knowledge-base/universities/brown/rules.json",
+        "knowledge-base/styles/early-career/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "允许校园经历和项目承担更多证明功能。",
+        "适合经历不多但需要完整一页纸的本科生。"
+      ],
+      "matchKeywords": [
+        "brown",
+        "careerlab",
+        "undergraduate",
+        "campus",
+        "student",
+        "first-year"
+      ]
+    },
+    {
+      "id": "dartmouth-tuck-general",
+      "label": "Dartmouth / Tuck Resume",
+      "description": "精炼、传统、适合商科和泛行业投递。",
+      "sourceLabel": "Dartmouth Resume Guidance",
+      "knowledgePaths": [
+        "knowledge-base/universities/dartmouth/rules.json",
+        "knowledge-base/styles/classic-business/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "格式稳重，强调成就、领导力和职责范围。",
+        "适合商科、管理、咨询和金融交叉场景。"
+      ],
+      "matchKeywords": [
+        "dartmouth",
+        "tuck",
+        "classic business",
+        "leadership",
+        "business resume"
+      ]
+    },
+    {
+      "id": "wustl-olin-business",
+      "label": "WUSTL Business Resume",
+      "description": "商学院、市场、金融、运营和管理方向。",
+      "sourceLabel": "Washington University Business Resume Handbook",
+      "knowledgePaths": [
+        "knowledge-base/universities/wustl/rules.json",
+        "knowledge-base/industries/business-general/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调商业问题、分析动作和可解释结果。",
+        "适合 Olin 商学院风格的业务、咨询、市场和金融投递。"
+      ],
+      "matchKeywords": [
+        "wustl",
+        "washington university",
+        "olin",
+        "business",
+        "management",
+        "market research"
+      ]
+    },
+    {
+      "id": "frontend-product-engineer",
+      "label": "Frontend / Product Engineer Resume",
+      "description": "前端、全栈、产品工程、用户体验和性能优化。",
+      "sourceLabel": "Frontend Engineering Resume Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/frontend-engineering/rules.json",
+        "knowledge-base/industries/product-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Technical Skills",
+        "Projects",
+        "Experience",
+        "Open Source"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "Frontend bullets should mention user-facing surface, framework, state/data flow, performance, accessibility, or release impact."
+      ],
+      "rationale": [
+        "强调 React/Vue、性能、可访问性、组件系统和产品效果。",
+        "避免只列页面开发，必须写用户面和工程面。"
+      ],
+      "matchKeywords": [
+        "frontend",
+        "front-end",
+        "react",
+        "vue",
+        "next.js",
+        "typescript",
+        "ui engineer",
+        "product engineer"
+      ]
+    },
+    {
+      "id": "backend-java-platform",
+      "label": "Backend / Java Platform Resume",
+      "description": "后端、Java、平台服务、数据库、缓存和接口性能。",
+      "sourceLabel": "Backend / Java Engineering Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/backend-engineering/rules.json",
+        "knowledge-base/industries/java/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Technical Skills",
+        "Backend Projects",
+        "Experience",
+        "Awards"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "Backend bullets should include service boundary, API/data model, concurrency, reliability, latency, throughput, or deployment context when supported."
+      ],
+      "rationale": [
+        "把模块职责、接口、性能、稳定性和业务对象写清楚。",
+        "适合 Java 后端、平台工程、微服务和中间件方向。"
+      ],
+      "matchKeywords": [
+        "backend",
+        "back-end",
+        "java",
+        "spring",
+        "microservices",
+        "api",
+        "database",
+        "redis",
+        "kafka"
+      ]
+    },
+    {
+      "id": "ml-ai-research-engineer",
+      "label": "ML / AI Research Engineer Resume",
+      "description": "机器学习、算法、大模型、实验指标和工程落地。",
+      "sourceLabel": "AI / Machine Learning Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/machine-learning/rules.json",
+        "knowledge-base/industries/ai-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Technical Skills",
+        "Research / ML Projects",
+        "Experience",
+        "Publications"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "ML bullets should preserve dataset, model, metric, baseline, experiment, deployment, or evaluation context where available."
+      ],
+      "rationale": [
+        "算法经历必须写数据、模型、指标、实验或上线，不写空泛 AI 词。",
+        "适合 ML engineer、AI engineer、算法、NLP、CV 和大模型方向。"
+      ],
+      "matchKeywords": [
+        "machine learning",
+        "ml",
+        "ai",
+        "algorithm",
+        "llm",
+        "nlp",
+        "computer vision",
+        "deep learning",
+        "pytorch"
+      ]
+    },
+    {
+      "id": "cybersecurity-infrastructure",
+      "label": "Cybersecurity / Infrastructure Resume",
+      "description": "安全、云、网络、DevOps、基础设施和可靠性。",
+      "sourceLabel": "Security / Infrastructure Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/cybersecurity/rules.json",
+        "knowledge-base/industries/cloud-infrastructure/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调 threat model、controls、automation、uptime、incident 和 compliance。",
+        "适合安全工程、云平台、SRE、DevOps 和网络方向。"
+      ],
+      "matchKeywords": [
+        "cybersecurity",
+        "security",
+        "cloud",
+        "aws",
+        "devops",
+        "sre",
+        "infrastructure",
+        "network",
+        "kubernetes"
+      ]
+    },
+    {
+      "id": "embedded-robotics",
+      "label": "Embedded / Robotics Resume",
+      "description": "嵌入式、机器人、控制、传感器和硬件软件协同。",
+      "sourceLabel": "Embedded Systems / Robotics Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/embedded-systems/rules.json",
+        "knowledge-base/industries/robotics/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "写清楚硬件平台、控制逻辑、实时约束、测试环境和性能指标。",
+        "适合嵌入式、机器人、自动化、电控和 IoT。"
+      ],
+      "matchKeywords": [
+        "embedded",
+        "robotics",
+        "iot",
+        "firmware",
+        "sensor",
+        "control",
+        "rtos",
+        "automation"
+      ]
+    },
+    {
+      "id": "mechanical-manufacturing",
+      "label": "Mechanical / Manufacturing Resume",
+      "description": "机械、制造、质量、流程改进和工程验证。",
+      "sourceLabel": "Mechanical / Manufacturing Resume Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/mechanical-engineering/rules.json",
+        "knowledge-base/industries/manufacturing/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调 CAD、测试、工艺、质量、成本和产线结果。",
+        "适合机械工程、制造工程、质量工程和自动化生产。"
+      ],
+      "matchKeywords": [
+        "mechanical",
+        "manufacturing",
+        "solidworks",
+        "cad",
+        "quality",
+        "process improvement",
+        "automation engineering"
+      ]
+    },
+    {
+      "id": "supply-chain-operations",
+      "label": "Supply Chain / Operations Resume",
+      "description": "供应链、物流、采购、库存、运营效率和流程优化。",
+      "sourceLabel": "Supply Chain / Operations Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/supply-chain/rules.json",
+        "knowledge-base/industries/operations/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "用数量、周期、成本、库存和流程指标证明运营能力。",
+        "适合供应链、物流、采购、运营分析和计划岗位。"
+      ],
+      "matchKeywords": [
+        "supply chain",
+        "logistics",
+        "procurement",
+        "inventory",
+        "operations",
+        "planning",
+        "warehouse"
+      ]
+    },
+    {
+      "id": "business-analyst-general",
+      "label": "Business Analyst Resume",
+      "description": "商业分析、需求分析、流程诊断、数据洞察和建议输出。",
+      "sourceLabel": "Business Analyst Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/business-analyst/rules.json",
+        "knowledge-base/industries/data-analyst/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "在咨询式结构和数据分析证据之间平衡。",
+        "适合 BA、strategy analyst、operations analyst 和 product analyst。"
+      ],
+      "matchKeywords": [
+        "business analyst",
+        "strategy analyst",
+        "operations analyst",
+        "product analyst",
+        "requirements",
+        "stakeholder"
+      ]
+    },
+    {
+      "id": "economics-policy-research",
+      "label": "Economics / Policy Research CV",
+      "description": "经济学、计量、政策研究、历史政府和 LSE 风格 CV。",
+      "sourceLabel": "Economics / Government / LSE CV Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/economics/rules.json",
+        "knowledge-base/industries/public-policy-government/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "保留研究问题、数据、方法和政策含义。",
+        "适合经济学、政策、政府、历史和研究型申请。"
+      ],
+      "matchKeywords": [
+        "economics",
+        "lse",
+        "government",
+        "history",
+        "policy research",
+        "economic",
+        "public policy"
+      ]
+    },
+    {
+      "id": "communications-pr",
+      "label": "Communications / PR Resume",
+      "description": "传播、公关、内容策略、媒体关系和品牌叙事。",
+      "sourceLabel": "Communication / PR Resume Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/communications-media/rules.json",
+        "knowledge-base/industries/marketing/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调受众、渠道、内容产出、媒体触达和活动结果。",
+        "适合 PR、communications、social media 和 content strategy。"
+      ],
+      "matchKeywords": [
+        "communication",
+        "communications",
+        "pr",
+        "public relations",
+        "social media",
+        "content strategy",
+        "media relations"
+      ]
+    },
+    {
+      "id": "ux-research-design",
+      "label": "UX Research / Product Design Resume",
+      "description": "用户研究、交互设计、作品集、产品洞察和设计影响。",
+      "sourceLabel": "UX / Product Design Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/ux-design/rules.json",
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调 problem、method、artifact、decision 和 user impact。",
+        "适合 UX research、product design、service design 和 design strategy。"
+      ],
+      "matchKeywords": [
+        "ux",
+        "user research",
+        "product design",
+        "figma",
+        "portfolio",
+        "interaction design",
+        "usability"
+      ]
+    },
+    {
+      "id": "sales-business-development",
+      "label": "Sales / Business Development Resume",
+      "description": "销售、客户拓展、渠道、收入、线索和客户关系。",
+      "sourceLabel": "Sales / Business Development Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/sales-business-development/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "用 pipeline、deal size、conversion、account 和 revenue 证明结果。",
+        "适合 BD、sales、account management 和 partnerships。"
+      ],
+      "matchKeywords": [
+        "sales",
+        "business development",
+        "bd",
+        "account management",
+        "partnerships",
+        "pipeline",
+        "revenue"
+      ]
+    },
+    {
+      "id": "human-resources-talent",
+      "label": "HR / Talent Resume",
+      "description": "人力资源、招聘、组织发展、员工体验和数据化 HR。",
+      "sourceLabel": "Human Resources Resume Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/human-resources/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调招聘漏斗、培训、组织项目、员工沟通和合规。",
+        "适合 HR、TA、OD、people operations。"
+      ],
+      "matchKeywords": [
+        "human resources",
+        "hr",
+        "talent acquisition",
+        "recruiting",
+        "people operations",
+        "training"
+      ]
+    },
+    {
+      "id": "academic-phd-research",
+      "label": "PhD / Research Academic CV",
+      "description": "博士、科研、论文、教学、会议和学术服务。",
+      "sourceLabel": "Academic CV Sample Corpus",
+      "knowledgePaths": [
+        "knowledge-base/industries/academic-cv/rules.json",
+        "knowledge-base/industries/research-assistant/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research Interests",
+        "Publications",
+        "Research Experience",
+        "Teaching",
+        "Presentations",
+        "Awards",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "Do not force an academic CV into a one-page resume when publications, teaching, or research output require multi-page structure."
+      ],
+      "rationale": [
+        "允许多页 CV，保留出版物和学术产出。",
+        "适合 PhD、RA、奖学金、研究型岗位和学术申请。"
+      ],
+      "matchKeywords": [
+        "phd",
+        "doctoral",
+        "academic cv",
+        "publication",
+        "teaching",
+        "conference",
+        "research interests"
+      ]
+    },
+    {
+      "id": "law-llm-formal",
+      "label": "Law / LLM Formal CV",
+      "description": "法律、LLM、合规、合同、案例研究和政策文本。",
+      "sourceLabel": "Law CV Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/law/rules.json",
+        "knowledge-base/styles/formal-cv/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调 jurisdiction、legal research、memo、contract、brief 和 compliance。",
+        "避免商业化夸张，保留正式、准确和文本能力。"
+      ],
+      "matchKeywords": [
+        "llm",
+        "law",
+        "legal research",
+        "contract",
+        "compliance",
+        "law school",
+        "legal intern"
+      ]
+    },
+    {
+      "id": "medicine-clinical",
+      "label": "Medicine / Clinical CV",
+      "description": "医学、临床、科研、病例、实验室和公共卫生。",
+      "sourceLabel": "Medicine CV Samples",
+      "knowledgePaths": [
+        "knowledge-base/industries/healthcare-medicine/rules.json",
+        "knowledge-base/industries/life-science/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Publications",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "expanded",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "严格区分观察、协助、研究和临床责任，避免越界表述。",
+        "适合医学、临床科研、公共卫生和生命科学申请。"
+      ],
+      "matchKeywords": [
+        "medicine",
+        "clinical",
+        "medical",
+        "doctor",
+        "hospital",
+        "public health",
+        "patient",
+        "case"
+      ]
+    },
+    {
+      "id": "environment-sustainability",
+      "label": "Environment / Sustainability Resume",
+      "description": "环境、ESG、能源、气候、政策和可持续项目。",
+      "sourceLabel": "Environmental / Sustainability Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/environment-sustainability/rules.json",
+        "knowledge-base/industries/public-policy-government/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "用项目对象、数据、政策/研究方法和影响范围证明能力。",
+        "适合 ESG、能源、环境咨询、政策和可持续方向。"
+      ],
+      "matchKeywords": [
+        "environment",
+        "sustainability",
+        "esg",
+        "energy",
+        "climate",
+        "renewable",
+        "policy"
+      ]
+    },
+    {
+      "id": "canada-coop-resume",
+      "label": "Canada Co-op Resume",
+      "description": "加拿大 co-op、实习、工程和商业岗位的清晰一页版。",
+      "sourceLabel": "Canadian Co-op Resume Pattern",
+      "knowledgePaths": [
+        "knowledge-base/markets/canada/rules.json",
+        "knowledge-base/styles/ats/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调 co-op、项目、技能和岗位相关课程。",
+        "适合加拿大实习和新毕业生投递。"
+      ],
+      "matchKeywords": [
+        "canada",
+        "canadian",
+        "co-op",
+        "coop",
+        "toronto",
+        "vancouver",
+        "waterloo"
+      ]
+    },
+    {
+      "id": "australia-professional",
+      "label": "Australia Professional Resume",
+      "description": "澳洲求职语境，强调专业经历、技能概要和可验证成果。",
+      "sourceLabel": "Australia Resume Pattern",
+      "knowledgePaths": [
+        "knowledge-base/markets/australia/rules.json",
+        "knowledge-base/styles/professional/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "比美国一页纸更允许适度 profile，但仍保持简洁。",
+        "适合澳洲实习、graduate program 和 professional roles。"
+      ],
+      "matchKeywords": [
+        "australia",
+        "australian",
+        "sydney",
+        "melbourne",
+        "graduate program"
+      ]
+    },
+    {
+      "id": "europe-eu-cv",
+      "label": "Europe Professional CV",
+      "description": "欧洲地区专业 CV，兼顾正式结构和岗位证据。",
+      "sourceLabel": "Europe CV Pattern",
+      "knowledgePaths": [
+        "knowledge-base/markets/europe/rules.json",
+        "knowledge-base/styles/professional-cv/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "根据欧洲语境保留更正式的 profile、语言能力和经历细节。",
+        "适合欧洲、英国以外欧盟市场和国际组织类投递。"
+      ],
+      "matchKeywords": [
+        "europe",
+        "eu",
+        "european",
+        "germany",
+        "france",
+        "netherlands",
+        "international organization"
+      ]
+    },
+    {
+      "id": "chinese-campus",
+      "label": "中文校招标准版",
+      "description": "国内校招、实习、应届生中文简历。",
+      "sourceLabel": "Chinese Resume Knowledge Base",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/rules.json",
+        "knowledge/chinese-resume/templates.json",
+        "knowledge/chinese-resume/job-types.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "实习/工作经历",
+        "项目经历",
+        "技能证书",
+        "荣誉奖项"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "个人信息、求职意向、教育、实习/项目、技能证书顺序清晰。",
+        "控制一页纸，弱化自我评价。"
+      ],
+      "matchKeywords": [
+        "cn-standard-campus",
+        "chinese",
+        "中文",
+        "校招",
+        "实习",
+        "应届生",
+        "校园"
+      ]
+    },
+    {
+      "id": "chinese-internet",
+      "label": "中文互联网大厂版",
+      "description": "国内互联网、产品、运营、数据、技术岗。",
+      "sourceLabel": "Chinese Internet Big Tech Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/company-keywords.json",
+        "knowledge/chinese-resume/job-types.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "实习/工作经历",
+        "项目经历",
+        "技能证书",
+        "荣誉奖项"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "强调业务场景、项目落地、数据结果和岗位关键词。",
+        "不加照片为默认，除非用户场景要求。"
+      ],
+      "matchKeywords": [
+        "cn-internet-bigtech",
+        "互联网",
+        "大厂",
+        "产品",
+        "运营",
+        "数据",
+        "算法",
+        "开发",
+        "字节",
+        "腾讯",
+        "阿里",
+        "美团"
+      ]
+    },
+    {
+      "id": "chinese-product-ops",
+      "label": "中文产品/运营版",
+      "description": "产品经理、用户运营、增长、内容运营和商业化岗位。",
+      "sourceLabel": "Chinese Product / Operations Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge/chinese-resume/action-verbs.json",
+        "knowledge/chinese-resume/company-keywords.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "项目/产品经历",
+        "实习/运营经历",
+        "数据结果",
+        "技能工具"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "产品/运营经历必须写清用户对象、需求/策略、执行动作、数据结果或复盘结论。"
+      ],
+      "rationale": [
+        "把用户洞察、需求拆解、跨部门推进和上线/运营结果放到前台。",
+        "适合产品经理、内容运营、用户运营、增长和商业化。"
+      ],
+      "matchKeywords": [
+        "产品经理",
+        "产品",
+        "运营",
+        "用户运营",
+        "内容运营",
+        "增长",
+        "商业化",
+        "prd",
+        "需求",
+        "社群"
+      ]
+    },
+    {
+      "id": "chinese-data-analyst",
+      "label": "中文数据分析版",
+      "description": "数据分析、商业分析、BI、策略分析和经营分析。",
+      "sourceLabel": "Chinese Data Analyst Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge/chinese-resume/action-verbs.json",
+        "knowledge/chinese-resume/company-keywords.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "数据项目",
+        "实习/工作经历",
+        "技术技能",
+        "业务成果"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "数据分析 bullet 优先保留数据源、工具、指标体系、分析方法、业务结论和落地动作。"
+      ],
+      "rationale": [
+        "突出 SQL/Python、指标体系、看板、归因和业务建议。",
+        "避免把数据项目写成只会工具的课程作业。"
+      ],
+      "matchKeywords": [
+        "数据分析",
+        "商业分析",
+        "bi",
+        "经营分析",
+        "策略分析",
+        "sql",
+        "python",
+        "tableau",
+        "power bi"
+      ]
+    },
+    {
+      "id": "chinese-technical-clean",
+      "label": "中文技术岗简洁版",
+      "description": "开发、测试、运维、算法和工程岗位的清晰技术版。",
+      "sourceLabel": "Chinese Technical Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge/chinese-resume/action-verbs.json",
+        "knowledge/chinese-resume/company-keywords.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "技术技能",
+        "项目经历",
+        "实习/工作经历",
+        "竞赛/开源/论文"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "技术技能分组展示；项目经历必须写模块、技术栈、实现方式、性能/效果或个人贡献边界。"
+      ],
+      "rationale": [
+        "技术栈前置，项目按系统对象、个人模块、工程方法、结果组织。",
+        "适合互联网技术岗和校招技术筛选。"
+      ],
+      "matchKeywords": [
+        "技术岗简洁版",
+        "技术",
+        "开发",
+        "测试",
+        "运维",
+        "工程师",
+        "项目经历",
+        "技术技能"
+      ]
+    },
+    {
+      "id": "chinese-algorithm-ai",
+      "label": "中文算法/AI版",
+      "description": "算法工程师、机器学习、大模型、NLP、CV 和推荐岗位。",
+      "sourceLabel": "Chinese AI / Algorithm Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge-base/industries/machine-learning/rules.json",
+        "knowledge-base/industries/ai-engineering/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "技术技能",
+        "算法/科研项目",
+        "实习经历",
+        "论文/竞赛/开源"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "算法项目必须保留数据集、模型、baseline、指标、实验结论或部署场景；没有指标时提出追问。"
+      ],
+      "rationale": [
+        "把模型方法、实验指标、数据规模和工程落地分清楚。",
+        "不把所有 AI 经历写成同一种大模型套话。"
+      ],
+      "matchKeywords": [
+        "算法",
+        "机器学习",
+        "大模型",
+        "ai",
+        "人工智能",
+        "nlp",
+        "cv",
+        "推荐",
+        "深度学习",
+        "pytorch"
+      ]
+    },
+    {
+      "id": "chinese-java-backend",
+      "label": "中文 Java/后端版",
+      "description": "Java 后端、平台服务、微服务、数据库和中间件方向。",
+      "sourceLabel": "Chinese Java Backend Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge-base/industries/backend-engineering/rules.json",
+        "knowledge-base/industries/java/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "技术技能",
+        "后端项目",
+        "实习/工作经历",
+        "竞赛/开源"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "后端项目必须写接口/服务边界、数据模型、缓存/消息队列、并发、稳定性或性能结果。"
+      ],
+      "rationale": [
+        "比通用技术版更强调服务边界、接口、数据和稳定性。",
+        "适合 Java 后端、平台工程和微服务岗位。"
+      ],
+      "matchKeywords": [
+        "java",
+        "后端",
+        "spring",
+        "微服务",
+        "接口",
+        "数据库",
+        "redis",
+        "kafka",
+        "mysql"
+      ]
+    },
+    {
+      "id": "chinese-frontend-ui",
+      "label": "中文前端/前端工程版",
+      "description": "前端开发、全栈、低代码、可视化和用户界面工程。",
+      "sourceLabel": "Chinese Frontend Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge-base/industries/frontend-engineering/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "技术技能",
+        "前端/全栈项目",
+        "实习经历",
+        "作品/开源"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "前端项目必须写用户界面对象、框架、状态/数据流、性能、组件复用或上线效果。"
+      ],
+      "rationale": [
+        "突出 React/Vue、组件系统、性能优化、可视化和产品落地。",
+        "避免只写静态页面开发。"
+      ],
+      "matchKeywords": [
+        "前端",
+        "frontend",
+        "react",
+        "vue",
+        "next",
+        "typescript",
+        "组件",
+        "可视化",
+        "全栈"
+      ]
+    },
+    {
+      "id": "chinese-market-brand",
+      "label": "中文市场/品牌版",
+      "description": "市场营销、品牌、公关、内容、活动和新媒体。",
+      "sourceLabel": "Chinese Marketing / Brand Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge/chinese-resume/action-verbs.json",
+        "knowledge-base/industries/marketing/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "市场/品牌经历",
+        "活动/内容项目",
+        "数据结果",
+        "技能工具"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "市场类经历必须写渠道、受众、内容/活动动作、曝光/转化/线索等结果。"
+      ],
+      "rationale": [
+        "让渠道、受众、传播动作和转化结果清楚可读。",
+        "适合市场、品牌、公关、新媒体和内容岗位。"
+      ],
+      "matchKeywords": [
+        "市场",
+        "品牌",
+        "公关",
+        "新媒体",
+        "内容",
+        "活动",
+        "传播",
+        "投放",
+        "小红书"
+      ]
+    },
+    {
+      "id": "chinese-consulting",
+      "label": "中文咨询/商业分析版",
+      "description": "咨询、战略、商业分析、行业研究和管培生。",
+      "sourceLabel": "Chinese Consulting Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge-base/industries/consulting/rules.json",
+        "knowledge-base/companies/mckinsey/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "咨询/商业项目",
+        "实习经历",
+        "领导力",
+        "技能证书"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "咨询类经历必须写问题拆解、研究方法、分析框架、建议输出和客户/业务影响。"
+      ],
+      "rationale": [
+        "把经历改成问题、分析、建议、影响的结构。",
+        "适合咨询、战略、商业分析、管培生和行业研究。"
+      ],
+      "matchKeywords": [
+        "咨询",
+        "战略",
+        "商业分析",
+        "管培生",
+        "行业研究",
+        "mckinsey",
+        "麦肯锡",
+        "bcg",
+        "贝恩"
+      ]
+    },
+    {
+      "id": "chinese-finance-bank",
+      "label": "中文银行金融版",
+      "description": "国内银行、券商、投行、审计、金融机构。",
+      "sourceLabel": "Chinese Bank / Finance Template",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/templates.json",
+        "knowledge/chinese-resume/company-keywords.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "实习/工作经历",
+        "项目经历",
+        "技能证书",
+        "荣誉奖项"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "证书、金融课程、实习、报告、估值/审计对象更靠前。",
+        "版式稳重，可按场景展示证件照。"
+      ],
+      "matchKeywords": [
+        "cn-bank-finance",
+        "银行",
+        "金融机构",
+        "券商",
+        "投行",
+        "审计",
+        "中国银行",
+        "证券",
+        "基金"
+      ]
+    },
+    {
+      "id": "chinese-hr-talent",
+      "label": "中文 HR/招聘版",
+      "description": "人力资源、招聘、组织发展、员工关系和培训。",
+      "sourceLabel": "Chinese HR Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge-base/industries/human-resources/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "人力资源经历",
+        "项目经历",
+        "数据结果",
+        "技能证书"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "HR 经历优先写招聘漏斗、培训项目、员工沟通、组织项目和合规边界。"
+      ],
+      "rationale": [
+        "强调招聘流程、候选人/员工体验、培训和组织协同。",
+        "适合 HR、招聘、OD、培训和人力实习。"
+      ],
+      "matchKeywords": [
+        "hr",
+        "人力",
+        "招聘",
+        "组织发展",
+        "培训",
+        "员工关系",
+        "人才"
+      ]
+    },
+    {
+      "id": "chinese-supply-chain",
+      "label": "中文供应链/运营版",
+      "description": "供应链、采购、物流、计划、仓储和运营管理。",
+      "sourceLabel": "Chinese Supply Chain / Operations Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge-base/industries/supply-chain/rules.json",
+        "knowledge-base/industries/operations/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "供应链/运营经历",
+        "项目经历",
+        "数据结果",
+        "技能证书"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "供应链经历必须写成本、周期、库存、交付、流程或供应商管理相关证据。"
+      ],
+      "rationale": [
+        "用成本、周期、库存、交付和流程指标证明运营能力。",
+        "适合供应链、物流、采购、计划和运营管理。"
+      ],
+      "matchKeywords": [
+        "供应链",
+        "物流",
+        "采购",
+        "库存",
+        "计划",
+        "仓储",
+        "运营管理",
+        "制造业"
+      ]
+    },
+    {
+      "id": "chinese-teacher-education",
+      "label": "中文教师/教育版",
+      "description": "教师、教培、课程研发、教育运营和学校申请。",
+      "sourceLabel": "Chinese Education Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/templates.json",
+        "knowledge/chinese-resume/photo-rules.json",
+        "knowledge-base/industries/education/rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "教学/教育经历",
+        "课程/项目经历",
+        "证书",
+        "荣誉奖项"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "教育类经历必须写授课对象、课程内容、班级/学生规模、教学结果或家校/运营协同。"
+      ],
+      "rationale": [
+        "教育场景更重视证书、稳定性、教学对象和课程产出。",
+        "照片按教师/学校/事业单位场景自动判断。"
+      ],
+      "matchKeywords": [
+        "教师",
+        "教育",
+        "教培",
+        "课程",
+        "学校",
+        "班主任",
+        "事业单位教师"
+      ]
+    },
+    {
+      "id": "chinese-soe-public",
+      "label": "中文国企/事业单位版",
+      "description": "国企、央企、公务员、教师和事业单位。",
+      "sourceLabel": "Chinese SOE / Public Sector Template",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/templates.json",
+        "knowledge/chinese-resume/photo-rules.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "实习/工作经历",
+        "项目经历",
+        "技能证书",
+        "荣誉奖项"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "教育、政治面貌/荣誉/证书/稳定性证据更重要。",
+        "照片和正式信息模块按国内场景判断。"
+      ],
+      "matchKeywords": [
+        "cn-soe-public",
+        "国企",
+        "央企",
+        "公务员",
+        "事业单位",
+        "教师",
+        "教育",
+        "国家电网"
+      ]
+    },
+    {
+      "id": "chinese-business-formal",
+      "label": "中文高级商务版",
+      "description": "社招、管理、商务、客户成功和成熟职业背景。",
+      "sourceLabel": "Chinese Senior Business Resume Rules",
+      "knowledgePaths": [
+        "knowledge/chinese-resume/templates.json",
+        "knowledge/chinese-resume/job-types.json",
+        "knowledge/chinese-resume/action-verbs.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向/职业概览",
+        "核心能力",
+        "工作经历",
+        "重点项目",
+        "教育经历",
+        "技能证书"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "社招商务版允许短职业概览，但必须是证据摘要，不写空泛自我评价。"
+      ],
+      "rationale": [
+        "适合有工作经验用户，把履历组织成业务成果和核心能力。",
+        "语气稳重，减少学生感和模板感。"
+      ],
+      "matchKeywords": [
+        "高级商务版",
+        "社招",
+        "管理",
+        "商务",
+        "客户成功",
+        "销售",
+        "负责人",
+        "经理"
+      ]
+    },
+    {
+      "id": "chinese-hong-kong",
+      "label": "香港中文/双语简历版",
+      "description": "中国香港求职，结合港校 Career Guide、国际 CV 与中文求职习惯。",
+      "sourceLabel": "Hong Kong Career Guide + Chinese Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/universities/hku/rules.json",
+        "knowledge/chinese-resume/rules.json",
+        "knowledge/chinese-resume/templates.json"
+      ],
+      "layoutFamily": "chinese-professional",
+      "sectionOrder": [
+        "个人信息",
+        "求职意向",
+        "教育经历",
+        "工作/实习经历",
+        "项目经历",
+        "语言能力",
+        "技能证书"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body.",
+        "香港方向优先保留中英文语境、语言能力、港校/国际经历和正式清晰的模块结构。"
+      ],
+      "rationale": [
+        "香港是中文与国际 CV 交叉场景，避免过度国内化或过度美式。",
+        "适合香港实习、银行、咨询、商科、科技和研究岗位。"
+      ],
+      "matchKeywords": [
+        "香港",
+        "中国香港",
+        "hong kong",
+        "hku",
+        "港校",
+        "港中文",
+        "cuhk",
+        "香港大学"
+      ]
+    }
+  ]
+}

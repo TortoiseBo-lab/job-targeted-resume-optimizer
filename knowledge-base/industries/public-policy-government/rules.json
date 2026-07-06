@@ -1,0 +1,153 @@
+{
+  "sourceName": "Public Policy and Government CV",
+  "sourceType": "industry",
+  "targetRole": "Policy / Government / Public Sector",
+  "targetCountry": "International",
+  "resumeLength": "One page for roles; academic/policy CV may extend when research, publications, or public service justify it.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Policy / Government Experience",
+    "Research Projects",
+    "Leadership and Service",
+    "Publications / Presentations",
+    "Skills and Languages"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Policy / Government Experience",
+    "Research Projects",
+    "Leadership and Service",
+    "Publications / Presentations",
+    "Skills and Languages"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Clean professional font; section labels should make policy evidence easy to scan.",
+    "margin": "0.6-0.8 inch.",
+    "bulletStyle": "Evidence-led bullets with policy object, method, and stakeholder.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Analytical, civic, evidence-based, and stakeholder-aware.",
+    "bulletFormula": "Action + policy/government question + research method/source + output + stakeholder or decision value",
+    "actionVerbs": [
+      "Analyzed",
+      "Briefed",
+      "Researched",
+      "Mapped",
+      "Evaluated",
+      "Drafted",
+      "Coordinated",
+      "Presented",
+      "Interviewed",
+      "Synthesized",
+      "Recommended"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Worked on a public policy project.",
+      "strong": "Analyzed municipal policy documents and stakeholder interviews to draft a 6-page brief on implementation barriers.",
+      "reason": "Names source materials, method, deliverable, and policy value."
+    },
+    {
+      "weak": "Helped government office with research.",
+      "strong": "Synthesized public records and community feedback into briefing notes for weekly department meetings.",
+      "reason": "Keeps the claim factual while showing audience and use."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "public-policy-government-routing",
+      "title": "Public Policy and Government CV routing rule",
+      "content": "When the target role matches Policy / Government / Public Sector, use Public Policy and Government CV as the primary industry route and adopt this formula: Action + policy/government question + research method/source + output + stakeholder or decision value."
+    },
+    {
+      "id": "public-policy-government-style",
+      "title": "Public Policy and Government CV language guardrail",
+      "content": "Preserve domain-native evidence for Policy / Government / Public Sector; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "policy",
+      "government",
+      "public-sector",
+      "history"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

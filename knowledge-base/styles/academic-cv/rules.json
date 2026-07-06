@@ -1,0 +1,167 @@
+{
+  "sourceName": "Academic CV",
+  "sourceType": "style",
+  "resumeLength": "Length is evidence-dependent; completeness matters more than one-page compression.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Research Interests",
+    "Publications",
+    "Research Experience",
+    "Teaching",
+    "Presentations",
+    "Awards",
+    "Grants",
+    "Service",
+    "Skills"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Research Interests",
+    "Publications",
+    "Research Experience",
+    "Teaching",
+    "Presentations",
+    "Awards",
+    "Grants",
+    "Service",
+    "Skills"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Readable serif or sans-serif resume font; keep one family and two weights at most.",
+    "margin": "0.75-1 inch.",
+    "bulletStyle": "Use bullets for roles/projects; use citation-style entries for publications.",
+    "dateFormat": "Consistent month/year or year-only format, right-aligned when layout supports it.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Scholarly, precise, and complete.",
+    "bulletFormula": "Action + method + corpus/sample + output",
+    "actionVerbs": [
+      "Researched",
+      "Authored",
+      "Presented",
+      "Collected",
+      "Coded",
+      "Built",
+      "Led",
+      "Designed",
+      "Implemented",
+      "Analyzed",
+      "Optimized",
+      "Launched",
+      "Automated",
+      "Improved",
+      "Reduced",
+      "Increased",
+      "Delivered",
+      "Synthesized",
+      "Modeled",
+      "Coordinated",
+      "Evaluated",
+      "Resolved"
+    ],
+    "avoidWords": [
+      "decorative formatting that weakens parser readability",
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "great",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "team player",
+      "results-driven"
+    ],
+    "quantificationRules": [
+      "Adjust bullet density to style: ATS and banking can be denser; minimal and modern should be more selective.",
+      "Attach a number, scale, frequency, audience, runtime, revenue, cost, accuracy, conversion, latency, or time-to-completion metric whenever the source material supports it.",
+      "When exact metrics are absent, use bounded scope statements such as team size, dataset size, user group, deliverable count, or project duration.",
+      "Never invent metrics. Mark missing metrics as an improvement question instead of fabricating proof.",
+      "Prefer outcome metrics over task volume: revenue, adoption, accuracy, savings, cycle time, risk reduction, or decision quality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Assisted professor with research.",
+      "strong": "Cleaned and coded 3,200 interview records in R, improving inter-rater reliability from 0.76 to 0.88 for a labor-policy study.",
+      "reason": "Names method, dataset, tool, and research-quality metric."
+    },
+    {
+      "weak": "Wrote literature reviews.",
+      "strong": "Synthesized 48 peer-reviewed articles into a literature matrix that shaped hypotheses for a mixed-methods dissertation project.",
+      "reason": "Makes the research contribution visible and specific."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Most prominent bullets and sections map to the target role, company, and industry requirements."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and measurable outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Concise, specific, active language with low repetition and no inflated AI-like phrasing."
+    },
+    {
+      "category": "School and style fit",
+      "weight": 15,
+      "description": "Structure, length, and emphasis match the selected guide/style profile."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "academic-cv-structure",
+      "title": "Academic CV structure guardrail",
+      "content": "When applying Academic CV rules, preserve conventional section names, prioritize the most relevant evidence first, and do not add unsupported content."
+    },
+    {
+      "id": "academic-cv-bullet",
+      "title": "Academic CV bullet rewrite rule",
+      "content": "Rewrite bullets using Action + method + corpus/sample + output; each bullet should start with a strong verb, name the method or tool, include scope, and end with an outcome when evidence exists."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "scripts/enrich-knowledge-base.mjs",
+    "version": 2,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local resume-learning corpus",
+        "note": "open-source abstracted resume guidance"
+      }
+    ],
+    "updatedAt": "2026-06-27T02:00:34.643Z",
+    "styleTags": [
+      "style",
+      "academic-cv"
+    ],
+    "documentTypes": [
+      "style_template",
+      "resume_template"
+    ],
+    "learnedFrom": [
+      "open-source abstracted resume guidance",
+      "abstracted public career-center conventions",
+      "abstracted public job-description competency patterns",
+      "open-source LaTeX template structure review"
+    ]
+  }
+}

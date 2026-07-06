@@ -1,0 +1,62 @@
+{
+  "sourceName": "Medicine, Healthcare and Life Science CV",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Assisted with lab experiments.",
+      "strong": "Prepared samples and documented protocol deviations during weekly lab assays to support reproducible analysis.",
+      "reason": "Shows method, quality control, and research contribution without overstating authority.",
+      "pattern": "Action + clinical/lab/public-health context + method/protocol + population/sample/scope + quality or research output",
+      "tags": [
+        "medicine",
+        "healthcare",
+        "life-science",
+        "public-health"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Volunteered at a hospital.",
+      "strong": "Supported patient intake and wayfinding for outpatient visitors, maintaining accurate records and timely handoffs to staff.",
+      "reason": "Converts service work into process, population, and reliability evidence.",
+      "pattern": "Action + clinical/lab/public-health context + method/protocol + population/sample/scope + quality or research output",
+      "tags": [
+        "medicine",
+        "healthcare",
+        "life-science",
+        "public-health"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Conducted",
+    "Collected",
+    "Screened",
+    "Analyzed",
+    "Monitored",
+    "Prepared",
+    "Documented",
+    "Validated",
+    "Presented",
+    "Assisted",
+    "Reviewed",
+    "Processed"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

@@ -1,0 +1,67 @@
+{
+  "sourceName": "Stanford Resume Guide",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Responsible for organizing events.",
+      "strong": "Coordinated 6 recruiting events for 420 students, increasing employer attendance by 25% through targeted outreach.",
+      "reason": "Replaces duty language with ownership, scale, and result.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "university",
+        "stanford"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Worked with team members on a project.",
+      "strong": "Led a 5-person team to deliver a financial literacy workshop series adopted by two campus organizations.",
+      "reason": "Shows leadership, team size, deliverable, and adoption.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "university",
+        "stanford"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Developed",
+    "Led",
+    "Analyzed",
+    "Created",
+    "Managed",
+    "Researched",
+    "Presented",
+    "Improved",
+    "Built",
+    "Designed",
+    "Implemented",
+    "Optimized",
+    "Launched",
+    "Automated",
+    "Reduced",
+    "Increased",
+    "Delivered",
+    "Synthesized",
+    "Modeled",
+    "Coordinated",
+    "Evaluated",
+    "Resolved"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "great",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "team player",
+    "results-driven"
+  ],
+  "updatedAt": "2026-06-27T02:00:34.643Z"
+}

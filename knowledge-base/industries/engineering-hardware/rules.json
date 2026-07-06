@@ -1,0 +1,155 @@
+{
+  "sourceName": "Electrical, Mechanical and Hardware Engineering CV",
+  "sourceType": "industry",
+  "targetRole": "Electrical / Mechanical / Hardware Engineering",
+  "targetCountry": "International",
+  "resumeLength": "One page for internship/job resumes; longer CV only for research-heavy applications.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Technical Skills",
+    "Engineering Projects",
+    "Internship / Experience",
+    "Research / Lab Experience",
+    "Awards"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Technical Skills",
+    "Engineering Projects",
+    "Internship / Experience",
+    "Research / Lab Experience",
+    "Awards"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Readable serif or sans-serif; compact technical hierarchy with aligned dates.",
+    "margin": "0.55-0.75 inch for one-page resumes.",
+    "bulletStyle": "1-2 line bullets, technical noun first when helpful.",
+    "dateFormat": "Consistent month/year, right aligned where possible.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Precise, technical, validation-oriented, and restrained.",
+    "bulletFormula": "Action + engineered object/system + method/tool + constraint/test condition + validated output or performance result",
+    "actionVerbs": [
+      "Designed",
+      "Simulated",
+      "Fabricated",
+      "Calibrated",
+      "Tested",
+      "Validated",
+      "Diagnosed",
+      "Documented",
+      "Modeled",
+      "Optimized",
+      "Assembled",
+      "Measured"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Worked on an automation project.",
+      "strong": "Designed and tested a PLC-based automation module, documenting sensor logic and failure cases for repeatable lab validation.",
+      "reason": "Names the system, method, and validation output instead of vague participation."
+    },
+    {
+      "weak": "Used MATLAB in engineering class.",
+      "strong": "Modeled control-system response in MATLAB/Simulink and compared parameter sensitivity across three operating scenarios.",
+      "reason": "Turns a tool list into a method-driven engineering contribution."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "engineering-hardware-routing",
+      "title": "Electrical, Mechanical and Hardware Engineering CV routing rule",
+      "content": "When the target role matches Electrical / Mechanical / Hardware Engineering, use Electrical, Mechanical and Hardware Engineering CV as the primary industry route and adopt this formula: Action + engineered object/system + method/tool + constraint/test condition + validated output or performance result."
+    },
+    {
+      "id": "engineering-hardware-style",
+      "title": "Electrical, Mechanical and Hardware Engineering CV language guardrail",
+      "content": "Preserve domain-native evidence for Electrical / Mechanical / Hardware Engineering; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "engineering",
+      "hardware",
+      "automation",
+      "mechanical",
+      "electrical"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

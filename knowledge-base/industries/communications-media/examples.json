@@ -1,0 +1,62 @@
+{
+  "sourceName": "Communication, Media and Cultural Industries Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Created content for social media.",
+      "strong": "Produced weekly short-form content for student audiences, aligning story angles with campaign themes and engagement feedback.",
+      "reason": "Adds audience, cadence, channel, and editorial decision logic.",
+      "pattern": "Action + communication output/channel + audience/stakeholder + editorial or research method + reach, quality, or decision value",
+      "tags": [
+        "communications",
+        "media",
+        "content",
+        "cultural-industry"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Did interviews for a project.",
+      "strong": "Interviewed 12 participants and synthesized recurring themes into an editorial brief for a cultural research project.",
+      "reason": "Shows research method and output instead of activity-only wording.",
+      "pattern": "Action + communication output/channel + audience/stakeholder + editorial or research method + reach, quality, or decision value",
+      "tags": [
+        "communications",
+        "media",
+        "content",
+        "cultural-industry"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Wrote",
+    "Edited",
+    "Produced",
+    "Researched",
+    "Interviewed",
+    "Coordinated",
+    "Published",
+    "Curated",
+    "Analyzed",
+    "Localized",
+    "Planned",
+    "Presented"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

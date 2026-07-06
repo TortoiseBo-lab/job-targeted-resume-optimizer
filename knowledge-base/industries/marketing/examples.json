@@ -1,0 +1,65 @@
+{
+  "sourceName": "Marketing",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Managed social media campaigns.",
+      "strong": "Launched three paid social experiments that lowered CAC by 18% while increasing qualified demo requests by 31%.",
+      "reason": "Uses funnel metrics rather than generic campaign ownership.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "industry",
+        "marketing"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Created content for the brand.",
+      "strong": "Produced SEO content calendar across 24 articles, lifting non-branded organic traffic by 22% in one quarter.",
+      "reason": "Adds channel, output volume, and measurable growth.",
+      "pattern": "Action verb + method/tool + scope + quantified result",
+      "tags": [
+        "industry",
+        "marketing"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Built",
+    "Analyzed",
+    "Optimized",
+    "Shipped",
+    "Automated",
+    "Experimented",
+    "Led",
+    "Designed",
+    "Implemented",
+    "Launched",
+    "Improved",
+    "Reduced",
+    "Increased",
+    "Delivered",
+    "Synthesized",
+    "Modeled",
+    "Presented",
+    "Coordinated",
+    "Evaluated",
+    "Resolved"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "great",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "team player",
+    "results-driven"
+  ],
+  "updatedAt": "2026-06-27T02:00:34.643Z"
+}

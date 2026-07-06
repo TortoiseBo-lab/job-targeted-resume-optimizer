@@ -1,0 +1,143 @@
+{
+  "updatedAt": "2026-07-03T10:18:09.465Z",
+  "generatedBy": "scripts/enrich-knowledge-base.mjs",
+  "localCorpus": {
+    "sourceCount": 177,
+    "documentTypeCounts": {
+      "cv_sample": 20,
+      "sample_resume": 72,
+      "resume_guide": 28,
+      "source_document": 1
+    },
+    "schools": [
+      "Academic CV Samples",
+      "Brown",
+      "CMU",
+      "Columbia",
+      "Cornell",
+      "Dartmouth Tuck",
+      "Duke",
+      "General Resume Samples",
+      "Harvard Business School",
+      "MIT",
+      "NYU Stern",
+      "Stanford GSB",
+      "Tufts",
+      "UC Berkeley",
+      "UPenn / Wharton",
+      "USC",
+      "UVA Darden",
+      "WUSTL",
+      "Yale"
+    ],
+    "globalRules": [
+      "Keep formatting consistent: readable fonts, clean spacing, aligned dates, and conventional headings.",
+      "Show accomplishments and impact with concrete scope, numbers, or outcomes when available.",
+      "Use strong action verbs at the beginning of bullet points.",
+      "Remove vague, inflated, or unsupported claims; keep language specific and evidence-based.",
+      "Academic CVs should preserve research, publications, teaching, presentations, grants, and service.",
+      "Prefer a one-page resume for most early-career job applications."
+    ],
+    "commonSections": [
+      "Education",
+      "Experience",
+      "Research",
+      "Skills",
+      "Activities",
+      "Projects",
+      "Leadership",
+      "Honors",
+      "Publications",
+      "Work Experience",
+      "Summary",
+      "Objective",
+      "Professional Experience"
+    ],
+    "recentAdditions": [
+      {
+        "folder": "docs/sample-resume-knowledge",
+        "fileCount": 56,
+        "abstraction": "role, layout, section, and language rules only"
+      }
+    ]
+  },
+  "nodes": {
+    "universities": [
+      "harvard",
+      "mit",
+      "stanford",
+      "upenn",
+      "berkeley",
+      "yale",
+      "princeton",
+      "cmu",
+      "cornell",
+      "duke",
+      "tufts",
+      "uva-darden",
+      "wustl"
+    ],
+    "industries": [
+      "software-engineering",
+      "data-science",
+      "data-analyst",
+      "product-management",
+      "consulting",
+      "investment-banking",
+      "finance",
+      "marketing",
+      "research-assistant",
+      "academic-cv",
+      "engineering-hardware",
+      "accounting-audit",
+      "law",
+      "public-policy-government",
+      "healthcare-medicine",
+      "communications-media",
+      "hospitality-tourism",
+      "economics-business",
+      "statistics-math",
+      "fintech"
+    ],
+    "companies": [
+      "google",
+      "meta",
+      "amazon",
+      "openai",
+      "microsoft",
+      "tiktok",
+      "mckinsey",
+      "bcg",
+      "bain",
+      "goldman-sachs",
+      "j-p-morgan",
+      "morgan-stanley"
+    ],
+    "styles": [
+      "ats",
+      "minimal",
+      "modern",
+      "big-tech",
+      "consulting",
+      "investment-banking",
+      "academic-cv",
+      "startup-style",
+      "jakes-resume",
+      "deedy-resume",
+      "awesome-cv",
+      "moderncv"
+    ]
+  },
+  "openKnowledge": {
+    "templateCatalog": {
+      "path": "knowledge-base/templates/catalog.json",
+      "templateCount": 67,
+      "generatedFrom": "src/lib/resume-template-router.ts"
+    },
+    "playbook": {
+      "path": "knowledge-base/playbooks/targeted-resume-playbook.json",
+      "purpose": "Target-company, target-role, and JD-driven resume tailoring."
+    },
+    "sourcePolicy": "Abstracted rules, generated templates, and synthetic examples only; no raw third-party documents or personal resume text."
+  }
+}

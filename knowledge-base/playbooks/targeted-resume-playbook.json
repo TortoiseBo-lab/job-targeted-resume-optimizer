@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "name": "Target-Company Job-Driven Resume Tailoring Playbook",
+  "purpose": "A public, abstracted playbook for turning a candidate profile, target company, target role, and JD into a tailored resume and optimization report.",
+  "sourcePolicy": "This playbook contains abstracted rules and synthetic examples only. It intentionally avoids original third-party guide prose, raw sample resume text, and personal data.",
+  "workflow": [
+    {
+      "stage": "target_intake",
+      "objective": "Normalize the target company, role family, country/market, seniority, JD, and user constraints.",
+      "outputs": [
+        "role_family",
+        "target_market",
+        "company_signals",
+        "must_have_requirements",
+        "nice_to_have_requirements"
+      ]
+    },
+    {
+      "stage": "jd_signal_extraction",
+      "objective": "Extract skill, responsibility, domain, tool, stakeholder, metric, and behavioral signals from the JD.",
+      "outputs": [
+        "keyword_clusters",
+        "responsibility_clusters",
+        "evidence_requirements",
+        "risk_flags"
+      ]
+    },
+    {
+      "stage": "experience_evidence_mapping",
+      "objective": "Map user facts to JD signals without inventing facts.",
+      "outputs": [
+        "direct_matches",
+        "transferable_matches",
+        "weak_or_missing_evidence",
+        "follow_up_questions"
+      ]
+    },
+    {
+      "stage": "section_strategy",
+      "objective": "Choose resume sections, ordering, density, and page size for the target market and role.",
+      "outputs": [
+        "section_order",
+        "compression_plan",
+        "front_page_priority",
+        "template_id"
+      ]
+    },
+    {
+      "stage": "bullet_rewrite",
+      "objective": "Rewrite bullets as action, object, method/tool, scope, and outcome.",
+      "outputs": [
+        "rewritten_bullets",
+        "metric_questions",
+        "unsupported_claims_removed"
+      ]
+    },
+    {
+      "stage": "report_delivery",
+      "objective": "Explain the changes, gaps, and next evidence needed before final submission.",
+      "outputs": [
+        "score",
+        "diagnosis",
+        "rewrite_rationale",
+        "next_questions",
+        "export_ready_resume"
+      ]
+    }
+  ],
+  "scoringRubric": [
+    {
+      "category": "JD Match",
+      "weight": 25,
+      "checks": [
+        "Must-have skills are proven by experience",
+        "Top responsibilities appear in the first half",
+        "Keywords are supported by facts"
+      ]
+    },
+    {
+      "category": "Company Fit",
+      "weight": 15,
+      "checks": [
+        "Company-specific signals shape prioritization",
+        "Tone fits the company and market",
+        "Evidence matches expected maturity"
+      ]
+    },
+    {
+      "category": "Evidence Strength",
+      "weight": 25,
+      "checks": [
+        "Bullets contain action, method, scope, and result",
+        "Metrics are used only when supported",
+        "Weak responsibilities are compressed"
+      ]
+    },
+    {
+      "category": "Structure and Scanability",
+      "weight": 20,
+      "checks": [
+        "Sections are conventional",
+        "Dates and headings are consistent",
+        "Most relevant content appears early"
+      ]
+    },
+    {
+      "category": "Language Quality",
+      "weight": 15,
+      "checks": [
+        "No inflated AI phrasing",
+        "Verbs are precise",
+        "Claims are specific and defensible"
+      ]
+    }
+  ],
+  "jdSignalClusters": {
+    "software_engineering": [
+      "system",
+      "API",
+      "latency",
+      "reliability",
+      "scale",
+      "deployment",
+      "testing",
+      "data model"
+    ],
+    "data_analytics": [
+      "dataset",
+      "SQL",
+      "dashboard",
+      "metric",
+      "business question",
+      "stakeholder",
+      "decision"
+    ],
+    "consulting": [
+      "problem framing",
+      "market research",
+      "analysis",
+      "recommendation",
+      "client",
+      "implementation"
+    ],
+    "finance": [
+      "valuation",
+      "model",
+      "risk",
+      "market",
+      "transaction",
+      "reporting",
+      "assumption"
+    ],
+    "product_management": [
+      "user problem",
+      "roadmap",
+      "experiment",
+      "launch",
+      "adoption",
+      "retention",
+      "cross-functional"
+    ],
+    "marketing_media": [
+      "audience",
+      "channel",
+      "campaign",
+      "content",
+      "reach",
+      "conversion",
+      "brand"
+    ],
+    "academic_research": [
+      "research question",
+      "method",
+      "dataset/sample",
+      "finding",
+      "publication",
+      "presentation"
+    ]
+  },
+  "evidenceMappingRules": [
+    "Direct evidence beats keyword matching. A keyword should appear only when a real experience proves it.",
+    "When a JD requirement is missing, ask for project, coursework, tool, stakeholder, scale, or result evidence before rewriting.",
+    "Weakly related experience should be compressed, not deleted, when it still shows transferable skills.",
+    "The first half of the resume should carry the strongest role-specific evidence.",
+    "Do not fabricate metrics, company names, tools, awards, dates, or outcomes."
+  ],
+  "followUpQuestionBank": [
+    {
+      "gap": "missing_metric",
+      "questions": [
+        "What scale can you safely state: users, rows, revenue, time saved, accuracy, latency, conversion, cost, or team size?",
+        "Was there a before/after result, even if approximate?"
+      ]
+    },
+    {
+      "gap": "missing_technical_depth",
+      "questions": [
+        "Which stack, model, API, database, framework, or infrastructure did you personally use?",
+        "What part of the system was your responsibility?"
+      ]
+    },
+    {
+      "gap": "missing_business_context",
+      "questions": [
+        "Who used the output and what decision or workflow did it affect?",
+        "What business or operational problem did this project solve?"
+      ]
+    },
+    {
+      "gap": "missing_company_alignment",
+      "questions": [
+        "Which target company values or job requirements does this experience best support?",
+        "Should this experience be framed for technical depth, business impact, leadership, or domain knowledge?"
+      ]
+    }
+  ],
+  "syntheticRewritePatterns": [
+    {
+      "weak": "Worked on a data dashboard for the team.",
+      "strong": "Built a SQL-based KPI dashboard that consolidated weekly sales data and helped managers identify underperforming regions.",
+      "why": "Adds tool, object, cadence, stakeholder, and decision value without inventing unsupported metrics."
+    },
+    {
+      "weak": "Participated in a machine learning project.",
+      "strong": "Trained and evaluated a classification model on course project data, comparing baseline and tuned results to explain feature impact.",
+      "why": "Names model work and evaluation behavior while staying conservative when dataset and metric details are missing."
+    },
+    {
+      "weak": "Helped with market research.",
+      "strong": "Synthesized competitor pricing and customer segment findings into a recommendation memo for a student consulting project.",
+      "why": "Turns vague assistance into analysis output, context, and deliverable."
+    }
+  ]
+}

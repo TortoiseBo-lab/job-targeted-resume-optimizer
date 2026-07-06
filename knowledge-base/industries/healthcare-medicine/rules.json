@@ -1,0 +1,156 @@
+{
+  "sourceName": "Medicine, Healthcare and Life Science CV",
+  "sourceType": "industry",
+  "targetRole": "Medicine / Healthcare / Life Science",
+  "targetCountry": "International",
+  "resumeLength": "One page for internships/jobs; longer academic CV for publications, clinical training, or research output.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Clinical / Research Experience",
+    "Lab and Technical Skills",
+    "Projects",
+    "Publications / Presentations",
+    "Certifications",
+    "Volunteer"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Clinical / Research Experience",
+    "Lab and Technical Skills",
+    "Projects",
+    "Publications / Presentations",
+    "Certifications",
+    "Volunteer"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Readable and formal; keep clinical/research details organized by section.",
+    "margin": "0.6-0.85 inch.",
+    "bulletStyle": "Bullets should name protocol, population/sample, method, and output.",
+    "dateFormat": "Consistent month/year.",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Careful, scientific, ethics-aware, and protocol-specific.",
+    "bulletFormula": "Action + clinical/lab/public-health context + method/protocol + population/sample/scope + quality or research output",
+    "actionVerbs": [
+      "Conducted",
+      "Collected",
+      "Screened",
+      "Analyzed",
+      "Monitored",
+      "Prepared",
+      "Documented",
+      "Validated",
+      "Presented",
+      "Assisted",
+      "Reviewed",
+      "Processed"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped with",
+      "worked on",
+      "participated in",
+      "various",
+      "many",
+      "good",
+      "excellent",
+      "hardworking",
+      "detail-oriented",
+      "fast learner",
+      "results-driven",
+      "dynamic",
+      "cutting-edge"
+    ],
+    "quantificationRules": [
+      "Prefer concrete scope: sample size, stakeholder count, case volume, event size, model accuracy, project duration, budget, risk, or response time when supported by source facts.",
+      "When exact numbers are absent, use bounded evidence such as tool, method, deliverable, audience, or process scope; never invent metrics.",
+      "Use metrics differently by domain: technical performance for engineering, compliance/accuracy for audit, writing/research output for law and policy, service reliability for hospitality."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Assisted with lab experiments.",
+      "strong": "Prepared samples and documented protocol deviations during weekly lab assays to support reproducible analysis.",
+      "reason": "Shows method, quality control, and research contribution without overstating authority."
+    },
+    {
+      "weak": "Volunteered at a hospital.",
+      "strong": "Supported patient intake and wayfinding for outpatient visitors, maintaining accurate records and timely handoffs to staff.",
+      "reason": "Converts service work into process, population, and reliability evidence."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Format and ATS readability",
+      "weight": 20,
+      "description": "Conventional headings, readable layout, aligned dates, consistent spacing, and parser-friendly text."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 25,
+      "description": "Prominent sections and bullets match the target role and market context."
+    },
+    {
+      "category": "Evidence and impact",
+      "weight": 25,
+      "description": "Bullets show action, method, scope, and outcome without unsupported claims."
+    },
+    {
+      "category": "Language quality",
+      "weight": 15,
+      "description": "Specific, concise, role-native language with no inflated AI phrasing."
+    },
+    {
+      "category": "Style fit",
+      "weight": 15,
+      "description": "Structure and density match the selected role, country, and CV/resume style."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "healthcare-medicine-routing",
+      "title": "Medicine, Healthcare and Life Science CV routing rule",
+      "content": "When the target role matches Medicine / Healthcare / Life Science, use Medicine, Healthcare and Life Science CV as the primary industry route and adopt this formula: Action + clinical/lab/public-health context + method/protocol + population/sample/scope + quality or research output."
+    },
+    {
+      "id": "healthcare-medicine-style",
+      "title": "Medicine, Healthcare and Life Science CV language guardrail",
+      "content": "Preserve domain-native evidence for Medicine / Healthcare / Life Science; do not convert the profile into a generic tech, finance, or consulting resume unless the user target explicitly requires it."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "abstracted-from-desktop-123456-corpus",
+    "version": 1,
+    "sourceFiles": [],
+    "sourceReferences": [
+      {
+        "label": "Local 123456 CV sample corpus",
+        "note": "56 newly added CV/resume samples from docs/sample-resume-knowledge; abstracted into rules only, without copying resume text."
+      },
+      {
+        "label": "Existing local resume-learning corpus",
+        "note": "Previously extracted school resume guides, templates, sample resumes, and industry profiles."
+      }
+    ],
+    "updatedAt": "2026-07-03T10:18:09.465Z",
+    "styleTags": [
+      "medicine",
+      "healthcare",
+      "life-science",
+      "public-health"
+    ],
+    "documentTypes": [
+      "cv_sample",
+      "sample_resume"
+    ],
+    "learnedFrom": [
+      "new 123456 folder file names and extracted section patterns",
+      "existing school guide and industry rule-set format",
+      "invented examples for teaching, not copied source text"
+    ]
+  }
+}

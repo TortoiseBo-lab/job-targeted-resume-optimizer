@@ -1,0 +1,62 @@
+{
+  "sourceName": "Accounting and Audit Resume",
+  "examples": [
+    {
+      "type": "bullet-rewrite",
+      "weak": "Helped with audit work.",
+      "strong": "Reviewed invoice samples and reconciled supporting documents to flag reporting discrepancies for senior audit review.",
+      "reason": "Clarifies audit object, procedure, and stakeholder use without overstating ownership.",
+      "pattern": "Action + accounting/audit object + procedure/tool + scope + accuracy, compliance, or reporting outcome",
+      "tags": [
+        "accounting",
+        "audit",
+        "finance",
+        "compliance"
+      ]
+    },
+    {
+      "type": "bullet-rewrite",
+      "weak": "Made financial reports.",
+      "strong": "Prepared monthly variance analysis in Excel, summarizing revenue and expense drivers for management review.",
+      "reason": "Adds reporting object, tool, and decision context.",
+      "pattern": "Action + accounting/audit object + procedure/tool + scope + accuracy, compliance, or reporting outcome",
+      "tags": [
+        "accounting",
+        "audit",
+        "finance",
+        "compliance"
+      ]
+    }
+  ],
+  "actionVerbs": [
+    "Reconciled",
+    "Verified",
+    "Prepared",
+    "Reviewed",
+    "Tested",
+    "Classified",
+    "Documented",
+    "Analyzed",
+    "Compiled",
+    "Validated",
+    "Monitored",
+    "Reported"
+  ],
+  "avoidPhrases": [
+    "responsible for",
+    "helped with",
+    "worked on",
+    "participated in",
+    "various",
+    "many",
+    "good",
+    "excellent",
+    "hardworking",
+    "detail-oriented",
+    "fast learner",
+    "results-driven",
+    "dynamic",
+    "cutting-edge"
+  ],
+  "updatedAt": "2026-07-03T10:18:09.465Z"
+}

@@ -1,0 +1,119 @@
+{
+  "sourceName": "University of Hong Kong Career Guidance",
+  "sourceType": "university",
+  "targetCountry": "Hong Kong",
+  "resumeLength": "Prefer one page for students and early-career roles; allow two pages only when the user's experience is substantial and highly relevant.",
+  "preferredSections": [
+    "Contact",
+    "Education",
+    "Experience",
+    "Projects",
+    "Leadership",
+    "Skills"
+  ],
+  "sectionOrder": [
+    "Contact",
+    "Education",
+    "Experience",
+    "Projects",
+    "Leadership",
+    "Activities",
+    "Skills",
+    "Awards"
+  ],
+  "formattingRules": {
+    "fontRecommendation": "Readable professional font, 10-11pt body, clear section headings",
+    "margin": "Use balanced margins and enough white space for dense but readable Hong Kong applications",
+    "bulletStyle": "Concise bullets with consistent indentation and strong first verbs",
+    "dateFormat": "Consistent month/year format",
+    "useColumns": false,
+    "atsFriendly": true
+  },
+  "writingRules": {
+    "tone": "Professional, concise, evidence-based, suitable for Hong Kong internships, graduate schemes, finance, consulting, business and local employer screening",
+    "bulletFormula": "Action verb + business/academic context + method/tool + result or learning outcome",
+    "actionVerbs": [
+      "Analyzed",
+      "Built",
+      "Coordinated",
+      "Delivered",
+      "Developed",
+      "Improved",
+      "Led",
+      "Prepared",
+      "Researched",
+      "Supported"
+    ],
+    "avoidWords": [
+      "responsible for",
+      "helped",
+      "participated in",
+      "hard-working",
+      "good communication skills",
+      "various"
+    ],
+    "quantificationRules": [
+      "Use numbers for transaction size, users, respondents, reports, frequency, accuracy, time saved, revenue, cost or ranking only when supported by user facts.",
+      "For Hong Kong finance, consulting and business roles, prioritize analytical scope, stakeholder context, client/business impact and bilingual or cross-border relevance when true.",
+      "Do not invent grades, awards, company names, deal values or employment outcomes."
+    ]
+  },
+  "exampleBullets": [
+    {
+      "weak": "Helped with market research for a finance project.",
+      "strong": "Analyzed 30+ comparable companies and summarized valuation drivers in Excel, supporting a market-entry recommendation for the student finance project.",
+      "reason": "Makes scope, method and business use clear without inventing unsupported impact."
+    },
+    {
+      "weak": "Responsible for organizing student activities.",
+      "strong": "Coordinated a 6-person team to plan a campus career event, managing speaker outreach, registration tracking and on-site operations.",
+      "reason": "Shows leadership, coordination and operational detail relevant to Hong Kong graduate applications."
+    }
+  ],
+  "scoringCriteria": [
+    {
+      "category": "Hong Kong market fit",
+      "weight": 0.24,
+      "description": "Aligns resume structure and language with Hong Kong internships, graduate schemes and local employer screening."
+    },
+    {
+      "category": "Evidence",
+      "weight": 0.24,
+      "description": "Uses concrete scope, tools, stakeholders and supported outcomes."
+    },
+    {
+      "category": "Role relevance",
+      "weight": 0.22,
+      "description": "Prioritizes finance, consulting, business, technology or education evidence according to the selected role."
+    },
+    {
+      "category": "Format",
+      "weight": 0.15,
+      "description": "Keeps the resume readable, ATS-friendly and suitable for PDF submission."
+    },
+    {
+      "category": "Authenticity",
+      "weight": 0.15,
+      "description": "Avoids inflated language and unsupported metrics."
+    }
+  ],
+  "promptSnippets": [
+    {
+      "id": "hku-hong-kong-market",
+      "title": "Hong Kong resume guidance",
+      "content": "For Hong Kong applications, combine international resume clarity with Hong Kong employer expectations: compact one-page structure, strong education and internship evidence, role-specific keywords, supported metrics, and business/finance/consulting context when relevant."
+    }
+  ],
+  "metadata": {
+    "generatedBy": "manual-hong-kong-market-rules",
+    "version": 1,
+    "sourceFiles": [],
+    "updatedAt": "2026-06-30T00:00:00.000Z",
+    "styleTags": [
+      "Hong Kong",
+      "HKU",
+      "international resume",
+      "Chinese resume conventions"
+    ]
+  }
+}
