@@ -45,6 +45,8 @@ Then load only relevant company, industry, university, and style rule files.
    `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume`
 
 10. Confirm `.docx` and `.pdf` files exist before reporting success.
+11. Note the exporter layout profile (`standard`, `compact`, or `dense`) and PDF engine from the command output.
+12. If the resume spills beyond the desired page count, tighten the source content first: reduce weak bullets, merge low-value skills, and keep only target-relevant evidence.
 
 ## Hard Rules
 
@@ -61,6 +63,7 @@ Report:
 
 - Word/PDF paths.
 - Separate optimization-report path.
+- Export layout profile and PDF engine.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.

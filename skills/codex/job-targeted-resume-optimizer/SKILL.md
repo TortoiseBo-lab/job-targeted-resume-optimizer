@@ -60,6 +60,8 @@ If the user has not provided a resume or JD, ask for those first. Keep the quest
      `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume`
 
    - Confirm the `.docx` and `.pdf` files exist before reporting success.
+   - Note the exporter layout profile (`standard`, `compact`, or `dense`) and PDF engine from the command output.
+   - If the resume spills beyond the desired page count, tighten the source content first: reduce weak bullets, merge low-value skills, and keep only target-relevant evidence.
 
 ## Hard Rules
 
@@ -77,6 +79,7 @@ At the end, report:
 
 - Word/PDF paths.
 - Separate optimization-report path.
+- Export layout profile and PDF engine.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.

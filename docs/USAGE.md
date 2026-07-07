@@ -68,6 +68,22 @@ outputs/google-swe-intern-targeted-resume.docx
 outputs/google-swe-intern-targeted-resume.pdf
 ```
 
+The export command prints the selected layout profile and PDF engine:
+
+```txt
+Resume export complete:
+- layout profile: standard
+- pdf engine: internal
+```
+
+Layout profiles are selected automatically:
+
+- `standard` for normal one-page resumes.
+- `compact` when the resume needs tighter spacing.
+- `dense` when the source is long and needs maximum page fit.
+
+PDF uses LibreOffice conversion when a working `soffice` or `libreoffice` command exists. Otherwise it falls back to the internal PDF renderer.
+
 Try the bundled example:
 
 ```bash

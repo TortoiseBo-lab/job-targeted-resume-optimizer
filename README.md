@@ -6,7 +6,7 @@
 
 An installable Codex and Claude Code skill for creating target-company and target-role tailored resumes.
 
-Most resume tools polish what already exists. This package starts from the target: company, role, market, seniority, and JD. It maps the candidate's real evidence to that target, chooses a resume strategy, rewrites without inventing facts, and delivers final Word and PDF files.
+Most resume tools polish what already exists. This package starts from the target: company, role, market, seniority, and JD. It maps the candidate's real evidence to that target, chooses a resume strategy, rewrites without inventing facts, and delivers final Word and PDF files with resume-specific layout controls.
 
 This is the open skill package, not the hosted production web app.
 
@@ -76,7 +76,7 @@ Resume + Target JD
   -> Candidate evidence map
   -> Strategy and template route
   -> Final resume source
-  -> Word / PDF export
+  -> Auto-fit Word / PDF export
   -> Separate optimization report
 ```
 
@@ -88,8 +88,18 @@ The skill is designed to behave like a guided resume-making flow:
 4. Select section order, density, and template route.
 5. Rewrite bullets using only supported facts.
 6. Keep missing-detail questions and optimization notes out of the resume.
-7. Export the final resume as Word and PDF.
+7. Export the final resume as Word and PDF with automatic standard/compact/dense layout selection.
 8. Put suggestions in a separate report.
+
+## Document Export Quality
+
+The built-in exporter is optimized for application-ready resumes:
+
+- Word sections use divider lines, consistent margins, ATS-friendly fonts, and heading keep rules.
+- The exporter estimates resume length and automatically selects `standard`, `compact`, or `dense` spacing.
+- PDF generation uses LibreOffice conversion when a working `soffice` or `libreoffice` command is available.
+- If LibreOffice is not available, PDF generation falls back to the internal renderer instead of failing.
+- Optimization notes, evidence gaps, and follow-up questions are filtered out of the resume export by default.
 
 ## Why It Exists
 
@@ -115,7 +125,7 @@ The system uses:
 | `knowledge-base/templates/catalog.json` | 67 resume template routes |
 | `knowledge-base/playbooks/targeted-resume-playbook.md` | Human-readable workflow |
 | `scripts/install-skill.mjs` | Codex / Claude Code installer |
-| `scripts/export-resume.mjs` | Resume source to DOCX / PDF exporter |
+| `scripts/export-resume.mjs` | Auto-fit resume source to DOCX / PDF exporter |
 | `examples/` | Sample resume, JD, and generated outputs |
 | `prompts/chatgpt-copy-paste-cn.md` | No-code Chinese prompt |
 
