@@ -18,7 +18,7 @@ The assistant should return:
 - Target role signal analysis.
 - Candidate evidence map.
 - Resume strategy.
-- Rewritten resume draft.
+- Final rewritten resume content for Word/PDF export.
 - Change rationale.
 - Follow-up questions.
 
@@ -49,23 +49,23 @@ Target company: Google
 Target role: Software Engineer Intern
 Target market: US
 
-Please generate a Markdown resume, optimization report, evidence gaps, and Word/PDF outputs.
+Please generate a final targeted resume as Word and PDF.
+Put optimization notes, evidence gaps, and follow-up questions in a separate report, not inside the resume.
 ```
 
-## Option 3: Export Markdown To Word And PDF
+## Option 3: Export Internal Resume Source To Word And PDF
 
-After the skill or another AI assistant creates a Markdown resume package, export it:
+After the skill or another AI assistant creates a clean internal resume source file, export it:
 
 ```bash
 npm run export -- --input outputs/google-swe-intern-targeted-resume.md
 ```
 
-The exporter creates:
+The exporter creates Word and PDF by default:
 
 ```txt
 outputs/google-swe-intern-targeted-resume.docx
 outputs/google-swe-intern-targeted-resume.pdf
-outputs/google-swe-intern-targeted-resume.html
 ```
 
 Try the bundled example:
@@ -77,15 +77,15 @@ npm run export:example
 ## Recommended Workflow
 
 1. Prepare a factual resume and a target job description.
-2. Use the prompt or Claude Code skill to generate a targeted Markdown resume.
-3. Review any `[Need detail: ...]` markers.
-4. Add missing metrics, tools, scale, or context.
-5. Regenerate or edit the final Markdown.
-6. Export Word and PDF files.
+2. Use the prompt or Claude Code skill to generate a final resume source and separate optimization report.
+3. Review the separate report for missing metrics, tools, scale, or context.
+4. Regenerate or edit the final resume source after facts are confirmed.
+5. Export Word and PDF files.
 
 ## Important Rules
 
 - Do not invent candidate facts.
 - Do not force job-description keywords into unsupported experience.
 - Treat gaps as follow-up questions.
+- Do not put follow-up questions or missing-detail markers inside the final resume.
 - Keep the final resume evidence-based, ATS-friendly, and tailored to one target role.

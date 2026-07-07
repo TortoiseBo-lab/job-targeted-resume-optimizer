@@ -6,7 +6,7 @@
 /job-targeted-resume-optimizer
 ```
 
-然后让 Claude Code 根据简历、目标公司、目标岗位和 JD 直接生成定制简历草稿与优化报告。
+然后让 Claude Code 根据简历、目标公司、目标岗位和 JD 直接生成可投递的 Word/PDF 定制简历与单独优化报告。
 
 ## 这是什么
 
@@ -17,7 +17,7 @@ Claude Code skill 可以理解成“给 Claude Code 装一个专门能力”。
 - 根据目标公司和目标岗位选择规则。
 - 根据 JD 拆解岗位信号。
 - 根据候选人真实经历改写简历。
-- 输出简历草稿、修改理由、证据缺口和补问问题。
+- 输出最终版 Word/PDF 简历，并把修改理由、证据缺口和补问问题放进单独报告。
 
 ## 最简单安装方式
 
@@ -62,13 +62,15 @@ JD 在：
 ./inputs/google-swe-intern-jd.md
 
 目标市场：US
-输出 Markdown，并尽可能告诉我还缺哪些量化信息。
+请直接输出 Word 和 PDF。缺少的量化信息请放在单独的优化报告里，不要写进简历正文。
 ```
 
 Claude Code 会读取仓库知识库，并默认生成：
 
 ```txt
-outputs/google-software-engineer-intern-targeted-resume.md
+outputs/google-software-engineer-intern-targeted-resume.docx
+outputs/google-software-engineer-intern-targeted-resume.pdf
+outputs/google-software-engineer-intern-optimization-report.md
 ```
 
 ## 推荐文件结构
@@ -105,11 +107,12 @@ mkdir -p inputs outputs
 目标市场：
 
 请输出：
-1. 定制后的英文简历 Markdown
-2. 岗位信号分析
-3. 经历匹配表
-4. 修改理由
-5. 还需要我补充的问题
+1. 定制后的英文简历 Word
+2. 定制后的英文简历 PDF
+3. 单独的优化报告
+4. 岗位信号分析
+5. 经历匹配表
+6. 还需要我补充的问题
 ```
 
 ## 如果用户想全局安装
@@ -133,4 +136,3 @@ cp -R .claude/skills/job-targeted-resume-optimizer ~/.claude/skills/
 3. 把简历和 JD 放进 `inputs`。
 4. 输入 `/job-targeted-resume-optimizer`。
 5. Claude Code 会在 `outputs` 里生成目标岗位定制简历。
-

@@ -10,8 +10,9 @@ After installation, users can ask Codex or Claude Code to create a target-role r
 2. Target company and role analysis.
 3. Evidence mapping.
 4. Resume strategy and template routing.
-5. Markdown resume generation.
-6. Word, PDF, and HTML export.
+5. Final resume generation.
+6. Word and PDF export.
+7. Separate optimization report generation.
 
 ## Install From This Repository
 
@@ -83,16 +84,16 @@ Target company: Google
 Target role: Software Engineer Intern
 Target market: US
 
-Please generate a targeted resume, optimization report, Word file, and PDF.
+Please generate a final targeted resume as Word and PDF.
+Put optimization notes and follow-up questions in a separate report, not inside the resume.
 ```
 
 The skill should produce:
 
 ```txt
-outputs/google-software-engineer-intern-targeted-resume.md
 outputs/google-software-engineer-intern-targeted-resume.docx
 outputs/google-software-engineer-intern-targeted-resume.pdf
-outputs/google-software-engineer-intern-targeted-resume.html
+outputs/google-software-engineer-intern-optimization-report.md
 ```
 
 ## Safety Note

@@ -1,11 +1,11 @@
 ---
 name: job-targeted-resume-optimizer
-description: Create a target-company and target-role tailored resume through a guided workflow. Use when the user wants resume optimization, resume rewriting, a resume draft for a specific company/job/JD, an ATS-friendly resume, a Claude Code skill-based resume builder, or Word/PDF resume output from candidate facts.
+description: Create a target-company and target-role tailored resume through a guided workflow. Use when the user wants resume optimization, resume rewriting, a final resume document for a specific company/job/JD, an ATS-friendly resume, a Claude Code skill-based resume builder, or Word/PDF resume output from candidate facts.
 ---
 
 # Job Targeted Resume Optimizer
 
-Run a guided resume-building workflow: intake, target analysis, evidence mapping, strategy, drafting, review, and export.
+Run a guided resume-building workflow: intake, target analysis, evidence mapping, strategy, final resume writing, review, and export.
 
 ## Required Inputs
 
@@ -16,7 +16,7 @@ Collect or infer:
 - Target role.
 - Target market or region.
 - Job description.
-- Desired output format: Markdown, Word, PDF, or all.
+- Desired output format: Word, PDF, or both. Markdown is an internal source format only unless the user explicitly asks for it.
 
 If the user has not provided a resume or JD, ask for those first.
 
@@ -37,13 +37,14 @@ Then load only relevant company, industry, university, and style rule files.
 3. Map evidence into direct match, transferable match, and gap.
 4. Choose section order and a template route from the 67-template catalog.
 5. Rewrite the resume without inventing facts.
-6. Mark missing facts as `[Need detail: ...]`.
-7. Save a Markdown resume package under `outputs/<company-role>-targeted-resume.md`.
-8. If Word/PDF is requested, run:
+6. Keep missing facts, `[Need detail: ...]`, follow-up questions, and optimization commentary out of the resume.
+7. Save a separate optimization report under `outputs/<company-role>-optimization-report.md`.
+8. Use a temporary or hidden Markdown source only as an internal export source, unless the user explicitly asks for Markdown.
+9. Run:
 
-   `node <this skill>/scripts/export-resume.mjs --input outputs/<company-role>-targeted-resume.md`
+   `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume`
 
-9. Confirm generated files exist before reporting success.
+10. Confirm `.docx` and `.pdf` files exist before reporting success.
 
 ## Hard Rules
 
@@ -52,13 +53,14 @@ Then load only relevant company, industry, university, and style rule files.
 - Use target-company and target-role reasoning, not generic polishing.
 - Preserve the candidate's real background.
 - Ask follow-up questions when metrics, scope, tools, or outcomes are missing.
+- Never put follow-up questions, missing-detail markers, or optimization commentary inside the resume document.
 
 ## Final Response
 
 Report:
 
-- Markdown output path.
-- Word/PDF paths if generated.
+- Word/PDF paths.
+- Separate optimization-report path.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.

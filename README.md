@@ -6,7 +6,7 @@
 
 An installable Codex and Claude Code skill for creating target-company and target-role tailored resumes.
 
-Most resume tools polish what already exists. This package starts from the target: company, role, market, seniority, and JD. It maps the candidate's real evidence to that target, chooses a resume strategy, rewrites without inventing facts, and exports Markdown, Word, PDF, and HTML.
+Most resume tools polish what already exists. This package starts from the target: company, role, market, seniority, and JD. It maps the candidate's real evidence to that target, chooses a resume strategy, rewrites without inventing facts, and delivers final Word and PDF files.
 
 This is the open skill package, not the hosted production web app.
 
@@ -37,16 +37,16 @@ Target company: Google
 Target role: Software Engineer Intern
 Target market: US
 
-Please generate a targeted resume, optimization report, Word file, and PDF.
+Please generate a final targeted resume as Word and PDF.
+Put optimization notes and follow-up questions in a separate report, not inside the resume.
 ```
 
 Expected outputs:
 
 ```txt
-outputs/google-software-engineer-intern-targeted-resume.md
 outputs/google-software-engineer-intern-targeted-resume.docx
 outputs/google-software-engineer-intern-targeted-resume.pdf
-outputs/google-software-engineer-intern-targeted-resume.html
+outputs/google-software-engineer-intern-optimization-report.md
 ```
 
 ## Demo
@@ -55,9 +55,9 @@ Bundled example:
 
 - Input resume: [examples/inputs/sample-resume.md](examples/inputs/sample-resume.md)
 - Target JD: [examples/inputs/google-swe-intern-jd.md](examples/inputs/google-swe-intern-jd.md)
-- Output Markdown: [examples/outputs/example-targeted-resume.md](examples/outputs/example-targeted-resume.md)
 - Output Word: [examples/outputs/example-targeted-resume.docx](examples/outputs/example-targeted-resume.docx)
 - Output PDF: [examples/outputs/example-targeted-resume.pdf](examples/outputs/example-targeted-resume.pdf)
+- Separate report: [examples/outputs/example-optimization-report.md](examples/outputs/example-optimization-report.md)
 
 Run the demo export locally:
 
@@ -75,9 +75,9 @@ Resume + Target JD
   -> Target role signal analysis
   -> Candidate evidence map
   -> Strategy and template route
-  -> Targeted resume draft
-  -> Optimization report
-  -> Word / PDF / HTML export
+  -> Final resume source
+  -> Word / PDF export
+  -> Separate optimization report
 ```
 
 The skill is designed to behave like a guided resume-making flow:
@@ -87,8 +87,9 @@ The skill is designed to behave like a guided resume-making flow:
 3. Separate direct matches, transferable matches, and gaps.
 4. Select section order, density, and template route.
 5. Rewrite bullets using only supported facts.
-6. Mark missing metrics or context as `[Need detail: ...]`.
-7. Export the final resume package.
+6. Keep missing-detail questions and optimization notes out of the resume.
+7. Export the final resume as Word and PDF.
+8. Put suggestions in a separate report.
 
 ## Why It Exists
 
@@ -114,7 +115,7 @@ The system uses:
 | `knowledge-base/templates/catalog.json` | 67 resume template routes |
 | `knowledge-base/playbooks/targeted-resume-playbook.md` | Human-readable workflow |
 | `scripts/install-skill.mjs` | Codex / Claude Code installer |
-| `scripts/export-resume.mjs` | Markdown to DOCX / PDF / HTML exporter |
+| `scripts/export-resume.mjs` | Resume source to DOCX / PDF exporter |
 | `examples/` | Sample resume, JD, and generated outputs |
 | `prompts/chatgpt-copy-paste-cn.md` | No-code Chinese prompt |
 

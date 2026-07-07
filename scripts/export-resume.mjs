@@ -8,7 +8,8 @@ function parseArgs(argv) {
     input: "",
     outDir: "",
     baseName: "",
-    formats: ["docx", "pdf", "html"],
+    formats: ["docx", "pdf"],
+    includeReport: false,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -21,6 +22,8 @@ function parseArgs(argv) {
       args.baseName = argv[++index] ?? "";
     } else if (arg === "--formats") {
       args.formats = (argv[++index] ?? "").split(",").map((value) => value.trim()).filter(Boolean);
+    } else if (arg === "--include-report") {
+      args.includeReport = true;
     } else if (arg === "--help" || arg === "-h") {
       printHelp();
       process.exit(0);
@@ -29,7 +32,7 @@ function parseArgs(argv) {
 
   if (!args.input) {
     printHelp();
-    throw new Error("Missing required --input <markdown-file> argument.");
+    throw new Error("Missing required --input <resume-source-file> argument.");
   }
 
   return args;
@@ -41,10 +44,11 @@ function printHelp() {
   npm run export -- --input examples/outputs/example-targeted-resume.md --out-dir tmp/exported
 
 Options:
-  --input, -i      Markdown resume package to export.
+  --input, -i      Internal resume source file to export.
   --out-dir, -o    Output directory. Defaults to the input file directory.
   --base-name      Output file base name. Defaults to input file name.
-  --formats        Comma-separated formats. Defaults to docx,pdf,html.
+  --formats        Comma-separated formats. Defaults to docx,pdf. Supports docx,pdf,html.
+  --include-report Keep optimization-report sections in the exported document.
 
 This exporter has no external runtime dependencies.`);
 }
@@ -66,6 +70,7 @@ function plainText(value) {
     .replace(/`([^`]+)`/g, "$1")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/\s*\[Need detail:[^\]]+\]/gi, "")
     .trim();
 }
 
@@ -76,12 +81,26 @@ function inlineHtml(value) {
     .replace(/\*([^*]+)\*/g, "<em>$1</em>");
 }
 
-function parseMarkdown(markdown) {
+function parseMarkdown(markdown, { includeReport = false } = {}) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const blocks = [];
   let listItems = [];
   let codeLines = [];
   let inCode = false;
+  let skipSection = false;
+
+  const excludedSections = new Set([
+    "target role",
+    "resume strategy",
+    "optimization report",
+    "strongest matches",
+    "evidence gaps",
+    "next questions",
+    "follow-up questions",
+    "change rationale",
+    "candidate evidence map",
+    "target role signal analysis",
+  ]);
 
   function flushList() {
     if (listItems.length) {
@@ -124,18 +143,36 @@ function parseMarkdown(markdown) {
     const heading = /^(#{1,4})\s+(.+)$/.exec(line);
     if (heading) {
       flushList();
-      blocks.push({ type: "heading", level: heading[1].length, text: plainText(heading[2]) });
+      const level = heading[1].length;
+      const text = plainText(heading[2]);
+      const normalizedHeading = text.toLowerCase();
+      if (!includeReport && level === 2 && excludedSections.has(normalizedHeading)) {
+        skipSection = true;
+        continue;
+      }
+      if (level <= 2) {
+        skipSection = false;
+      }
+      if (!skipSection) {
+        blocks.push({ type: "heading", level, text });
+      }
+      continue;
+    }
+
+    if (skipSection) {
       continue;
     }
 
     const bullet = /^[-*]\s+(.+)$/.exec(line);
     if (bullet) {
-      listItems.push(plainText(bullet[1]));
+      const item = plainText(bullet[1]);
+      if (item) listItems.push(item);
       continue;
     }
 
     flushList();
-    blocks.push({ type: "paragraph", text: plainText(line) });
+    const text = plainText(line);
+    if (text) blocks.push({ type: "paragraph", text });
   }
 
   flushList();
@@ -182,29 +219,61 @@ ${body}
 </html>`;
 }
 
-function docxParagraph(text, style = "") {
-  const styleXml = style ? `<w:pPr><w:pStyle w:val="${style}"/></w:pPr>` : "";
-  return `<w:p>${styleXml}<w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
+function docxParagraph(text, style = "", extraPPr = "") {
+  const styleXml = style ? `<w:pStyle w:val="${style}"/>` : "";
+  const pPr = styleXml || extraPPr ? `<w:pPr>${styleXml}${extraPPr}</w:pPr>` : "";
+  return `<w:p>${pPr}<w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
+}
+
+function docxSectionHeading(text) {
+  const border = `<w:pBdr><w:bottom w:val="single" w:sz="8" w:space="3" w:color="222222"/></w:pBdr><w:keepNext/>`;
+  return docxParagraph(text, "Heading2", border);
+}
+
+function docxSubheading(text) {
+  return docxParagraph(text, "Heading3", "<w:keepNext/>");
+}
+
+function docxPlainParagraph(text) {
+  const spacing = `<w:spacing w:after="70" w:line="250" w:lineRule="auto"/>`;
+  return docxParagraph(text, "", spacing);
+}
+
+function docxTitle(text) {
+  const pPr = `<w:jc w:val="center"/><w:spacing w:after="80"/>`;
+  return docxParagraph(text, "Title", pPr);
+}
+
+function docxContactLine(text) {
+  const pPr = `<w:jc w:val="center"/><w:spacing w:after="80"/>`;
+  return docxParagraph(text, "", pPr);
 }
 
 function docxBullet(text) {
-  return `<w:p><w:pPr><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
+  return `<w:p><w:pPr><w:spacing w:after="35" w:line="245" w:lineRule="auto"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
 }
 
 function buildDocxXml(blocks) {
   const paragraphs = [];
-  for (const block of blocks) {
+  blocks.forEach((block, index) => {
     if (block.type === "heading") {
-      const style = block.level === 1 ? "Title" : `Heading${Math.min(block.level, 3)}`;
-      paragraphs.push(docxParagraph(block.text, style));
+      if (block.level === 1) {
+        paragraphs.push(docxTitle(block.text));
+      } else if (block.level === 2) {
+        paragraphs.push(docxSectionHeading(block.text));
+      } else {
+        paragraphs.push(docxSubheading(block.text));
+      }
     } else if (block.type === "list") {
       for (const item of block.items) {
         paragraphs.push(docxBullet(item));
       }
+    } else if (index === 1 && blocks[0]?.type === "heading" && blocks[0].level === 1) {
+      paragraphs.push(docxContactLine(block.text));
     } else {
-      paragraphs.push(docxParagraph(block.text));
+      paragraphs.push(docxPlainParagraph(block.text));
     }
-  }
+  });
 
   return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -430,30 +499,58 @@ function buildPdf(blocks) {
     if (y - points < marginY) newPage();
   }
 
-  function addLine(text, size = 10.5, indent = 0) {
+  function addLine(text, size = 10.2, indent = 0) {
     ensureSpace(size + 5);
     commands.push(`BT /F1 ${size.toFixed(1)} Tf ${marginX + indent} ${y.toFixed(1)} Td (${pdfEscape(text)}) Tj ET`);
-    y -= size + 4.2;
+    y -= size + 3.2;
+  }
+
+  function addRule() {
+    ensureSpace(8);
+    const ruleY = y + 3;
+    commands.push(`q 0.7 w ${marginX} ${ruleY.toFixed(1)} m ${pageWidth - marginX} ${ruleY.toFixed(1)} l S Q`);
+    y -= 5;
+  }
+
+  function addCenteredLine(text, size = 18) {
+    ensureSpace(size + 5);
+    const estimatedWidth = text.length * size * 0.48;
+    const x = Math.max(marginX, (pageWidth - estimatedWidth) / 2);
+    commands.push(`BT /F1 ${size.toFixed(1)} Tf ${x.toFixed(1)} ${y.toFixed(1)} Td (${pdfEscape(text)}) Tj ET`);
+    y -= size + 3.2;
   }
 
   for (const block of blocks) {
     if (block.type === "heading") {
-      const size = block.level === 1 ? 18 : block.level === 2 ? 12 : 10.8;
-      y -= block.level === 1 ? 2 : 6;
-      addLine(block.text.toUpperCase(), size, 0);
-      y -= 2;
+      if (block.level === 1) {
+        y -= 2;
+        addCenteredLine(block.text, 18);
+        y -= 1;
+      } else if (block.level === 2) {
+        y -= 5;
+        addLine(block.text.toUpperCase(), 11.3, 0);
+        addRule();
+      } else {
+        y -= 3;
+        addLine(block.text, 10.4, 0);
+      }
     } else if (block.type === "list") {
       for (const item of block.items) {
-        for (const [index, line] of wrapText(item, 92).entries()) {
-          addLine(`${index === 0 ? "- " : "  "}${line}`, 10.2, 10);
+        for (const [index, line] of wrapText(item, 89).entries()) {
+          addLine(`${index === 0 ? "- " : "  "}${line}`, 9.7, 10);
         }
       }
-      y -= 2;
+      y -= 1;
     } else {
-      for (const line of wrapText(block.text, 96)) {
-        addLine(line, 10.4, 0);
+      for (const line of wrapText(block.text, 94)) {
+        const centered = blocks[0]?.type === "heading" && blocks.indexOf(block) === 1;
+        if (centered) {
+          addCenteredLine(line, 9.6);
+        } else {
+          addLine(line, 9.9, 0);
+        }
       }
-      y -= 2;
+      y -= 1;
     }
   }
   if (commands.length) pages.push(commands);
@@ -505,7 +602,7 @@ await mkdir(outDir, { recursive: true });
 
 const baseName = args.baseName || path.basename(inputPath, path.extname(inputPath));
 const markdown = await readFile(inputPath, "utf8");
-const blocks = parseMarkdown(markdown);
+const blocks = parseMarkdown(markdown, { includeReport: args.includeReport });
 const generated = [];
 
 for (const format of args.formats) {

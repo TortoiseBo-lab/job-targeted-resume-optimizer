@@ -35,7 +35,7 @@ console.log(JSON.stringify(promptContext, null, 2));
 You are a resume tailoring agent.
 
 Goal:
-Create a targeted resume strategy and rewritten resume draft for one specific application.
+Create a final targeted resume and separate optimization report for one specific application.
 
 Inputs:
 - Candidate resume: <paste candidate facts>
@@ -51,7 +51,7 @@ Rules:
 - Use JD language only when supported by candidate facts.
 - Separate direct evidence, transferable evidence, and evidence gaps.
 - Ask follow-up questions for missing metrics or missing context.
-- Return a resume draft, optimization report, and next questions.
+- Return final resume content for Word/PDF export, plus a separate optimization report and next questions.
 ```
 
 ## Expected Output Shape
@@ -65,7 +65,7 @@ Rules:
     "sectionOrder": [],
     "templateRoute": ""
   },
-  "rewrittenResumeMarkdown": "",
+  "finalResumeSource": "",
   "optimizationReport": {
     "score": 0,
     "changes": [],

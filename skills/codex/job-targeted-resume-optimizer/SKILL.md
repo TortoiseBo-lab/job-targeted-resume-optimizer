@@ -1,11 +1,11 @@
 ---
 name: job-targeted-resume-optimizer
-description: Create a target-company and target-role tailored resume through a guided workflow. Use when the user wants resume optimization, resume rewriting, a resume draft for a specific company/job/JD, an ATS-friendly resume, a Claude/Codex skill-based resume builder, or Word/PDF resume output from candidate facts.
+description: Create a target-company and target-role tailored resume through a guided workflow. Use when the user wants resume optimization, resume rewriting, a final resume document for a specific company/job/JD, an ATS-friendly resume, a Claude/Codex skill-based resume builder, or Word/PDF resume output from candidate facts.
 ---
 
 # Job Targeted Resume Optimizer
 
-Run a guided resume-building workflow that feels like a product flow: intake, target analysis, evidence mapping, strategy, drafting, review, and export.
+Run a guided resume-building workflow that feels like a product flow: intake, target analysis, evidence mapping, strategy, final resume writing, review, and export.
 
 ## Required Inputs
 
@@ -16,7 +16,7 @@ Collect or infer:
 - Target role.
 - Target market or region.
 - Job description.
-- Desired output format: Markdown, Word, PDF, or all.
+- Desired output format: Word, PDF, or both. Markdown is an internal source format only unless the user explicitly asks for it.
 
 If the user has not provided a resume or JD, ask for those first. Keep the question short and practical.
 
@@ -39,23 +39,27 @@ If the user has not provided a resume or JD, ask for those first. Keep the quest
 4. **Evidence map**
    - Classify candidate evidence as direct match, transferable match, or gap.
    - Do not invent facts.
-   - Mark missing facts as `[Need detail: ...]`.
+   - Keep gaps and missing facts out of the resume. Put them in the separate optimization report.
 
 5. **Resume strategy**
    - Choose section order and density.
    - Pick a template route from the 67-template catalog.
    - Explain what to emphasize, compress, or remove.
 
-6. **Draft**
-   - Create a targeted Markdown resume under `outputs/<company-role>-targeted-resume.md`.
-   - Include an optimization report with target signals, evidence map, changes, risks, and follow-up questions.
+6. **Draft final resume**
+   - Create a clean final resume source in a temporary or hidden working file.
+   - The resume must be the final application-ready version only.
+   - Do not include target analysis, resume strategy, evidence gaps, follow-up questions, `[Need detail: ...]`, or optimization notes in the resume.
+   - If facts are missing, either omit the unsupported claim or use a conservative factual version.
+   - Create a separate report under `outputs/<company-role>-optimization-report.md` for target signals, evidence map, risks, and follow-up questions.
 
 7. **Export**
-   - If the user asks for Word or PDF, run:
+   - Always produce Word/PDF as the main user-facing deliverables unless the user explicitly asks otherwise.
+   - Run:
 
-     `node <this skill>/scripts/export-resume.mjs --input outputs/<company-role>-targeted-resume.md`
+     `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume`
 
-   - Confirm the `.docx`, `.pdf`, and `.html` files exist before reporting success.
+   - Confirm the `.docx` and `.pdf` files exist before reporting success.
 
 ## Hard Rules
 
@@ -64,14 +68,15 @@ If the user has not provided a resume or JD, ask for those first. Keep the quest
 - Use target-company and target-role reasoning, not generic polishing.
 - Preserve the candidate's real background.
 - Ask follow-up questions when metrics, scope, tools, or outcomes are missing.
+- Never put follow-up questions, missing-detail markers, or optimization commentary inside the resume document.
 - Prefer clear, ATS-friendly English for the final resume unless the user requests another language.
 
 ## Output Summary
 
 At the end, report:
 
-- Markdown output path.
-- Word/PDF paths if generated.
+- Word/PDF paths.
+- Separate optimization-report path.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.
