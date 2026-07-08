@@ -97,9 +97,20 @@ The built-in exporter is optimized for application-ready resumes:
 
 - Word sections use divider lines, consistent margins, ATS-friendly fonts, and heading keep rules.
 - The exporter estimates resume length and automatically selects `standard`, `compact`, or `dense` spacing.
+- The exporter can apply a 67-route template id through `--template-route`, such as `google-big-tech`, `wharton-finance`, or `mbb-consulting`.
+- Template routes map to real document style families: `classic-ats`, `tech-clean`, `academic-cv`, `finance-compact`, `consulting-executive`, `creative-modern`, and `chinese-professional`.
+- Serif templates use `Times New Roman` in Word and `Times-Roman` in fallback PDF; tech and modern templates use Arial/Aptos-style sans fonts.
+- Divider line weight, color, heading capitalization, density, and Chinese font fallback vary by document template.
 - PDF generation uses LibreOffice conversion when a working `soffice` or `libreoffice` command is available.
 - If LibreOffice is not available, PDF generation falls back to the internal renderer instead of failing.
 - Optimization notes, evidence gaps, and follow-up questions are filtered out of the resume export by default.
+
+Example:
+
+```bash
+npm run export -- --input outputs/google-swe-intern-targeted-resume.md --template-route google-big-tech
+npm run export -- --input outputs/finance-analyst-targeted-resume.md --template-route wharton-finance
+```
 
 ## Why It Exists
 

@@ -84,6 +84,32 @@ Layout profiles are selected automatically:
 
 PDF uses LibreOffice conversion when a working `soffice` or `libreoffice` command exists. Otherwise it falls back to the internal PDF renderer.
 
+Apply a specific route from the 67-template catalog:
+
+```bash
+npm run export -- --input outputs/google-swe-intern-targeted-resume.md --template-route google-big-tech
+npm run export -- --input outputs/finance-analyst-targeted-resume.md --template-route wharton-finance
+npm run export -- --input outputs/consulting-ba-targeted-resume.md --template-route mbb-consulting
+```
+
+Or force a document style family directly:
+
+```bash
+npm run export -- --input outputs/resume.md --document-template classic-ats
+npm run export -- --input outputs/resume.md --document-template tech-clean
+npm run export -- --input outputs/resume.md --document-template finance-compact
+```
+
+Document templates control the actual Word/PDF styling:
+
+- `classic-ats`: Times New Roman, conservative ATS line dividers.
+- `tech-clean`: Arial, clean technical section lines.
+- `academic-cv`: Times New Roman, less aggressive capitalization.
+- `finance-compact`: Times New Roman, compact spacing, stronger dividers.
+- `consulting-executive`: Times New Roman, formal consulting style.
+- `creative-modern`: Aptos/Arial-style sans font, softer divider color.
+- `chinese-professional`: Chinese-friendly font fallback and compact spacing.
+
 Try the bundled example:
 
 ```bash

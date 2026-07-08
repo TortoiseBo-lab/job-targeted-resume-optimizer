@@ -55,12 +55,13 @@ If the user has not provided a resume or JD, ask for those first. Keep the quest
 
 7. **Export**
    - Always produce Word/PDF as the main user-facing deliverables unless the user explicitly asks otherwise.
+   - Pass the chosen 67-template route id to the exporter with `--template-route`.
    - Run:
 
-     `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume`
+     `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume --template-route <chosen-template-id>`
 
    - Confirm the `.docx` and `.pdf` files exist before reporting success.
-   - Note the exporter layout profile (`standard`, `compact`, or `dense`) and PDF engine from the command output.
+   - Note the exporter layout profile (`standard`, `compact`, or `dense`), document template, template route, and PDF engine from the command output.
    - If the resume spills beyond the desired page count, tighten the source content first: reduce weak bullets, merge low-value skills, and keep only target-relevant evidence.
 
 ## Hard Rules
@@ -79,7 +80,7 @@ At the end, report:
 
 - Word/PDF paths.
 - Separate optimization-report path.
-- Export layout profile and PDF engine.
+- Export layout profile, document template, template route, and PDF engine.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.

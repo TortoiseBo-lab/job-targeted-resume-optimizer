@@ -1,6 +1,6 @@
 {
   "name": "job-targeted-resume-optimizer",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Installable Codex and Claude Code skill package for target-company and target-role driven resume optimization.",
   "license": "MIT",
   "type": "module",
@@ -24,7 +24,7 @@
   "scripts": {
     "validate": "node scripts/validate-open-package.mjs",
     "export": "node scripts/export-resume.mjs",
-    "export:example": "node scripts/export-resume.mjs --input examples/outputs/example-targeted-resume.md",
+    "export:example": "node scripts/export-resume.mjs --input examples/outputs/example-targeted-resume.md --template-route google-big-tech",
     "install:skills": "node scripts/install-skill.mjs --target all",
     "install:codex": "node scripts/install-skill.mjs --target codex",
     "install:claude": "node scripts/install-skill.mjs --target claude"

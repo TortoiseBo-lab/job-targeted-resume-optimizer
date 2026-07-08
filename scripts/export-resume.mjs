@@ -3,10 +3,109 @@ import { constants } from "node:fs";
 import { access, copyFile, mkdir, mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 
 const ROOT = process.cwd();
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const execFileAsync = promisify(execFile);
+
+const DOCUMENT_TEMPLATES = {
+  "classic-ats": {
+    id: "classic-ats",
+    label: "Classic ATS",
+    font: "Times New Roman",
+    fallbackFonts: "Times New Roman, Times, serif",
+    eastAsiaFont: "SimSun",
+    pdfBaseFont: "Times-Roman",
+    headingCaps: true,
+    divider: { size: 8, color: "222222" },
+  },
+  "tech-clean": {
+    id: "tech-clean",
+    label: "Tech Clean",
+    font: "Arial",
+    fallbackFonts: "Arial, Helvetica, sans-serif",
+    eastAsiaFont: "Microsoft YaHei",
+    pdfBaseFont: "Helvetica",
+    headingCaps: true,
+    divider: { size: 8, color: "222222" },
+  },
+  "academic-cv": {
+    id: "academic-cv",
+    label: "Academic CV",
+    font: "Times New Roman",
+    fallbackFonts: "Times New Roman, Times, serif",
+    eastAsiaFont: "SimSun",
+    pdfBaseFont: "Times-Roman",
+    headingCaps: false,
+    divider: { size: 6, color: "444444" },
+  },
+  "finance-compact": {
+    id: "finance-compact",
+    label: "Finance Compact",
+    font: "Times New Roman",
+    fallbackFonts: "Times New Roman, Times, serif",
+    eastAsiaFont: "SimSun",
+    pdfBaseFont: "Times-Roman",
+    headingCaps: true,
+    divider: { size: 10, color: "111111" },
+    minimumDensity: "compact",
+  },
+  "consulting-executive": {
+    id: "consulting-executive",
+    label: "Consulting Executive",
+    font: "Times New Roman",
+    fallbackFonts: "Times New Roman, Times, serif",
+    eastAsiaFont: "SimSun",
+    pdfBaseFont: "Times-Roman",
+    headingCaps: true,
+    divider: { size: 8, color: "1F1F1F" },
+  },
+  "creative-modern": {
+    id: "creative-modern",
+    label: "Creative Modern",
+    font: "Aptos",
+    fallbackFonts: "Aptos, Arial, Helvetica, sans-serif",
+    eastAsiaFont: "Microsoft YaHei",
+    pdfBaseFont: "Helvetica",
+    headingCaps: false,
+    divider: { size: 8, color: "4A5568" },
+  },
+  "chinese-professional": {
+    id: "chinese-professional",
+    label: "Chinese Professional",
+    font: "Arial",
+    fallbackFonts: "Arial, Helvetica, sans-serif",
+    eastAsiaFont: "Microsoft YaHei",
+    pdfBaseFont: "Helvetica",
+    headingCaps: false,
+    divider: { size: 8, color: "222222" },
+    minimumDensity: "compact",
+  },
+};
+
+const TEMPLATE_ALIASES = {
+  auto: "auto",
+  ats: "classic-ats",
+  classic: "classic-ats",
+  "classic-ats": "classic-ats",
+  tech: "tech-clean",
+  "tech-clean": "tech-clean",
+  academic: "academic-cv",
+  "academic-cv": "academic-cv",
+  finance: "finance-compact",
+  "finance-compact": "finance-compact",
+  consulting: "consulting-executive",
+  "consulting-executive": "consulting-executive",
+  modern: "creative-modern",
+  creative: "creative-modern",
+  "creative-modern": "creative-modern",
+  chinese: "chinese-professional",
+  "chinese-professional": "chinese-professional",
+};
+
+const DENSITY_ORDER = ["standard", "compact", "dense"];
 
 const LAYOUT_PROFILES = {
   standard: {
@@ -85,6 +184,8 @@ function parseArgs(argv) {
     formats: ["docx", "pdf"],
     includeReport: false,
     pdfEngine: "auto",
+    documentTemplate: "auto",
+    templateRoute: "",
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -101,6 +202,10 @@ function parseArgs(argv) {
       args.includeReport = true;
     } else if (arg === "--pdf-engine") {
       args.pdfEngine = argv[++index] ?? "auto";
+    } else if (arg === "--document-template") {
+      args.documentTemplate = argv[++index] ?? "auto";
+    } else if (arg === "--template-route") {
+      args.templateRoute = argv[++index] ?? "";
     } else if (arg === "--help" || arg === "-h") {
       printHelp();
       process.exit(0);
@@ -113,6 +218,9 @@ function parseArgs(argv) {
   }
   if (!["auto", "libreoffice", "internal"].includes(args.pdfEngine)) {
     throw new Error("Unsupported --pdf-engine. Use auto, libreoffice, or internal.");
+  }
+  if (!TEMPLATE_ALIASES[args.documentTemplate]) {
+    throw new Error(`Unsupported --document-template ${args.documentTemplate}. Use auto, classic-ats, tech-clean, academic-cv, finance-compact, consulting-executive, creative-modern, or chinese-professional.`);
   }
 
   return args;
@@ -130,6 +238,8 @@ Options:
   --formats        Comma-separated formats. Defaults to docx,pdf. Supports docx,pdf,html.
   --include-report Keep optimization-report sections in the exported document.
   --pdf-engine     auto|libreoffice|internal. Defaults to auto.
+  --template-route 67-template route id such as google-big-tech or wharton-finance.
+  --document-template auto|classic-ats|tech-clean|academic-cv|finance-compact|consulting-executive|creative-modern|chinese-professional.
 
 This exporter has no external runtime dependencies.`);
 }
@@ -289,7 +399,62 @@ function selectLayoutProfile(blocks) {
   return LAYOUT_PROFILES.standard;
 }
 
-function buildHtml(blocks, title, profile) {
+async function loadTemplateRoute(routeId) {
+  if (!routeId) return null;
+  const catalogCandidates = [
+    path.join(ROOT, "knowledge-base", "templates", "catalog.json"),
+    path.join(SCRIPT_DIR, "..", "knowledge-base", "templates", "catalog.json"),
+    path.join(SCRIPT_DIR, "..", "references", "knowledge-base", "templates", "catalog.json"),
+  ];
+
+  let catalog = null;
+  for (const catalogPath of catalogCandidates) {
+    try {
+      catalog = JSON.parse(await readFile(catalogPath, "utf8"));
+      break;
+    } catch {
+      // Try the next package layout.
+    }
+  }
+  if (!catalog) {
+    throw new Error("Cannot locate knowledge-base/templates/catalog.json for --template-route.");
+  }
+
+  const route = catalog.templates.find((template) => template.id === routeId);
+  if (!route) {
+    throw new Error(`Unknown --template-route ${routeId}. Check knowledge-base/templates/catalog.json.`);
+  }
+  return route;
+}
+
+function resolveDocumentTemplate(requestedTemplate, route) {
+  const alias = TEMPLATE_ALIASES[requestedTemplate] ?? "auto";
+  const templateId = alias === "auto" ? route?.layoutFamily ?? "classic-ats" : alias;
+  const template = DOCUMENT_TEMPLATES[templateId];
+  if (!template) {
+    throw new Error(`No document template exists for layout family: ${templateId}`);
+  }
+  return template;
+}
+
+function applyRouteDensity(profile, route, documentTemplate) {
+  const density = documentTemplate.minimumDensity || route?.density || "";
+  if (!density || density === "expanded") return profile;
+  const currentIndex = DENSITY_ORDER.indexOf(profile.name);
+  const desiredIndex = DENSITY_ORDER.indexOf(density);
+  if (desiredIndex > currentIndex) return LAYOUT_PROFILES[DENSITY_ORDER[desiredIndex]];
+  return profile;
+}
+
+function fontCss(documentTemplate) {
+  return documentTemplate.fallbackFonts;
+}
+
+function headingText(text, documentTemplate) {
+  return documentTemplate.headingCaps ? text.toUpperCase() : text;
+}
+
+function buildHtml(blocks, title, profile, documentTemplate) {
   const body = blocks.map((block) => {
     if (block.type === "heading") {
       return `<h${block.level}>${inlineHtml(block.text)}</h${block.level}>`;
@@ -310,9 +475,9 @@ function buildHtml(blocks, title, profile) {
   <title>${escapeHtml(title)}</title>
   <style>
     @page { margin: ${(profile.pageMargin / 1440).toFixed(2)}in; }
-    body { color: #151515; font-family: Arial, Helvetica, sans-serif; font-size: ${(profile.normalSize / 2).toFixed(1)}pt; line-height: ${(profile.line / 240).toFixed(2)}; }
+    body { color: #151515; font-family: ${fontCss(documentTemplate)}; font-size: ${(profile.normalSize / 2).toFixed(1)}pt; line-height: ${(profile.line / 240).toFixed(2)}; }
     h1 { font-size: ${(profile.titleSize / 2).toFixed(1)}pt; margin: 0 0 5pt; text-align: center; }
-    h2 { border-bottom: 1px solid #222; font-size: ${(profile.h2Size / 2).toFixed(1)}pt; margin: 11pt 0 4pt; padding-bottom: 2pt; text-transform: uppercase; page-break-after: avoid; }
+    h2 { border-bottom: ${(documentTemplate.divider.size / 8).toFixed(2)}pt solid #${documentTemplate.divider.color}; font-size: ${(profile.h2Size / 2).toFixed(1)}pt; margin: 11pt 0 4pt; padding-bottom: 2pt; ${documentTemplate.headingCaps ? "text-transform: uppercase;" : ""} page-break-after: avoid; }
     h3 { font-size: ${(profile.h3Size / 2).toFixed(1)}pt; margin: 7pt 0 2pt; page-break-after: avoid; }
     h4 { font-size: ${(profile.normalSize / 2).toFixed(1)}pt; margin: 6pt 0 2pt; page-break-after: avoid; }
     p { margin: 0 0 ${(profile.paragraphAfter / 20).toFixed(1)}pt; }
@@ -334,9 +499,9 @@ function docxParagraph(text, style = "", extraPPr = "") {
   return `<w:p>${pPr}<w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
 }
 
-function docxSectionHeading(text, profile) {
-  const border = `<w:pBdr><w:bottom w:val="single" w:sz="8" w:space="3" w:color="222222"/></w:pBdr><w:keepNext/><w:keepLines/><w:spacing w:before="${Math.max(110, profile.paragraphAfter * 2)}" w:after="${Math.max(45, profile.paragraphAfter)}"/>`;
-  return docxParagraph(text, "Heading2", border);
+function docxSectionHeading(text, profile, documentTemplate) {
+  const border = `<w:pBdr><w:bottom w:val="single" w:sz="${documentTemplate.divider.size}" w:space="3" w:color="${documentTemplate.divider.color}"/></w:pBdr><w:keepNext/><w:keepLines/><w:spacing w:before="${Math.max(110, profile.paragraphAfter * 2)}" w:after="${Math.max(45, profile.paragraphAfter)}"/>`;
+  return docxParagraph(headingText(text, documentTemplate), "Heading2", border);
 }
 
 function docxSubheading(text) {
@@ -362,14 +527,14 @@ function docxBullet(text, profile) {
   return `<w:p><w:pPr><w:widowControl/><w:spacing w:after="${profile.bulletAfter}" w:line="${profile.line}" w:lineRule="auto"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
 }
 
-function buildDocxXml(blocks, profile) {
+function buildDocxXml(blocks, profile, documentTemplate) {
   const paragraphs = [];
   blocks.forEach((block, index) => {
     if (block.type === "heading") {
       if (block.level === 1) {
         paragraphs.push(docxTitle(block.text, profile));
       } else if (block.level === 2) {
-        paragraphs.push(docxSectionHeading(block.text, profile));
+        paragraphs.push(docxSectionHeading(block.text, profile, documentTemplate));
       } else {
         paragraphs.push(docxSubheading(block.text));
       }
@@ -396,31 +561,36 @@ function buildDocxXml(blocks, profile) {
 </w:document>`;
 }
 
-function buildDocxStylesXml(profile) {
+function docxFonts(documentTemplate) {
+  return `<w:rFonts w:ascii="${escapeXml(documentTemplate.font)}" w:hAnsi="${escapeXml(documentTemplate.font)}" w:eastAsia="${escapeXml(documentTemplate.eastAsiaFont)}"/>`;
+}
+
+function buildDocxStylesXml(profile, documentTemplate) {
+  const caps = documentTemplate.headingCaps ? "<w:caps/>" : "";
   return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:style w:type="paragraph" w:default="1" w:styleId="Normal">
     <w:name w:val="Normal"/>
     <w:pPr><w:widowControl/><w:spacing w:line="${profile.line}" w:lineRule="auto"/></w:pPr>
-    <w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial"/><w:sz w:val="${profile.normalSize}"/></w:rPr>
+    <w:rPr>${docxFonts(documentTemplate)}<w:sz w:val="${profile.normalSize}"/></w:rPr>
   </w:style>
   <w:style w:type="paragraph" w:styleId="Title">
     <w:name w:val="Title"/>
     <w:basedOn w:val="Normal"/>
     <w:pPr><w:jc w:val="center"/><w:keepLines/><w:spacing w:after="${Math.max(80, profile.paragraphAfter)}"/></w:pPr>
-    <w:rPr><w:b/><w:sz w:val="${profile.titleSize}"/></w:rPr>
+    <w:rPr>${docxFonts(documentTemplate)}<w:b/><w:sz w:val="${profile.titleSize}"/></w:rPr>
   </w:style>
   <w:style w:type="paragraph" w:styleId="Heading2">
     <w:name w:val="heading 2"/>
     <w:basedOn w:val="Normal"/>
     <w:pPr><w:keepNext/><w:keepLines/><w:spacing w:before="${Math.max(110, profile.paragraphAfter * 2)}" w:after="${Math.max(45, profile.paragraphAfter)}"/></w:pPr>
-    <w:rPr><w:b/><w:sz w:val="${profile.h2Size}"/><w:caps/></w:rPr>
+    <w:rPr>${docxFonts(documentTemplate)}<w:b/><w:sz w:val="${profile.h2Size}"/>${caps}</w:rPr>
   </w:style>
   <w:style w:type="paragraph" w:styleId="Heading3">
     <w:name w:val="heading 3"/>
     <w:basedOn w:val="Normal"/>
     <w:pPr><w:keepNext/><w:keepLines/><w:spacing w:before="${Math.max(70, profile.paragraphAfter)}" w:after="${Math.max(25, Math.floor(profile.paragraphAfter / 2))}"/></w:pPr>
-    <w:rPr><w:b/><w:sz w:val="${profile.h3Size}"/></w:rPr>
+    <w:rPr>${docxFonts(documentTemplate)}<w:b/><w:sz w:val="${profile.h3Size}"/></w:rPr>
   </w:style>
 </w:styles>`;
 }
@@ -541,7 +711,7 @@ function buildDocxSettingsXml() {
 </w:settings>`;
 }
 
-function buildDocx(blocks, profile) {
+function buildDocx(blocks, profile, documentTemplate) {
   return createZip([
     {
       name: "[Content_Types].xml",
@@ -571,11 +741,11 @@ function buildDocx(blocks, profile) {
     },
     {
       name: "word/document.xml",
-      content: buildDocxXml(blocks, profile),
+      content: buildDocxXml(blocks, profile, documentTemplate),
     },
     {
       name: "word/styles.xml",
-      content: buildDocxStylesXml(profile),
+      content: buildDocxStylesXml(profile, documentTemplate),
     },
     {
       name: "word/numbering.xml",
@@ -625,7 +795,7 @@ function wrapTextToWidth(text, maxWidth, size) {
   return lines;
 }
 
-function buildPdf(blocks, profile) {
+function buildPdf(blocks, profile, documentTemplate) {
   const pageWidth = 612;
   const pageHeight = 792;
   const marginX = profile.pdf.marginX;
@@ -675,7 +845,7 @@ function buildPdf(blocks, profile) {
       } else if (block.level === 2) {
         ensureSpace(42);
         y -= 5;
-        addLine(block.text.toUpperCase(), profile.pdf.h2, 0);
+        addLine(headingText(block.text, documentTemplate), profile.pdf.h2, 0);
         addRule();
       } else {
         ensureSpace(28);
@@ -706,7 +876,7 @@ function buildPdf(blocks, profile) {
   const objects = [
     "<< /Type /Catalog /Pages 2 0 R >>",
     "",
-    "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+    `<< /Type /Font /Subtype /Type1 /BaseFont /${documentTemplate.pdfBaseFont} >>`,
   ];
 
   const pageObjectIds = [];
@@ -821,10 +991,12 @@ await mkdir(outDir, { recursive: true });
 const baseName = args.baseName || path.basename(inputPath, path.extname(inputPath));
 const markdown = await readFile(inputPath, "utf8");
 const blocks = parseMarkdown(markdown, { includeReport: args.includeReport });
-const profile = selectLayoutProfile(blocks);
+const templateRoute = await loadTemplateRoute(args.templateRoute);
+const documentTemplate = resolveDocumentTemplate(args.documentTemplate, templateRoute);
+const profile = applyRouteDensity(selectLayoutProfile(blocks), templateRoute, documentTemplate);
 const generated = [];
 const formats = new Set(args.formats);
-const docxBuffer = buildDocx(blocks, profile);
+const docxBuffer = buildDocx(blocks, profile, documentTemplate);
 let docxPathForPdf = "";
 let tempDocxDir = "";
 let pdfEngineUsed = "";
@@ -854,7 +1026,7 @@ try {
     }
 
     if (!converted) {
-      await writeFile(target, buildPdf(blocks, profile));
+      await writeFile(target, buildPdf(blocks, profile, documentTemplate));
       pdfEngineUsed = "internal";
     } else {
       pdfEngineUsed = "libreoffice";
@@ -864,7 +1036,7 @@ try {
 
   if (formats.has("html")) {
     const target = path.join(outDir, `${baseName}.html`);
-    await writeFile(target, buildHtml(blocks, baseName, profile), "utf8");
+    await writeFile(target, buildHtml(blocks, baseName, profile, documentTemplate), "utf8");
     generated.push(target);
   }
 
@@ -874,6 +1046,8 @@ try {
 
 console.log("Resume export complete:");
 console.log(`- layout profile: ${profile.name}`);
+if (templateRoute) console.log(`- template route: ${templateRoute.id}`);
+console.log(`- document template: ${documentTemplate.id}`);
 if (pdfEngineUsed) console.log(`- pdf engine: ${pdfEngineUsed}`);
 for (const file of generated) {
   console.log(`- ${path.relative(ROOT, file)}`);
