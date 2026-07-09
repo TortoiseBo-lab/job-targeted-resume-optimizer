@@ -9,47 +9,43 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 4 0 obj
-<< /Length 3099 >>
+<< /Length 2955 >>
 stream
-BT /F1 18.0 Tf 269.6 736.0 Td (Alex Chen) Tj ET
-BT /F1 9.6 Tf 129.3 710.0 Td (alex.chen@example.com | New York, NY | linkedin.com/in/alexchen | github.com/alexchen) Tj ET
-BT /F1 11.3 Tf 54 689.7 Td (EDUCATION) Tj ET
-q 0.7 w 54 676.4 m 558 676.4 l S Q
-BT /F1 10.4 Tf 54 665.4 Td (Columbia University) Tj ET
-BT /F1 9.9 Tf 54 650.3 Td (M.S. in Computer Science, expected May 2027) Tj ET
-BT /F1 9.7 Tf 64 634.8 Td (- Relevant coursework: distributed systems, machine learning, databases, algorithms.) Tj ET
-BT /F1 10.4 Tf 54 616.6 Td (University of Illinois Urbana-Champaign) Tj ET
-BT /F1 9.9 Tf 54 601.5 Td (B.S. in Statistics and Computer Science, May 2025) Tj ET
-BT /F1 9.7 Tf 64 586.0 Td (- GPA: 3.8/4.0.) Tj ET
-BT /F1 11.3 Tf 54 565.8 Td (TECHNICAL SKILLS) Tj ET
-q 0.7 w 54 552.5 m 558 552.5 l S Q
-BT /F1 9.7 Tf 64 544.5 Td (- Languages: Python, JavaScript, TypeScript, SQL, Java.) Tj ET
-BT /F1 9.7 Tf 64 530.3 Td (- Frameworks and tools: React, Node.js, PostgreSQL, Git, Docker, pandas.) Tj ET
-BT /F1 9.7 Tf 64 516.1 Td (- Foundations: algorithms, databases, machine learning, data validation.) Tj ET
-BT /F1 11.3 Tf 54 495.9 Td (EXPERIENCE) Tj ET
-q 0.7 w 54 482.6 m 558 482.6 l S Q
-BT /F1 10.4 Tf 54 471.6 Td (Data Platform Intern, FinSight Analytics) Tj ET
-BT /F1 9.9 Tf 54 456.5 Td (June 2025 - August 2025) Tj ET
-BT /F1 9.7 Tf 64 441.0 Td (- Built Python data validation scripts for financial transaction datasets, improving reliability of downstream) Tj ET
-BT /F1 9.7 Tf 64 426.8 Td (  analytics workflows.) Tj ET
-BT /F1 9.7 Tf 64 412.6 Td (- Investigated broken ETL checks and documented recurring data quality issues for two data engineers and one) Tj ET
-BT /F1 9.7 Tf 64 398.4 Td (  product manager.) Tj ET
-BT /F1 9.7 Tf 64 384.2 Td (- Contributed to dashboard reliability improvements by tracing data refresh failures and proposing validation) Tj ET
-BT /F1 9.7 Tf 64 370.0 Td (  checkpoints.) Tj ET
-BT /F1 10.4 Tf 54 351.8 Td (Software Engineering Project, Campus Course Planner) Tj ET
-BT /F1 9.9 Tf 54 336.6 Td (January 2025 - May 2025) Tj ET
-BT /F1 9.7 Tf 64 321.2 Td (- Developed a React and Node.js web application that helps students compare course schedules and save academic) Tj ET
-BT /F1 9.7 Tf 64 307.0 Td (  plans.) Tj ET
-BT /F1 9.7 Tf 64 292.7 Td (- Designed PostgreSQL schemas for courses, prerequisites, and saved plans, supporting structured search and) Tj ET
-BT /F1 9.7 Tf 64 278.5 Td (  filtering.) Tj ET
-BT /F1 9.7 Tf 64 264.3 Td (- Implemented filters for department, time, professor, and requirement type to improve course discovery.) Tj ET
-BT /F1 11.3 Tf 54 244.1 Td (PROJECTS) Tj ET
-q 0.7 w 54 230.8 m 558 230.8 l S Q
-BT /F1 10.4 Tf 54 219.8 Td (Recommendation System Prototype) Tj ET
-BT /F1 9.7 Tf 64 204.7 Td (- Trained a Python collaborative filtering model and evaluated ranking quality with precision, recall, and mean average) Tj ET
-BT /F1 9.7 Tf 64 190.5 Td (  precision.) Tj ET
-BT /F1 9.7 Tf 64 176.3 Td (- Connected model evaluation to product relevance by comparing recommended items against known user) Tj ET
-BT /F1 9.7 Tf 64 162.1 Td (  preferences.) Tj ET
+BT /F1 18.0 Tf 269.6 754.0 Td (Alex Chen) Tj ET
+BT /F1 9.6 Tf 129.3 728.0 Td (alex.chen@example.com | New York, NY | linkedin.com/in/alexchen | github.com/alexchen) Tj ET
+BT /F1 11.3 Tf 36 707.7 Td (EDUCATION) Tj ET
+q 0.7 w 36 694.4 m 576 694.4 l S Q
+BT /F1 10.4 Tf 36 683.4 Td (Columbia University) Tj ET
+BT /F1 9.9 Tf 36 668.3 Td (M.S. in Computer Science, expected May 2027) Tj ET
+BT /F1 9.7 Tf 46 652.8 Td (- Relevant coursework: distributed systems, machine learning, databases, algorithms.) Tj ET
+BT /F1 10.4 Tf 36 634.6 Td (University of Illinois Urbana-Champaign) Tj ET
+BT /F1 9.9 Tf 36 619.5 Td (B.S. in Statistics and Computer Science, May 2025) Tj ET
+BT /F1 9.7 Tf 46 604.0 Td (- GPA: 3.8/4.0.) Tj ET
+BT /F1 11.3 Tf 36 583.8 Td (TECHNICAL SKILLS) Tj ET
+q 0.7 w 36 570.5 m 576 570.5 l S Q
+BT /F1 9.7 Tf 46 562.5 Td (- Languages: Python, JavaScript, TypeScript, SQL, Java.) Tj ET
+BT /F1 9.7 Tf 46 548.3 Td (- Frameworks and tools: React, Node.js, PostgreSQL, Git, Docker, pandas.) Tj ET
+BT /F1 9.7 Tf 46 534.1 Td (- Foundations: algorithms, databases, machine learning, data validation.) Tj ET
+BT /F1 11.3 Tf 36 513.9 Td (EXPERIENCE) Tj ET
+q 0.7 w 36 500.6 m 576 500.6 l S Q
+BT /F1 10.4 Tf 36 489.6 Td (Data Platform Intern, FinSight Analytics) Tj ET
+BT /F1 9.9 Tf 36 474.5 Td (June 2025 - August 2025) Tj ET
+BT /F1 9.7 Tf 46 459.0 Td (- Built Python data validation scripts for financial transaction datasets, improving reliability of downstream analytics) Tj ET
+BT /F1 9.7 Tf 46 444.8 Td (  workflows.) Tj ET
+BT /F1 9.7 Tf 46 430.6 Td (- Investigated broken ETL checks and documented recurring data quality issues for two data engineers and one product) Tj ET
+BT /F1 9.7 Tf 46 416.4 Td (  manager.) Tj ET
+BT /F1 9.7 Tf 46 402.2 Td (- Contributed to dashboard reliability improvements by tracing data refresh failures and proposing validation checkpoints.) Tj ET
+BT /F1 10.4 Tf 36 384.0 Td (Software Engineering Project, Campus Course Planner) Tj ET
+BT /F1 9.9 Tf 36 368.9 Td (January 2025 - May 2025) Tj ET
+BT /F1 9.7 Tf 46 353.4 Td (- Developed a React and Node.js web application that helps students compare course schedules and save academic plans.) Tj ET
+BT /F1 9.7 Tf 46 339.2 Td (- Designed PostgreSQL schemas for courses, prerequisites, and saved plans, supporting structured search and filtering.) Tj ET
+BT /F1 9.7 Tf 46 325.0 Td (- Implemented filters for department, time, professor, and requirement type to improve course discovery.) Tj ET
+BT /F1 11.3 Tf 36 304.7 Td (PROJECTS) Tj ET
+q 0.7 w 36 291.5 m 576 291.5 l S Q
+BT /F1 10.4 Tf 36 280.5 Td (Recommendation System Prototype) Tj ET
+BT /F1 9.7 Tf 46 265.4 Td (- Trained a Python collaborative filtering model and evaluated ranking quality with precision, recall, and mean average) Tj ET
+BT /F1 9.7 Tf 46 251.1 Td (  precision.) Tj ET
+BT /F1 9.7 Tf 46 236.9 Td (- Connected model evaluation to product relevance by comparing recommended items against known user preferences.) Tj ET
 endstream
 endobj
 5 0 obj
@@ -62,9 +58,9 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000185 00000 n 
-0000003336 00000 n 
+0000003192 00000 n 
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-3462
+3318
 %%EOF

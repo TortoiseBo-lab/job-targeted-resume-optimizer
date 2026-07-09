@@ -43,7 +43,7 @@ If the user has not provided a resume or JD, ask for those first. Keep the quest
 
 5. **Resume strategy**
    - Choose section order and density.
-   - Pick a template route from the 67-template catalog.
+   - Pick a template route from the 96-template catalog.
    - Explain what to emphasize, compress, or remove.
 
 6. **Draft final resume**
@@ -55,13 +55,13 @@ If the user has not provided a resume or JD, ask for those first. Keep the quest
 
 7. **Export**
    - Always produce Word/PDF as the main user-facing deliverables unless the user explicitly asks otherwise.
-   - Pass the chosen 67-template route id to the exporter with `--template-route`.
+   - Pass the chosen 96-template route id to the exporter with `--template-route`.
    - Run:
 
      `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume --template-route <chosen-template-id>`
 
    - Confirm the `.docx` and `.pdf` files exist before reporting success.
-   - Note the exporter layout profile (`standard`, `compact`, or `dense`), document template, template route, and PDF engine from the command output.
+   - Note the exporter layout profile (`standard`, `compact`, or `dense`), document template, template route, page size, PDF engine, and QA result from the command output.
    - If the resume spills beyond the desired page count, tighten the source content first: reduce weak bullets, merge low-value skills, and keep only target-relevant evidence.
 
 ## Hard Rules
@@ -80,7 +80,7 @@ At the end, report:
 
 - Word/PDF paths.
 - Separate optimization-report path.
-- Export layout profile, document template, template route, and PDF engine.
+- Export layout profile, document template, template route, page size, PDF engine, and QA result.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.

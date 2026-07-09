@@ -186,6 +186,7 @@ function parseArgs(argv) {
     pdfEngine: "auto",
     documentTemplate: "auto",
     templateRoute: "",
+    strictQa: false,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -206,6 +207,8 @@ function parseArgs(argv) {
       args.documentTemplate = argv[++index] ?? "auto";
     } else if (arg === "--template-route") {
       args.templateRoute = argv[++index] ?? "";
+    } else if (arg === "--strict-qa") {
+      args.strictQa = true;
     } else if (arg === "--help" || arg === "-h") {
       printHelp();
       process.exit(0);
@@ -238,8 +241,9 @@ Options:
   --formats        Comma-separated formats. Defaults to docx,pdf. Supports docx,pdf,html.
   --include-report Keep optimization-report sections in the exported document.
   --pdf-engine     auto|libreoffice|internal. Defaults to auto.
-  --template-route 67-template route id such as google-big-tech or wharton-finance.
+  --template-route 96-template route id such as google-big-tech or wharton-finance.
   --document-template auto|classic-ats|tech-clean|academic-cv|finance-compact|consulting-executive|creative-modern|chinese-professional.
+  --strict-qa      Fail export when template QA warnings are found.
 
 This exporter has no external runtime dependencies.`);
 }
@@ -427,6 +431,34 @@ async function loadTemplateRoute(routeId) {
   return route;
 }
 
+async function loadTemplateSpec(routeId) {
+  if (!routeId) return null;
+  const specCandidates = [
+    path.join(ROOT, "knowledge-base", "templates", "template-specs.json"),
+    path.join(SCRIPT_DIR, "..", "knowledge-base", "templates", "template-specs.json"),
+    path.join(SCRIPT_DIR, "..", "references", "knowledge-base", "templates", "template-specs.json"),
+  ];
+
+  let library = null;
+  for (const specPath of specCandidates) {
+    try {
+      library = JSON.parse(await readFile(specPath, "utf8"));
+      break;
+    } catch {
+      // Try the next package layout.
+    }
+  }
+  if (!library) {
+    throw new Error("Cannot locate knowledge-base/templates/template-specs.json for --template-route.");
+  }
+
+  const spec = library.specs.find((item) => item.id === routeId);
+  if (!spec) {
+    throw new Error(`No template spec exists for --template-route ${routeId}.`);
+  }
+  return spec;
+}
+
 function resolveDocumentTemplate(requestedTemplate, route) {
   const alias = TEMPLATE_ALIASES[requestedTemplate] ?? "auto";
   const templateId = alias === "auto" ? route?.layoutFamily ?? "classic-ats" : alias;
@@ -435,6 +467,22 @@ function resolveDocumentTemplate(requestedTemplate, route) {
     throw new Error(`No document template exists for layout family: ${templateId}`);
   }
   return template;
+}
+
+function specBackedDocumentTemplate(documentTemplate, spec) {
+  if (!spec) return documentTemplate;
+  return {
+    ...documentTemplate,
+    font: spec.fontRules.wordAscii,
+    fallbackFonts: `${spec.fontRules.wordAscii}, ${documentTemplate.fallbackFonts}`,
+    eastAsiaFont: spec.fontRules.wordEastAsia,
+    pdfBaseFont: spec.fontRules.pdfFallbackBaseFont,
+    headingCaps: spec.fontRules.headingCaps,
+    divider: {
+      size: spec.divider.size,
+      color: spec.divider.color,
+    },
+  };
 }
 
 function applyRouteDensity(profile, route, documentTemplate) {
@@ -446,6 +494,17 @@ function applyRouteDensity(profile, route, documentTemplate) {
   return profile;
 }
 
+function applyTemplateSpecToProfile(profile, spec) {
+  if (!spec) return profile;
+  return {
+    ...profile,
+    pageMargin: spec.margins.topTwip,
+    line: spec.lineHeight.bodyTwip,
+    paragraphAfter: spec.lineHeight.paragraphAfterTwip,
+    bulletAfter: spec.lineHeight.bulletAfterTwip,
+  };
+}
+
 function fontCss(documentTemplate) {
   return documentTemplate.fallbackFonts;
 }
@@ -454,7 +513,7 @@ function headingText(text, documentTemplate) {
   return documentTemplate.headingCaps ? text.toUpperCase() : text;
 }
 
-function buildHtml(blocks, title, profile, documentTemplate) {
+function buildHtml(blocks, title, profile, documentTemplate, templateSpec) {
   const body = blocks.map((block) => {
     if (block.type === "heading") {
       return `<h${block.level}>${inlineHtml(block.text)}</h${block.level}>`;
@@ -474,7 +533,7 @@ function buildHtml(blocks, title, profile, documentTemplate) {
   <meta charset="utf-8">
   <title>${escapeHtml(title)}</title>
   <style>
-    @page { margin: ${(profile.pageMargin / 1440).toFixed(2)}in; }
+    @page { size: ${templateSpec?.page?.size ?? "US Letter"}; margin: ${((templateSpec?.margins?.topTwip ?? profile.pageMargin) / 1440).toFixed(2)}in ${((templateSpec?.margins?.rightTwip ?? profile.pageMargin) / 1440).toFixed(2)}in ${((templateSpec?.margins?.bottomTwip ?? profile.pageMargin) / 1440).toFixed(2)}in ${((templateSpec?.margins?.leftTwip ?? profile.pageMargin) / 1440).toFixed(2)}in; }
     body { color: #151515; font-family: ${fontCss(documentTemplate)}; font-size: ${(profile.normalSize / 2).toFixed(1)}pt; line-height: ${(profile.line / 240).toFixed(2)}; }
     h1 { font-size: ${(profile.titleSize / 2).toFixed(1)}pt; margin: 0 0 5pt; text-align: center; }
     h2 { border-bottom: ${(documentTemplate.divider.size / 8).toFixed(2)}pt solid #${documentTemplate.divider.color}; font-size: ${(profile.h2Size / 2).toFixed(1)}pt; margin: 11pt 0 4pt; padding-bottom: 2pt; ${documentTemplate.headingCaps ? "text-transform: uppercase;" : ""} page-break-after: avoid; }
@@ -527,7 +586,7 @@ function docxBullet(text, profile) {
   return `<w:p><w:pPr><w:widowControl/><w:spacing w:after="${profile.bulletAfter}" w:line="${profile.line}" w:lineRule="auto"/><w:numPr><w:ilvl w:val="0"/><w:numId w:val="1"/></w:numPr></w:pPr><w:r><w:t xml:space="preserve">${escapeXml(text)}</w:t></w:r></w:p>`;
 }
 
-function buildDocxXml(blocks, profile, documentTemplate) {
+function buildDocxXml(blocks, profile, documentTemplate, templateSpec) {
   const paragraphs = [];
   blocks.forEach((block, index) => {
     if (block.type === "heading") {
@@ -548,14 +607,21 @@ function buildDocxXml(blocks, profile, documentTemplate) {
       paragraphs.push(docxPlainParagraph(block.text, profile));
     }
   });
+  const page = templateSpec?.page ?? { widthTwip: 12240, heightTwip: 15840 };
+  const margins = templateSpec?.margins ?? {
+    topTwip: profile.pageMargin,
+    rightTwip: profile.pageMargin,
+    bottomTwip: profile.pageMargin,
+    leftTwip: profile.pageMargin,
+  };
 
   return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:body>
     ${paragraphs.join("\n")}
     <w:sectPr>
-      <w:pgSz w:w="12240" w:h="15840"/>
-      <w:pgMar w:top="${profile.pageMargin}" w:right="${profile.pageMargin}" w:bottom="${profile.pageMargin}" w:left="${profile.pageMargin}" w:header="360" w:footer="360" w:gutter="0"/>
+      <w:pgSz w:w="${page.widthTwip}" w:h="${page.heightTwip}"/>
+      <w:pgMar w:top="${margins.topTwip}" w:right="${margins.rightTwip}" w:bottom="${margins.bottomTwip}" w:left="${margins.leftTwip}" w:header="360" w:footer="360" w:gutter="0"/>
     </w:sectPr>
   </w:body>
 </w:document>`;
@@ -711,7 +777,7 @@ function buildDocxSettingsXml() {
 </w:settings>`;
 }
 
-function buildDocx(blocks, profile, documentTemplate) {
+function buildDocx(blocks, profile, documentTemplate, templateSpec) {
   return createZip([
     {
       name: "[Content_Types].xml",
@@ -741,7 +807,7 @@ function buildDocx(blocks, profile, documentTemplate) {
     },
     {
       name: "word/document.xml",
-      content: buildDocxXml(blocks, profile, documentTemplate),
+      content: buildDocxXml(blocks, profile, documentTemplate, templateSpec),
     },
     {
       name: "word/styles.xml",
@@ -795,11 +861,12 @@ function wrapTextToWidth(text, maxWidth, size) {
   return lines;
 }
 
-function buildPdf(blocks, profile, documentTemplate) {
-  const pageWidth = 612;
-  const pageHeight = 792;
-  const marginX = profile.pdf.marginX;
-  const marginY = profile.pdf.marginY;
+function buildPdf(blocks, profile, documentTemplate, templateSpec) {
+  const pageWidth = templateSpec?.page?.pdfWidth ?? 612;
+  const pageHeight = templateSpec?.page?.pdfHeight ?? 792;
+  const marginX = templateSpec?.margins?.leftTwip ? templateSpec.margins.leftTwip / 20 : profile.pdf.marginX;
+  const marginY = templateSpec?.margins?.topTwip ? templateSpec.margins.topTwip / 20 : profile.pdf.marginY;
+  const marginBottom = templateSpec?.margins?.bottomTwip ? templateSpec.margins.bottomTwip / 20 : marginY;
   const contentWidth = pageWidth - marginX * 2;
   const pages = [];
   let commands = [];
@@ -812,7 +879,7 @@ function buildPdf(blocks, profile, documentTemplate) {
   }
 
   function ensureSpace(points) {
-    if (y - points < marginY) newPage();
+    if (y - points < marginBottom) newPage();
   }
 
   function addLine(text, size = profile.pdf.body, indent = 0) {
@@ -973,6 +1040,114 @@ async function convertDocxToPdfWithLibreOffice(docxPath, pdfPath) {
   }
 }
 
+function normalized(value) {
+  return value.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ").trim();
+}
+
+function headingBlocks(blocks, level = 2) {
+  return blocks
+    .filter((block) => block.type === "heading" && block.level === level)
+    .map((block) => block.text);
+}
+
+function hasSection(blocks, expected) {
+  const target = normalized(expected);
+  const aliases = {
+    experience: ["experience", "work experience", "professional experience", "policy experience", "public health experience", "venture experience", "investment experience", "经历", "工作经历", "实习经历", "项目经历"],
+    skills: ["skills", "technical skills", "additional skills", "技能", "专业技能", "技术技能"],
+    education: ["education", "教育", "教育背景"],
+    projects: ["projects", "project experience", "项目", "项目经历"],
+    leadership: ["leadership", "activities", "领导力", "校园经历"],
+  };
+  const candidates = aliases[target] ?? [target];
+  return headingBlocks(blocks).some((heading) => {
+    const text = normalized(heading);
+    return candidates.some((candidate) => text.includes(normalized(candidate)));
+  });
+}
+
+function countBullets(blocks) {
+  return blocks
+    .filter((block) => block.type === "list")
+    .reduce((total, block) => total + block.items.length, 0);
+}
+
+function aiToneHits(blocks) {
+  const text = blocks
+    .flatMap((block) => {
+      if (block.type === "list") return block.items;
+      return block.text ? [block.text] : [];
+    })
+    .join(" ")
+    .toLowerCase();
+  const patterns = [
+    "passionate",
+    "dynamic",
+    "results-driven",
+    "proven track record",
+    "responsible for",
+    "leveraged",
+    "utilized",
+    "various",
+    "numerous",
+    "cutting-edge",
+  ];
+  return patterns.filter((pattern) => text.includes(pattern));
+}
+
+function evaluateTemplateQa(blocks, profile, documentTemplate, templateSpec) {
+  const warnings = [];
+  const checks = [];
+  const qa = templateSpec?.exportQa;
+  if (!templateSpec || !qa) {
+    return { checks: ["No template spec supplied; route-level QA skipped."], warnings };
+  }
+
+  function pass(message) {
+    checks.push(`PASS ${message}`);
+  }
+
+  function warn(message) {
+    warnings.push(message);
+  }
+
+  if (templateSpec.page.size === qa.pageSizeMustMatch) pass(`page size ${templateSpec.page.size}`);
+  else warn(`Page size mismatch: expected ${qa.pageSizeMustMatch}, got ${templateSpec.page.size}.`);
+
+  if (templateSpec.fontRules.wordAscii === qa.fontMustMatch) pass(`font ${templateSpec.fontRules.wordAscii}`);
+  else warn(`Font mismatch: expected ${qa.fontMustMatch}, got ${templateSpec.fontRules.wordAscii}.`);
+
+  const missingSections = qa.requiredSections.filter((section) => !hasSection(blocks, section));
+  if (missingSections.length) warn(`Missing required section(s): ${missingSections.join(", ")}.`);
+  else pass(`required sections present: ${qa.requiredSections.join(", ")}`);
+
+  if (qa.skillsSectionRequired && !hasSection(blocks, "Skills")) warn("Skills section is missing.");
+  else pass("skills section present");
+
+  const bulletCount = countBullets(blocks);
+  if (bulletCount < qa.minimumBulletCount) warn(`Bullet density is low: ${bulletCount} bullets, expected at least ${qa.minimumBulletCount}.`);
+  else pass(`bullet density ${bulletCount}/${qa.minimumBulletCount}`);
+
+  const estimatedLines = estimateResumeLines(blocks);
+  if (estimatedLines < qa.minimumEstimatedFillLines) warn(`Page fill may be low: estimated ${estimatedLines.toFixed(1)} lines, expected at least ${qa.minimumEstimatedFillLines}.`);
+  else pass(`page fill ${estimatedLines.toFixed(1)} lines`);
+
+  if (estimatedLines > qa.maximumEstimatedLinesBeforeDense && profile.name !== "dense") {
+    warn(`Resume may be too dense for ${profile.name}: estimated ${estimatedLines.toFixed(1)} lines. Consider dense layout or content trimming.`);
+  }
+
+  if (qa.dividerRequired && templateSpec.divider.required) pass(`divider ${templateSpec.divider.type}/${templateSpec.divider.size}/${templateSpec.divider.color}`);
+  else warn("Template divider rule is not enabled.");
+
+  if (qa.checkAiTone) {
+    const hits = aiToneHits(blocks);
+    if (hits.length) warn(`Possible AI-tone phrases found: ${hits.join(", ")}.`);
+    else pass("AI-tone phrase check");
+  }
+
+  return { checks, warnings };
+}
+
 const args = parseArgs(process.argv.slice(2));
 for (const format of args.formats) {
   if (!["docx", "pdf", "html"].includes(format)) {
@@ -992,11 +1167,16 @@ const baseName = args.baseName || path.basename(inputPath, path.extname(inputPat
 const markdown = await readFile(inputPath, "utf8");
 const blocks = parseMarkdown(markdown, { includeReport: args.includeReport });
 const templateRoute = await loadTemplateRoute(args.templateRoute);
-const documentTemplate = resolveDocumentTemplate(args.documentTemplate, templateRoute);
-const profile = applyRouteDensity(selectLayoutProfile(blocks), templateRoute, documentTemplate);
+const templateSpec = await loadTemplateSpec(args.templateRoute);
+const documentTemplate = specBackedDocumentTemplate(resolveDocumentTemplate(args.documentTemplate, templateRoute), templateSpec);
+const profile = applyTemplateSpecToProfile(applyRouteDensity(selectLayoutProfile(blocks), templateRoute, documentTemplate), templateSpec);
+const qaResult = evaluateTemplateQa(blocks, profile, documentTemplate, templateSpec);
+if (args.strictQa && qaResult.warnings.length) {
+  throw new Error(`Template QA failed:\n${qaResult.warnings.map((warning) => `- ${warning}`).join("\n")}`);
+}
 const generated = [];
 const formats = new Set(args.formats);
-const docxBuffer = buildDocx(blocks, profile, documentTemplate);
+const docxBuffer = buildDocx(blocks, profile, documentTemplate, templateSpec);
 let docxPathForPdf = "";
 let tempDocxDir = "";
 let pdfEngineUsed = "";
@@ -1026,7 +1206,7 @@ try {
     }
 
     if (!converted) {
-      await writeFile(target, buildPdf(blocks, profile, documentTemplate));
+      await writeFile(target, buildPdf(blocks, profile, documentTemplate, templateSpec));
       pdfEngineUsed = "internal";
     } else {
       pdfEngineUsed = "libreoffice";
@@ -1036,7 +1216,7 @@ try {
 
   if (formats.has("html")) {
     const target = path.join(outDir, `${baseName}.html`);
-    await writeFile(target, buildHtml(blocks, baseName, profile, documentTemplate), "utf8");
+    await writeFile(target, buildHtml(blocks, baseName, profile, documentTemplate, templateSpec), "utf8");
     generated.push(target);
   }
 
@@ -1048,7 +1228,12 @@ console.log("Resume export complete:");
 console.log(`- layout profile: ${profile.name}`);
 if (templateRoute) console.log(`- template route: ${templateRoute.id}`);
 console.log(`- document template: ${documentTemplate.id}`);
+if (templateSpec) console.log(`- page size: ${templateSpec.page.size}`);
 if (pdfEngineUsed) console.log(`- pdf engine: ${pdfEngineUsed}`);
+console.log(`- qa: ${qaResult.warnings.length ? `${qaResult.warnings.length} warning(s)` : "pass"}`);
+for (const warning of qaResult.warnings) {
+  console.log(`  - ${warning}`);
+}
 for (const file of generated) {
   console.log(`- ${path.relative(ROOT, file)}`);
 }

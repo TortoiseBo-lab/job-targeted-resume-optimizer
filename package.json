@@ -1,6 +1,6 @@
 {
   "name": "job-targeted-resume-optimizer",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Installable Codex and Claude Code skill package for target-company and target-role driven resume optimization.",
   "license": "MIT",
   "type": "module",

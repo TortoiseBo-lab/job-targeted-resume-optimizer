@@ -35,17 +35,17 @@ Then load only relevant company, industry, university, and style rule files.
 1. Extract JD signals: responsibilities, hard skills, soft skills, business context, seniority, and hidden screening criteria.
 2. Parse the candidate resume into factual evidence.
 3. Map evidence into direct match, transferable match, and gap.
-4. Choose section order and a template route from the 67-template catalog.
+4. Choose section order and a template route from the 96-template catalog.
 5. Rewrite the resume without inventing facts.
 6. Keep missing facts, `[Need detail: ...]`, follow-up questions, and optimization commentary out of the resume.
 7. Save a separate optimization report under `outputs/<company-role>-optimization-report.md`.
 8. Use a temporary or hidden Markdown source only as an internal export source, unless the user explicitly asks for Markdown.
-9. Pass the chosen 67-template route id to the exporter with `--template-route`, then run:
+9. Pass the chosen 96-template route id to the exporter with `--template-route`, then run:
 
    `node <this skill>/scripts/export-resume.mjs --input <resume-source-file> --out-dir outputs --base-name <company-role>-targeted-resume --template-route <chosen-template-id>`
 
 10. Confirm `.docx` and `.pdf` files exist before reporting success.
-11. Note the exporter layout profile (`standard`, `compact`, or `dense`), document template, template route, and PDF engine from the command output.
+11. Note the exporter layout profile (`standard`, `compact`, or `dense`), document template, template route, page size, PDF engine, and QA result from the command output.
 12. If the resume spills beyond the desired page count, tighten the source content first: reduce weak bullets, merge low-value skills, and keep only target-relevant evidence.
 
 ## Hard Rules
@@ -63,7 +63,7 @@ Report:
 
 - Word/PDF paths.
 - Separate optimization-report path.
-- Export layout profile, document template, template route, and PDF engine.
+- Export layout profile, document template, template route, page size, PDF engine, and QA result.
 - Chosen template route.
 - Top 3 strongest matches.
 - Top 3 evidence gaps.

@@ -1,8 +1,8 @@
 {
-  "version": 1,
-  "generatedAt": "2026-07-05T02:34:17.698Z",
+  "version": "0.7.0",
+  "generatedAt": "2026-07-09",
   "generatedFrom": "src/lib/resume-template-router.ts",
-  "templateCount": 67,
+  "templateCount": 96,
   "licenseNote": "This catalog contains project-authored template metadata, abstracted routing rules, and synthetic guidance. It does not include original third-party resume PDFs, screenshots, or raw personal resume text.",
   "families": {
     "General": [
@@ -29,13 +29,29 @@
       "embedded-robotics",
       "mechanical-manufacturing",
       "supply-chain-operations",
-      "environment-sustainability"
+      "environment-sustainability",
+      "openai-ai-systems",
+      "meta-product-engineer",
+      "amazon-sde",
+      "microsoft-cloud",
+      "tiktok-algorithm",
+      "data-engineering",
+      "product-analytics",
+      "devops-sre",
+      "game-developer",
+      "qa-automation"
     ],
     "Finance and accounting": [
       "statistics-quant",
       "wharton-finance",
       "accounting-audit",
-      "nyu-stern-finance"
+      "nyu-stern-finance",
+      "investment-banking-analyst",
+      "private-equity",
+      "asset-management",
+      "risk-management",
+      "corporate-finance-fpna",
+      "quant-trading"
     ],
     "Business and consulting": [
       "mbb-consulting",
@@ -45,7 +61,12 @@
       "uva-commerce",
       "wustl-olin-business",
       "business-analyst-general",
-      "sales-business-development"
+      "sales-business-development",
+      "product-manager-general",
+      "project-program-manager",
+      "operations-management",
+      "customer-success-saas",
+      "entrepreneurship-founder"
     ],
     "Product, marketing, and creative": [
       "stanford-product",
@@ -60,14 +81,22 @@
       "ux-research-design",
       "academic-phd-research",
       "law-llm-formal",
-      "medicine-clinical"
+      "medicine-clinical",
+      "public-policy-government",
+      "ngo-international-development",
+      "education-research",
+      "public-health-policy"
     ],
     "Market and school-specific": [
       "oxford-uk-classic",
       "hku-hong-kong",
       "canada-coop-resume",
       "australia-professional",
-      "europe-eu-cv"
+      "europe-eu-cv",
+      "uk-graduate-scheme",
+      "eu-english-cv",
+      "australia-graduate",
+      "hong-kong-finance"
     ],
     "Chinese market": [
       "chinese-campus",
@@ -2733,6 +2762,1069 @@
         "港中文",
         "cuhk",
         "香港大学"
+      ]
+    },
+    {
+      "id": "openai-ai-systems",
+      "label": "OpenAI / AI Systems Resume",
+      "description": "AI 系统、模型评估、产品化和安全可靠性证据优先。",
+      "sourceLabel": "OpenAI + AI Systems Style",
+      "knowledgePaths": [
+        "knowledge-base/companies/openai/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json",
+        "knowledge-base/industries/data-science/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Research",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "openai",
+        "ai systems",
+        "llm",
+        "model evaluation",
+        "agents",
+        "safety",
+        "machine learning"
+      ]
+    },
+    {
+      "id": "meta-product-engineer",
+      "label": "Meta Product Engineer Resume",
+      "description": "产品工程、实验、增长、用户规模和跨职能影响。",
+      "sourceLabel": "Meta + Product Engineering Signals",
+      "knowledgePaths": [
+        "knowledge-base/companies/meta/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json",
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "meta",
+        "product engineer",
+        "experimentation",
+        "growth",
+        "react",
+        "mobile",
+        "social"
+      ]
+    },
+    {
+      "id": "amazon-sde",
+      "label": "Amazon SDE Resume",
+      "description": "所有权、规模、可靠性和服务端工程证据。",
+      "sourceLabel": "Amazon SDE Signals",
+      "knowledgePaths": [
+        "knowledge-base/companies/amazon/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "amazon",
+        "sde",
+        "ownership",
+        "distributed systems",
+        "aws",
+        "backend"
+      ]
+    },
+    {
+      "id": "microsoft-cloud",
+      "label": "Microsoft Cloud Engineer Resume",
+      "description": "云平台、开发者工具、企业产品和可靠性。",
+      "sourceLabel": "Microsoft Cloud Signals",
+      "knowledgePaths": [
+        "knowledge-base/companies/microsoft/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "microsoft",
+        "azure",
+        "cloud",
+        "developer tools",
+        "platform",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "tiktok-algorithm",
+      "label": "TikTok Algorithm Resume",
+      "description": "推荐、搜索、内容理解和高并发产品指标。",
+      "sourceLabel": "TikTok Algorithm Signals",
+      "knowledgePaths": [
+        "knowledge-base/companies/tiktok/rules.json",
+        "knowledge-base/industries/data-science/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Research",
+        "Skills"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with compact density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "tiktok",
+        "recommendation",
+        "algorithm",
+        "ranking",
+        "search",
+        "content",
+        "ml"
+      ]
+    },
+    {
+      "id": "data-engineering",
+      "label": "Data Engineering Resume",
+      "description": "数据平台、ETL、质量、调度、仓库和数据产品。",
+      "sourceLabel": "Data Engineering Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/data-analyst/rules.json",
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "data engineering",
+        "etl",
+        "pipeline",
+        "warehouse",
+        "spark",
+        "airflow",
+        "dbt"
+      ]
+    },
+    {
+      "id": "product-analytics",
+      "label": "Product Analytics Resume",
+      "description": "指标体系、实验分析、用户行为和业务决策。",
+      "sourceLabel": "Product Analytics Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/data-analyst/rules.json",
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "product analytics",
+        "experimentation",
+        "ab test",
+        "metrics",
+        "sql",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "devops-sre",
+      "label": "DevOps / SRE Resume",
+      "description": "可靠性、自动化、云、监控、部署和事故复盘。",
+      "sourceLabel": "SRE / Infrastructure Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Certifications"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with compact density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "devops",
+        "sre",
+        "kubernetes",
+        "docker",
+        "ci/cd",
+        "observability",
+        "terraform"
+      ]
+    },
+    {
+      "id": "game-developer",
+      "label": "Game Developer Resume",
+      "description": "游戏玩法、引擎、性能、工具链和团队协作。",
+      "sourceLabel": "Game Development Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Projects",
+        "Experience",
+        "Skills",
+        "Portfolio"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the creative-modern document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "game developer",
+        "unity",
+        "unreal",
+        "c++",
+        "graphics",
+        "gameplay"
+      ]
+    },
+    {
+      "id": "qa-automation",
+      "label": "QA Automation Resume",
+      "description": "测试自动化、质量体系、覆盖率、缺陷定位和发布可靠性。",
+      "sourceLabel": "QA Automation Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/software-engineering/rules.json"
+      ],
+      "layoutFamily": "tech-clean",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Certifications"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the tech-clean document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "qa",
+        "automation",
+        "testing",
+        "selenium",
+        "playwright",
+        "quality"
+      ]
+    },
+    {
+      "id": "investment-banking-analyst",
+      "label": "Investment Banking Analyst Resume",
+      "description": "交易、估值、建模、行业研究和执行细节。",
+      "sourceLabel": "Investment Banking Style",
+      "knowledgePaths": [
+        "knowledge-base/industries/investment-banking/rules.json",
+        "knowledge-base/styles/investment-banking/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the finance-compact document family with compact density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "investment banking",
+        "analyst",
+        "valuation",
+        "m&a",
+        "dcf",
+        "pitchbook"
+      ]
+    },
+    {
+      "id": "private-equity",
+      "label": "Private Equity Resume",
+      "description": "投资判断、尽调、建模、行业 thesis 和资产表现。",
+      "sourceLabel": "Private Equity Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/finance/rules.json",
+        "knowledge-base/styles/investment-banking/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Investment Experience",
+        "Leadership",
+        "Skills"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the finance-compact document family with compact density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "private equity",
+        "pe",
+        "investment",
+        "due diligence",
+        "lbo",
+        "portfolio"
+      ]
+    },
+    {
+      "id": "asset-management",
+      "label": "Asset Management Resume",
+      "description": "投研、组合、风险收益、市场观点和客户沟通。",
+      "sourceLabel": "Asset Management Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/finance/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Research",
+        "Leadership",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the finance-compact document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "asset management",
+        "portfolio",
+        "equity research",
+        "fixed income",
+        "markets"
+      ]
+    },
+    {
+      "id": "risk-management",
+      "label": "Risk Management Resume",
+      "description": "风控模型、控制、压力测试、合规和量化风险。",
+      "sourceLabel": "Risk Management Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/finance/rules.json",
+        "knowledge-base/industries/statistics-math/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Certifications"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the finance-compact document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "risk management",
+        "credit risk",
+        "market risk",
+        "var",
+        "stress testing",
+        "controls"
+      ]
+    },
+    {
+      "id": "corporate-finance-fpna",
+      "label": "Corporate Finance / FP&A Resume",
+      "description": "预算、预测、经营分析、财务模型和业务伙伴协作。",
+      "sourceLabel": "FP&A Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/finance/rules.json",
+        "knowledge-base/industries/accounting-audit/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the finance-compact document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "fp&a",
+        "corporate finance",
+        "forecast",
+        "budget",
+        "variance",
+        "financial planning"
+      ]
+    },
+    {
+      "id": "quant-trading",
+      "label": "Quant Trading Resume",
+      "description": "策略研究、回测、信号、风险、执行和数学能力。",
+      "sourceLabel": "Quant Trading Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/statistics-math/rules.json",
+        "knowledge-base/industries/finance/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Projects",
+        "Experience",
+        "Skills"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the academic-cv document family with compact density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "quant trading",
+        "trading",
+        "backtest",
+        "alpha",
+        "signal",
+        "statistics",
+        "python"
+      ]
+    },
+    {
+      "id": "product-manager-general",
+      "label": "Product Manager Resume",
+      "description": "用户问题、路线图、实验、上线和指标结果。",
+      "sourceLabel": "Product Manager Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the creative-modern document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "product manager",
+        "pm",
+        "roadmap",
+        "launch",
+        "user research",
+        "metrics"
+      ]
+    },
+    {
+      "id": "project-program-manager",
+      "label": "Project / Program Manager Resume",
+      "description": "跨部门推进、里程碑、风险、资源和交付结果。",
+      "sourceLabel": "Program Management Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Certifications"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the consulting-executive document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "project manager",
+        "program manager",
+        "pmo",
+        "delivery",
+        "stakeholder",
+        "risk"
+      ]
+    },
+    {
+      "id": "operations-management",
+      "label": "Operations Management Resume",
+      "description": "流程、效率、成本、质量、供应和团队管理。",
+      "sourceLabel": "Operations Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/product-management/rules.json"
+      ],
+      "layoutFamily": "consulting-executive",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Leadership"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the consulting-executive document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "operations",
+        "process improvement",
+        "cost",
+        "quality",
+        "workflow",
+        "supply"
+      ]
+    },
+    {
+      "id": "customer-success-saas",
+      "label": "Customer Success / SaaS Resume",
+      "description": "客户留存、采用率、续约、培训和跨团队问题解决。",
+      "sourceLabel": "Customer Success Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/marketing/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the creative-modern document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "customer success",
+        "saas",
+        "retention",
+        "renewal",
+        "onboarding",
+        "account"
+      ]
+    },
+    {
+      "id": "entrepreneurship-founder",
+      "label": "Founder / Entrepreneurship Resume",
+      "description": "从 0 到 1、用户验证、收入、产品、融资和团队。",
+      "sourceLabel": "Founder Resume Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/product-management/rules.json",
+        "knowledge-base/styles/startup-style/rules.json"
+      ],
+      "layoutFamily": "creative-modern",
+      "sectionOrder": [
+        "Education",
+        "Venture Experience",
+        "Experience",
+        "Projects",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the creative-modern document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "founder",
+        "startup",
+        "entrepreneurship",
+        "venture",
+        "revenue",
+        "fundraising"
+      ]
+    },
+    {
+      "id": "public-policy-government",
+      "label": "Public Policy / Government Resume",
+      "description": "政策研究、利益相关方、备忘录、项目执行和公共影响。",
+      "sourceLabel": "Public Policy Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/public-policy-government/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Policy Experience",
+        "Research",
+        "Leadership",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the academic-cv document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "public policy",
+        "government",
+        "policy memo",
+        "stakeholder",
+        "public sector"
+      ]
+    },
+    {
+      "id": "ngo-international-development",
+      "label": "NGO / International Development Resume",
+      "description": "项目、资助、监测评估、社区和跨文化执行。",
+      "sourceLabel": "NGO Development Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/public-policy-government/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Research",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the academic-cv document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "ngo",
+        "international development",
+        "monitoring evaluation",
+        "grant",
+        "community"
+      ]
+    },
+    {
+      "id": "education-research",
+      "label": "Education Research Resume",
+      "description": "教育项目、课程、评估、研究方法和学习成果。",
+      "sourceLabel": "Education Research Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/research-assistant/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Research",
+        "Teaching",
+        "Projects",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the academic-cv document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "education research",
+        "teaching",
+        "curriculum",
+        "learning outcomes",
+        "assessment"
+      ]
+    },
+    {
+      "id": "public-health-policy",
+      "label": "Public Health / Policy Resume",
+      "description": "公共卫生、项目评估、数据、政策和社区健康。",
+      "sourceLabel": "Public Health Rules",
+      "knowledgePaths": [
+        "knowledge-base/industries/healthcare-medicine/rules.json",
+        "knowledge-base/industries/public-policy-government/rules.json"
+      ],
+      "layoutFamily": "academic-cv",
+      "sectionOrder": [
+        "Education",
+        "Public Health Experience",
+        "Research",
+        "Projects",
+        "Skills"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the academic-cv document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "public health",
+        "epidemiology",
+        "health policy",
+        "community health",
+        "program evaluation"
+      ]
+    },
+    {
+      "id": "uk-graduate-scheme",
+      "label": "UK Graduate Scheme CV",
+      "description": "英国 graduate scheme、正式 A4、教育和经历并重。",
+      "sourceLabel": "UK Graduate CV Rules",
+      "knowledgePaths": [
+        "knowledge-base/universities/oxford/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the classic-ats document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "uk",
+        "united kingdom",
+        "graduate scheme",
+        "london",
+        "oxford",
+        "cambridge"
+      ]
+    },
+    {
+      "id": "eu-english-cv",
+      "label": "EU English Professional CV",
+      "description": "欧洲英文 CV，A4、正式结构、跨国经历和语言能力。",
+      "sourceLabel": "EU CV Rules",
+      "knowledgePaths": [
+        "knowledge-base/styles/ats/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Languages"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the classic-ats document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "europe",
+        "eu",
+        "emea",
+        "germany",
+        "france",
+        "netherlands",
+        "language"
+      ]
+    },
+    {
+      "id": "australia-graduate",
+      "label": "Australia Graduate Resume",
+      "description": "澳洲 graduate/professional 简历，A4、技能概要和经历证据。",
+      "sourceLabel": "Australia Graduate Rules",
+      "knowledgePaths": [
+        "knowledge-base/styles/ats/rules.json"
+      ],
+      "layoutFamily": "classic-ats",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Projects",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "standard",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the classic-ats document family with standard density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "australia",
+        "sydney",
+        "melbourne",
+        "graduate",
+        "professional"
+      ]
+    },
+    {
+      "id": "hong-kong-finance",
+      "label": "Hong Kong Finance CV",
+      "description": "香港金融投递，A4、正式字体、教育和金融经历前置。",
+      "sourceLabel": "Hong Kong Finance Rules",
+      "knowledgePaths": [
+        "knowledge-base/universities/hku/rules.json",
+        "knowledge-base/industries/finance/rules.json"
+      ],
+      "layoutFamily": "finance-compact",
+      "sectionOrder": [
+        "Education",
+        "Experience",
+        "Leadership",
+        "Skills",
+        "Additional Information"
+      ],
+      "density": "compact",
+      "contentRules": [
+        "Every core experience should keep factual evidence from the original resume.",
+        "Each major experience or project should normally contain 2-4 role-relevant bullets.",
+        "Skills must be grouped and connected to evidence, not dumped as isolated keywords.",
+        "Do not include report commentary, references, scoring, or explanations in the resume body."
+      ],
+      "rationale": [
+        "Uses the finance-compact document family with compact density.",
+        "Designed as an open, synthetic route specification rather than a copied source template."
+      ],
+      "matchKeywords": [
+        "hong kong",
+        "hku",
+        "hk finance",
+        "香港",
+        "投行",
+        "金融"
       ]
     }
   ]

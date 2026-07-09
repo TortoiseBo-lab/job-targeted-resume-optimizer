@@ -1,8 +1,10 @@
 # Open Resume Template Catalog
 
-This catalog exposes 67 target-driven resume templates used by the resume tailoring skill.
+This catalog exposes 96 target-driven resume templates used by the resume tailoring skill.
 
 The templates are open-source metadata and generation rules. They are derived from project-authored layout decisions, abstracted resume-guide learning, and synthetic examples. The catalog does not include original PDFs, screenshots, or raw resume samples.
+
+`template-specs.json` adds template-level rules for every callable route: page size, fonts, margins, line height, density, divider style, section order, writing rules, banned AI-tone rules, and export QA standards.
 
 ## Template Families
 
@@ -104,4 +106,3 @@ The templates are open-source metadata and generation rules. They are derived fr
 3. Score templates by matched keywords, selected knowledge paths, and market signals.
 4. Apply layout, section order, density, and content rules to the generated resume.
 5. Keep user facts intact and ask follow-up questions when evidence is missing.
-

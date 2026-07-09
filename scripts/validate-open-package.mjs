@@ -2,7 +2,7 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const EXPECTED_TEMPLATE_COUNT = 67;
+const EXPECTED_TEMPLATE_COUNT = 96;
 const EXPECTED_COUNTS = {
   companies: 12,
   industries: 20,
@@ -40,6 +40,7 @@ const requiredFiles = [
   "knowledge-base/index.json",
   "knowledge-base/README.md",
   "knowledge-base/templates/catalog.json",
+  "knowledge-base/templates/template-specs.json",
   "knowledge-base/templates/README.md",
   "knowledge-base/playbooks/targeted-resume-playbook.json",
   "knowledge-base/playbooks/targeted-resume-playbook.md",
@@ -81,12 +82,18 @@ async function validateRequiredFiles() {
 async function validateTemplateCatalog() {
   const catalogPath = path.join(ROOT, "knowledge-base/templates/catalog.json");
   const catalog = JSON.parse(await readFile(catalogPath, "utf8"));
+  const specsPath = path.join(ROOT, "knowledge-base/templates/template-specs.json");
+  const specsLibrary = JSON.parse(await readFile(specsPath, "utf8"));
   if (catalog.templateCount !== EXPECTED_TEMPLATE_COUNT) {
     throw new Error(`Expected templateCount ${EXPECTED_TEMPLATE_COUNT}, found ${catalog.templateCount}.`);
   }
   if (!Array.isArray(catalog.templates) || catalog.templates.length !== EXPECTED_TEMPLATE_COUNT) {
     throw new Error(`Expected ${EXPECTED_TEMPLATE_COUNT} templates, found ${catalog.templates?.length ?? 0}.`);
   }
+  if (specsLibrary.templateCount !== EXPECTED_TEMPLATE_COUNT || !Array.isArray(specsLibrary.specs) || specsLibrary.specs.length !== EXPECTED_TEMPLATE_COUNT) {
+    throw new Error(`Expected ${EXPECTED_TEMPLATE_COUNT} template specs, found ${specsLibrary.specs?.length ?? 0}.`);
+  }
+  const specById = new Map(specsLibrary.specs.map((spec) => [spec.id, spec]));
   const ids = new Set();
   for (const template of catalog.templates) {
     if (!template.id || !template.label || !template.layoutFamily || !Array.isArray(template.sectionOrder) || !Array.isArray(template.contentRules)) {
@@ -96,6 +103,19 @@ async function validateTemplateCatalog() {
       throw new Error(`Duplicate template id: ${template.id}`);
     }
     ids.add(template.id);
+    const spec = specById.get(template.id);
+    if (!spec) {
+      throw new Error(`Missing template spec for: ${template.id}`);
+    }
+    if (!["US Letter", "A4"].includes(spec.page?.size)) {
+      throw new Error(`Template spec has invalid page size for ${template.id}: ${spec.page?.size}`);
+    }
+    if (!spec.fontRules?.wordAscii || !spec.fontRules?.wordEastAsia || !spec.fontRules?.pdfFallbackBaseFont) {
+      throw new Error(`Template spec is missing font rules for ${template.id}`);
+    }
+    if (!spec.margins?.topTwip || !spec.lineHeight?.bodyTwip || !spec.divider?.type || !spec.exportQa?.requiredSections) {
+      throw new Error(`Template spec is missing layout or QA fields for ${template.id}`);
+    }
   }
 }
 
@@ -164,4 +184,4 @@ await validateCoverageIndex();
 await validatePlaybook();
 await validateSensitiveContent();
 
-console.log(`Open package validation passed: ${EXPECTED_TEMPLATE_COUNT} templates, coverage index valid, playbook valid, required files present, no sensitive pattern hits.`);
+console.log(`Open package validation passed: ${EXPECTED_TEMPLATE_COUNT} templates and specs, coverage index valid, playbook valid, required files present, no sensitive pattern hits.`);

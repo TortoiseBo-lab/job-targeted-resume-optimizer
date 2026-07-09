@@ -73,7 +73,11 @@ The export command prints the selected layout profile and PDF engine:
 ```txt
 Resume export complete:
 - layout profile: standard
+- template route: google-big-tech
+- document template: tech-clean
+- page size: US Letter
 - pdf engine: internal
+- qa: pass
 ```
 
 Layout profiles are selected automatically:
@@ -84,7 +88,7 @@ Layout profiles are selected automatically:
 
 PDF uses LibreOffice conversion when a working `soffice` or `libreoffice` command exists. Otherwise it falls back to the internal PDF renderer.
 
-Apply a specific route from the 67-template catalog:
+Apply a specific route from the 96-template catalog:
 
 ```bash
 npm run export -- --input outputs/google-swe-intern-targeted-resume.md --template-route google-big-tech
@@ -109,6 +113,12 @@ Document templates control the actual Word/PDF styling:
 - `consulting-executive`: Times New Roman, formal consulting style.
 - `creative-modern`: Aptos/Arial-style sans font, softer divider color.
 - `chinese-professional`: Chinese-friendly font fallback and compact spacing.
+
+Template-level QA runs on every routed export. Add `--strict-qa` if you want warnings to fail the export:
+
+```bash
+npm run export -- --input outputs/resume.md --template-route google-big-tech --strict-qa
+```
 
 Try the bundled example:
 

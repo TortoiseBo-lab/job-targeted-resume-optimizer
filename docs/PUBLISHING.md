@@ -2,14 +2,15 @@
 
 ## Current Status
 
-The open package is separated from the production website. It contains the public knowledge base, 67-template catalog, targeted resume playbook, license, contribution notes, security notes, data card, examples, GitHub templates, and a validation script.
+The open package is separated from the production website. It contains the public knowledge base, 96-template catalog, template-level spec library, targeted resume playbook, license, contribution notes, security notes, data card, examples, GitHub templates, and a validation script.
 
 ## Ready
 
 - Public README scoped to the open package, not the web app.
 - MIT license.
 - Contribution, security, and data policy notes.
-- `knowledge-base/templates/catalog.json` with 67 templates.
+- `knowledge-base/templates/catalog.json` with 96 templates.
+- `knowledge-base/templates/template-specs.json` with page, font, divider, writing, and QA rules.
 - `knowledge-base/playbooks/targeted-resume-playbook.json` and Markdown version.
 - Example usage docs in `examples/`.
 - GitHub issue and PR templates.

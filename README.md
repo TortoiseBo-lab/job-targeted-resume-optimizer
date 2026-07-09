@@ -97,10 +97,13 @@ The built-in exporter is optimized for application-ready resumes:
 
 - Word sections use divider lines, consistent margins, ATS-friendly fonts, and heading keep rules.
 - The exporter estimates resume length and automatically selects `standard`, `compact`, or `dense` spacing.
-- The exporter can apply a 67-route template id through `--template-route`, such as `google-big-tech`, `wharton-finance`, or `mbb-consulting`.
+- The exporter can apply a 96-route template id through `--template-route`, such as `google-big-tech`, `wharton-finance`, or `mbb-consulting`.
+- Every route has a template-level spec in `knowledge-base/templates/template-specs.json`.
 - Template routes map to real document style families: `classic-ats`, `tech-clean`, `academic-cv`, `finance-compact`, `consulting-executive`, `creative-modern`, and `chinese-professional`.
 - Serif templates use `Times New Roman` in Word and `Times-Roman` in fallback PDF; tech and modern templates use Arial/Aptos-style sans fonts.
+- US, US school, and US company templates default to US Letter; China, UK, Europe, Australia, and Hong Kong templates default to A4.
 - Divider line weight, color, heading capitalization, density, and Chinese font fallback vary by document template.
+- Export QA checks page size, template font, required sections, skills section presence, bullet density, page fill, divider rules, and AI-tone phrases.
 - PDF generation uses LibreOffice conversion when a working `soffice` or `libreoffice` command is available.
 - If LibreOffice is not available, PDF generation falls back to the internal renderer instead of failing.
 - Optimization notes, evidence gaps, and follow-up questions are filtered out of the resume export by default.
@@ -123,7 +126,7 @@ The system uses:
 - Company-specific writing rules.
 - Industry and role conventions.
 - University and style guidance.
-- A 67-route template catalog.
+- A 96-route template catalog.
 - A target-driven playbook for evidence mapping and resume strategy.
 
 ## What Is Included
@@ -133,7 +136,8 @@ The system uses:
 | `skills/codex/job-targeted-resume-optimizer/` | Codex skill package |
 | `skills/claude/job-targeted-resume-optimizer/` | Claude Code skill package |
 | `knowledge-base/index.json` | Coverage map for companies, industries, universities, and styles |
-| `knowledge-base/templates/catalog.json` | 67 resume template routes |
+| `knowledge-base/templates/catalog.json` | 96 resume template routes |
+| `knowledge-base/templates/template-specs.json` | Template-level page, font, divider, writing, and QA rules |
 | `knowledge-base/playbooks/targeted-resume-playbook.md` | Human-readable workflow |
 | `scripts/install-skill.mjs` | Codex / Claude Code installer |
 | `scripts/export-resume.mjs` | Auto-fit resume source to DOCX / PDF exporter |
@@ -147,7 +151,7 @@ Current open coverage includes:
 - Companies: Google, Meta, Amazon, OpenAI, Microsoft, TikTok, McKinsey, BCG, Bain, Goldman Sachs, J.P. Morgan, Morgan Stanley.
 - Industries: software engineering, data science, product management, consulting, finance, investment banking, marketing, academic CV, healthcare, law, public policy, accounting, statistics, fintech, and more.
 - Styles: ATS, Big Tech, consulting, investment banking, academic CV, modern, minimal, startup, and other routes.
-- Templates: 67 target-driven resume routes.
+- Templates: 96 target-driven resume routes.
 
 ## Use Without Installation
 
