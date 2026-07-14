@@ -49,24 +49,28 @@ outputs/google-software-engineer-intern-targeted-resume.pdf
 outputs/google-software-engineer-intern-optimization-report.md
 ```
 
-## Demo
+## Demos
 
-Bundled example:
+The repository includes synthetic international-student demos. All people, resumes, and JDs are fictional and safe for open-source use.
 
-- Input resume: [examples/inputs/sample-resume.md](examples/inputs/sample-resume.md)
-- Target JD: [examples/inputs/google-swe-intern-jd.md](examples/inputs/google-swe-intern-jd.md)
-- Output Word: [examples/outputs/example-targeted-resume.docx](examples/outputs/example-targeted-resume.docx)
-- Output PDF: [examples/outputs/example-targeted-resume.pdf](examples/outputs/example-targeted-resume.pdf)
-- Separate report: [examples/outputs/example-optimization-report.md](examples/outputs/example-optimization-report.md)
+| Demo | Route | Page | Style | Outputs |
+| --- | --- | --- | --- | --- |
+| [Google SWE Intern](examples/demos/google-swe-intern/README.md) | `google-big-tech` | US Letter | `tech-clean` | docx / pdf / report |
+| [Finance Analyst](examples/demos/finance-analyst/README.md) | `investment-banking-analyst` | US Letter | `finance-compact` | docx / pdf / report |
+| [Consulting BA](examples/demos/consulting-ba/README.md) | `mbb-consulting` | US Letter | `consulting-executive` | docx / pdf / report |
+| [Chinese Internet Product](examples/demos/chinese-internet-product/README.md) | `chinese-product-ops` | A4 | `chinese-professional` | docx / pdf / report |
+| [UK Graduate Scheme](examples/demos/uk-graduate-scheme/README.md) | `uk-graduate-scheme` | A4 | `classic-ats` | docx / pdf / report |
 
-Run the demo export locally:
+Run all demo exports locally:
 
 ```bash
 git clone https://github.com/TortoiseBo-lab/job-targeted-resume-optimizer.git
 cd job-targeted-resume-optimizer
 npm install
-npm run export:example
+npm run export:demos
 ```
+
+The older minimal bundled example remains available under `examples/inputs` and `examples/outputs`.
 
 ## Workflow
 
